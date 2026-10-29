@@ -1,0 +1,15 @@
+{
+  "name": "fahrschuleguth",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fahrschule Guth – Middleman + Tailwind CSS + daisyUI",
+  "scripts": {
+    "dev": "tailwindcss -i source/assets/stylesheets/site.src.css -o .tmp/dist/source/assets/stylesheets/site.src.css --watch",
+    "build": "NODE_ENV=production tailwindcss -i source/assets/stylesheets/site.src.css -o .tmp/dist/source/assets/stylesheets/site.src.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "daisyui": "^5.7.50",
+    "tailwindcss": "^4.3.3"
+  }
+}

@@ -1,0 +1,6 @@
+/.bundle/
+/vendor/bundle/
+/node_modules/
+/.tmp/
+/build/
+.DS_Store
