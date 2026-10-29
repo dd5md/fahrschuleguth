@@ -8,20 +8,26 @@ breadcrumb_parents:
   - { label: Über Uns, href: /ueberuns/ }
 ---
 <%= partial "partials/page_header" %>
-<div class="mx-auto mt-6 max-w-5xl space-y-10 px-4">
-  <% data.preise.listen.each do |liste| %>
-    <section aria-labelledby="<%= liste.id %>">
-      <h2 id="<%= liste.id %>" class="text-2xl font-extrabold">Preisliste <span class="text-primary">Klasse <%= liste.title.sub("Klasse ", "") %></span></h2>
-      <p class="mt-1 text-sm italic text-base-content/70">gemäß Preisaushang Fahrlehrergesetz § 32</p>
-      <ul class="card-glass mt-4 divide-y divide-base-content/10 rounded-box">
-        <% liste["items"].each do |p| %>
-          <li class="flex items-center justify-between gap-4 px-5 py-4">
-            <div><p class="font-semibold"><%= p["text"] %></p><p class="text-sm text-base-content/70"><%= p["sub"] %></p></div>
-            <p class="whitespace-nowrap text-lg font-bold text-primary"><%= p["preis"] %></p>
-          </li>
-        <% end %>
-      </ul>
-    </section>
-  <% end %>
-  <p class="text-sm leading-relaxed text-base-content/80"><%= data.preise.hinweis %></p>
-</div>
+<section class="py-16">
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="grid gap-6 lg:grid-cols-3">
+      <% data.preise.listen.each_with_index do |liste, i| %>
+        <article class="card bg-base-200 shadow-sm <%= 'ring-2 ring-primary' if i == 0 %>" aria-labelledby="<%= liste.id %>">
+          <div class="card-body">
+            <h2 id="<%= liste.id %>" class="card-title text-2xl">Preisliste <span class="text-primary">Klasse <%= liste.title.sub("Klasse ", "") %></span></h2>
+            <p class="text-sm italic text-base-content/70">gemäß Preisaushang Fahrlehrergesetz § 32</p>
+            <ul class="mt-3 divide-y divide-base-content/10">
+              <% liste["items"].each do |p| %>
+                <li class="flex items-center justify-between gap-4 py-3">
+                  <div><p class="font-semibold"><%= p["text"] %></p><p class="text-sm text-base-content/70"><%= p["sub"] %></p></div>
+                  <p class="whitespace-nowrap text-lg font-bold text-primary"><%= p["preis"] %></p>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </article>
+      <% end %>
+    </div>
+    <p class="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-base-content/70"><%= data.preise.hinweis %></p>
+  </div>
+</section>

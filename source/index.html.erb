@@ -4,59 +4,147 @@ pagetitle: Herzlich Willkommen
 hide_breadcrumb: true
 ---
 
-<!-- Kompakter Einstieg: Auto im Vordergrund, kurze Aussage, klare Aktionen -->
-<section class="glow-bg">
-  <div class="mx-auto grid max-w-5xl items-center gap-8 px-4 pb-10 pt-10 sm:pt-14 lg:grid-cols-5">
-    <div class="lg:col-span-3">
-      <p class="text-sm font-semibold uppercase tracking-widest text-primary">Fahrschule Bochum-Weitmar</p>
-      <h1 class="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">Herzlich <span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">Willkommen</span></h1>
-      <p class="mt-2 text-xl font-semibold text-base-content/80">Deine Fahrschule in Bochum-Weitmar<span class="text-primary">!</span></p>
-      <p class="mt-5 leading-relaxed text-base-content/85">
-        Wir bilden seit über <strong>30 Jahren</strong> erfolgreich die Klassen B, A1, A2 <strong>&amp;</strong> A aus. Für die Ausbildung nutzen wir die aktuelle Mercedes-A-Klasse mit AMG-Paket<strong>!</strong> Wir wünschen Dir auf unserer Website viel Spaß und freuen uns, Dich persönlich kennenzulernen.
-      </p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-primary rounded-full"><%= icon :phone, css: "size-5" %> Anrufen</a>
-        <a href="/kontakt/#anmeldung" class="btn btn-secondary rounded-full"><%= icon :arrow, css: "size-5" %> Anmelden</a>
-        <a href="/kontakt/" class="btn btn-ghost rounded-full border border-base-content/20"><%= icon :mail, css: "size-5" %> Kontakt</a>
-      </div>
-      <p class="mt-5 text-sm text-base-content/70">Nicht in <strong>7</strong> Tagen – aber total Guth..<strong>!</strong></p>
+<!-- Einstieg: kompakt, Auto im Vordergrund (Aufbau wie die Demo) -->
+<section id="home" class="hero-bg relative overflow-hidden" aria-labelledby="hero-title">
+  <div class="mx-auto max-w-7xl px-4 pb-20 pt-12 text-center sm:pt-14">
+    <span class="badge badge-primary badge-outline badge-lg">Fahrschule in Bochum-Weitmar</span>
+    <h1 id="hero-title" class="mx-auto mt-5 max-w-3xl text-5xl font-extrabold tracking-tight sm:text-6xl">
+      Herzlich <span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">Willkommen</span>
+    </h1>
+    <p class="mx-auto mt-3 max-w-3xl text-xl font-semibold text-base-content/80">Deine Fahrschule in Bochum-Weitmar<span class="text-primary">!</span></p>
+    <p class="mx-auto mt-5 max-w-3xl text-lg text-base-content/70">
+      Wir bilden seit über <strong>30 Jahren</strong> erfolgreich die Klassen B, A1, A2 <strong>&amp;</strong> A aus. Für die Ausbildung nutzen wir die aktuelle Mercedes-A-Klasse mit AMG-Paket<strong>!</strong> Wir wünschen Dir auf unserer Website viel Spaß und freuen uns, Dich persönlich kennenzulernen.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-primary btn-lg rounded-full"><%= icon :phone, css: "size-5" %> Anrufen</a>
+      <a href="/kontakt/#anmeldung" class="btn btn-secondary btn-lg rounded-full"><%= icon :arrow, css: "size-5" %> Anmelden</a>
+      <a href="/kontakt/" class="btn btn-ghost btn-lg rounded-full border border-base-content/20"><%= icon :mail, css: "size-5" %> Kontakt</a>
     </div>
-    <div class="lg:col-span-2">
-      <%= picture_tag "hero/a-klasse-schaufenster", alt: "Zwei Mercedes-A-Klassen der Fahrschule Guth vor dem Schaufenster der Fahrschule in Bochum-Weitmar", loading: "eager", fetchpriority: "high", class: "overflow-hidden rounded-box border border-base-content/10 shadow-2xl shadow-primary/10 lg:-rotate-1" %>
-    </div>
-  </div>
-</section>
 
-<section class="mx-auto mt-10 max-w-5xl px-4" aria-labelledby="mehr">
-  <h2 id="mehr" class="sr-only">Mehr über die Fahrschule</h2>
-  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-    <% [
-      ["/ueberuns/", "bilder/index-cockpit", "Cockpit der Mercedes A-Klasse mit Mediendisplay", "Preise, Links, Downloads", "Fahrschule Guth", "Unsere aktuellen Preislisten, nützliche Links und Dokumente zum Download."],
-      ["/news/", "galerie/motorraeder/kawasaki_14_600px", "Motorrad von hinten vor der Fahrschule", "Aktuelles", "News", "Aktuelle News und Infos zur Fahrschule, Führerschein und Gesetzen."],
-      ["/galerie/", "bilder/index-kuehlergrill", "Kühlergrill der Mercedes A-Klasse mit Kennzeichen BO-UG 9", "Unsere Fahrzeuge", "Über Uns", "Bei uns fährst du die aktuelle Mercedes A-Klasse mit <strong>AMG-Paket!</strong>"],
-      ["/galerie/", "bilder/index-fuehrerschein", "Fahrschülerin zeigt ihren Führerschein aus dem Auto heraus", "Impressionen", "Gallerie", "Gallerie mit Fotos und Videos über Fahrschule, Fahrlehrer und Fahrschüler."]
-    ].each do |href, img, alt, sub, head, text| %>
-      <a href="<%= href %>" class="card-glass group overflow-hidden rounded-box transition hover:-translate-y-1 hover:border-primary/50">
-        <%= picture_tag img, alt: alt, class: "aspect-video overflow-hidden", style: "object-fit:cover;aspect-ratio:16/9" %>
-        <div class="p-4">
-          <h3 class="text-xs font-semibold uppercase tracking-wider text-primary"><%= sub %></h3>
-          <p class="mt-1 text-lg font-bold"><%= head %></p>
-          <p class="mt-1 text-sm text-base-content/75"><%= text %></p>
-          <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary">More <%= icon :arrow, css: "size-4" %></span>
+    <div class="relative mx-auto mt-14 w-full max-w-3xl">
+      <%= picture_tag "hero/a-klasse-schaufenster", alt: "Zwei Mercedes-A-Klassen der Fahrschule Guth vor dem Schaufenster der Fahrschule in Bochum-Weitmar", loading: "eager", fetchpriority: "high", class: "overflow-hidden rounded-3xl border border-base-content/10 shadow-2xl shadow-primary/20" %>
+      <% [
+        ["car", "PKW und Motorrad", "Klassen B, A1, A2 & A", "left-0 top-6 sm:-left-10"],
+        ["clock", "Seit über 30 Jahren", "erfolgreich ausgebildet", "right-0 top-28 sm:-right-10"],
+        ["pin", "Bochum-Weitmar", "Hattinger Str. 136", "left-0 bottom-10 sm:-left-10"],
+        ["phone", "Uli Guth", "0172 | 233 666 0", "right-0 -bottom-6 sm:-right-10"]
+      ].each do |ic, title, text, pos| %>
+        <div class="glass absolute <%= pos %> hidden items-center gap-3 rounded-box p-2.5 pr-4 text-left md:flex">
+          <span class="grid size-9 place-items-center rounded-lg bg-primary/15 text-primary"><%= icon ic, css: "size-5" %></span>
+          <div class="leading-tight"><p class="text-sm font-semibold"><%= title %></p><p class="text-xs text-base-content/60"><%= text %></p></div>
         </div>
-      </a>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </section>
 
-<section class="mx-auto mt-14 max-w-5xl px-4" aria-labelledby="eindruecke">
-  <h2 id="eindruecke" class="text-2xl font-extrabold sm:text-3xl">Impressionen</h2>
-  <ul class="mt-5 grid gap-3 sm:grid-cols-3">
-    <% [["galerie/fahrschule/fahrschule_10", "Fahrlehrer Uli Guth im Büro der Fahrschule"],
-        ["galerie/bestanden/bestanden_01_2022_16", "Fahrschüler nach bestandener Prüfung, Januar 2022"],
-        ["galerie/fahrschule/fahrschule_neu_8", "Theorieraum mit Stuhlreihen und Lautsprechern"]].each do |file, alt| %>
-      <li><a href="<%= asset_path(:images, "#{file}.webp") %>" data-lightbox="home" data-alt="<%= alt %>" class="block overflow-hidden rounded-box border border-base-content/10">
-        <%= picture_tag file, alt: alt, style: "object-fit:cover;aspect-ratio:4/3" %></a></li>
-    <% end %>
-  </ul>
+<!-- Klassen-Leiste -->
+<section class="border-y border-base-200 bg-base-100 py-12" aria-labelledby="klassen-title">
+  <div class="mx-auto max-w-7xl px-4 text-center">
+    <h2 id="klassen-title" class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Wir bilden aus</h2>
+    <ul class="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+      <% %w[B A1 A2 A].each do |k| %>
+        <li class="flex items-center gap-3 text-xl font-bold text-base-content/60">
+          <span class="grid size-10 place-items-center rounded-lg bg-primary text-primary-content"><%= k %></span> Klasse <%= k %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
+
+<!-- Vorteile (Bento-Karten) -->
+<section id="vorteile" class="bg-base-200 py-20" aria-labelledby="vorteile-title">
+  <div class="mx-auto max-w-7xl px-4">
+    <header class="mx-auto max-w-2xl text-center">
+      <h2 id="vorteile-title" class="text-3xl font-bold sm:text-4xl">Unsere <span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">Vorteile</span><span class="text-primary">!</span></h2>
+      <p class="mt-4 text-base-content/70">Nicht in <strong>7</strong> Tagen – aber total Guth..<strong>!</strong></p>
+    </header>
+    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+      <article class="card bg-base-100 shadow-sm lg:col-span-2">
+        <div class="card-body gap-6 sm:flex-row sm:items-center">
+          <div class="flex-1">
+            <span class="grid size-12 place-items-center rounded-xl bg-primary/10 text-primary"><%= icon :car %></span>
+            <h3 class="card-title mt-4 text-2xl">Aktuelle Mercedes-A-Klasse mit AMG-Paket</h3>
+            <p class="mt-2 text-base-content/70">Bei uns fährst du die aktuelle Mercedes A-Klasse mit <strong>AMG-Paket!</strong></p>
+            <div class="card-actions mt-4"><a href="/galerie/fahrzeuge/" class="link link-primary inline-flex items-center gap-1 font-medium">Unsere Fahrzeuge <%= icon :arrow, css: "size-4" %></a></div>
+          </div>
+          <%= picture_tag "hero/a-klasse-seite", alt: "Schwarze Mercedes-A-Klasse der Fahrschule von der Seite", class: "flex-1 overflow-hidden rounded-2xl sm:max-w-sm" %>
+        </div>
+      </article>
+      <article class="card bg-base-100 shadow-sm">
+        <div class="card-body">
+          <span class="grid size-12 place-items-center rounded-xl bg-primary/10 text-primary"><%= icon :check %></span>
+          <h3 class="card-title mt-2 text-2xl">Schutzkleidung für die Motorradausbildung</h3>
+          <ul class="mt-2 flex flex-wrap gap-2"><li class="badge badge-primary badge-outline">Neuste Sena Funk Technik</li></ul>
+          <%= picture_tag "bilder/helme", alt: "Zwei Motorradhelme mit Sena-Funktechnik", class: "mt-4 overflow-hidden rounded-2xl" %>
+        </div>
+      </article>
+      <article class="card bg-base-100 shadow-sm">
+        <div class="card-body">
+          <span class="grid size-12 place-items-center rounded-xl bg-primary/10 text-primary"><%= icon :laptop %></span>
+          <h3 class="card-title mt-2 text-xl">Übungsnotebooks zur freien Nutzung</h3>
+          <%= picture_tag "galerie/fahrschule/fahrschule_4", alt: "Zwei Übungsnotebooks in der Fahrschule", class: "mt-3 overflow-hidden rounded-2xl" %>
+        </div>
+      </article>
+      <article class="card bg-base-100 shadow-sm">
+        <div class="card-body">
+          <span class="grid size-12 place-items-center rounded-xl bg-primary/10 text-primary"><%= icon :phone %></span>
+          <h3 class="card-title mt-2 text-xl">iPhone-App '360Grad'</h3>
+        </div>
+      </article>
+      <article class="card bg-base-100 shadow-sm">
+        <div class="card-body">
+          <span class="grid size-12 place-items-center rounded-xl bg-primary/10 text-primary"><%= icon :clock %></span>
+          <h3 class="card-title mt-2 text-xl">Theorieuntericht mit Smartboard &amp; Beamer</h3>
+          <p class="text-sm text-base-content/70">Theorie-Unterricht: Montags und Donnerstags, 19:00 bis 20:30 Uhr</p>
+          <%= picture_tag "galerie/fahrschule/fahrschule_neu_4", alt: "Theorieraum mit Smartboard und blauen Stühlen", class: "mt-3 overflow-hidden rounded-2xl" %>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Preise (Auszug) -->
+<section id="preise" class="py-20" aria-labelledby="preise-title">
+  <div class="mx-auto max-w-7xl px-4">
+    <header class="mx-auto max-w-2xl text-center">
+      <h2 id="preise-title" class="text-3xl font-bold sm:text-4xl"><span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">Preise</span></h2>
+      <p class="mt-4 text-base-content/70">gemäß Preisaushang Fahrlehrergesetz § 32</p>
+    </header>
+    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+      <% data.preise.listen.each_with_index do |liste, i| %>
+        <article class="card bg-base-200 shadow-sm <%= 'ring-2 ring-primary' if i == 0 %>">
+          <div class="card-body">
+            <h3 class="card-title text-2xl">Klasse <%= liste.title.sub("Klasse ", "") %></h3>
+            <p class="text-4xl font-extrabold text-primary"><%= liste["items"][0]["preis"] %></p>
+            <p class="text-sm text-base-content/70"><%= liste["items"][0]["text"] %>, <%= liste["items"][0]["sub"] %></p>
+            <ul class="mt-4 divide-y divide-base-content/10 text-sm">
+              <% liste["items"][1..4].each do |p| %>
+                <li class="flex justify-between gap-3 py-2"><span><%= p["text"] %> <span class="text-base-content/60">(<%= p["sub"] %>)</span></span><strong><%= p["preis"] %></strong></li>
+              <% end %>
+            </ul>
+          </div>
+        </article>
+      <% end %>
+    </div>
+    <p class="mx-auto mt-8 max-w-3xl text-center text-sm text-base-content/70"><%= data.preise.hinweis %></p>
+    <p class="mt-6 text-center"><a href="/ueberuns/preise/" class="btn btn-primary rounded-full">Alle Preise <%= icon :arrow, css: "size-4" %></a></p>
+  </div>
+</section>
+
+<!-- Bestanden -->
+<section id="bestanden" class="bg-base-200 py-20" aria-labelledby="bestanden-title">
+  <div class="mx-auto max-w-7xl px-4">
+    <header class="mx-auto max-w-2xl text-center">
+      <h2 id="bestanden-title" class="text-3xl font-bold sm:text-4xl">Wir haben <span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">Bestanden</span><span class="text-primary">!</span></h2>
+      <p class="mt-4 text-base-content/70"><strong>100%</strong> Erfolg - <strong>100%</strong> total Guth</p>
+    </header>
+    <ul class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+      <% data.news.posts.first["images"].first(8).each do |img| %>
+        <li><a href="<%= asset_path(:images, "#{img["file"]}.webp") %>" data-lightbox="home" data-alt="<%= img["alt"] %>" class="block overflow-hidden rounded-box bg-base-100 shadow-sm transition hover:-translate-y-1">
+          <%= picture_tag img["file"], alt: img["alt"], style: "object-fit:cover;aspect-ratio:4/3" %></a></li>
+      <% end %>
+    </ul>
+    <p class="mt-10 text-center"><a href="/news/" class="btn btn-primary rounded-full">Mehr <%= icon :arrow, css: "size-4" %></a></p>
+  </div>
 </section>

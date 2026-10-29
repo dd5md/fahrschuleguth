@@ -45,6 +45,7 @@ inkl. `width`/`height`. Die Bilder sind verkleinert (max. 720–1400 px) und ohn
 Abweichung von der Vorgabe „PNG + WebP“: Für Fotos ist der Fallback JPG (PNG wäre bei ~270 Fotos ein Vielfaches größer); PNG nur für Grafik (`bilder/ok`).
 
 ### Design
+Aufbau und Look folgen der Demo (dd5md.de / daisyUI-Landing): zentrierter Einstieg mit schwebenden Glas-Karten, Klassen-Leiste, Bento-Karten, Preiskarten, Bestanden-Galerie, große Farb-Box mit Kontakt/Öffnungszeiten, Footer mit `footer-title`. Unterseiten nutzen denselben Seitenkopf (Glow, Tabs).
 Dunkel als Standard, Umschalter Dark/Light mit `localStorage`. Akzent: Signal-Gelb/Amber (Verkehrs- und Fahrschul-Beschilderung, passt zur gelb-roten Ladenfront, sehr guter Kontrast auf dunklem Grund), Zweitfarbe Blau (blaue Stühle im Theorieraum, Farbe der Altseite).
 
 ### SEO

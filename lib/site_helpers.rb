@@ -155,6 +155,9 @@ module SiteHelpers
     "external" => "M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25",
     "left" => "M15.75 19.5 8.25 12l7.5-7.5",
     "right" => "m8.25 4.5 7.5 7.5-7.5 7.5",
+    "laptop" => "M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25",
+    "car" => "M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12",
+    "star" => "M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z",
     "close" => "M6 18 18 6M6 6l12 12"
   }.freeze
 
@@ -175,11 +178,11 @@ module SiteHelpers
   def gallery_grid(items, group: "gallery")
     lis = items.each_with_index.map do |it, i|
       eager = i < 4 ? "eager" : "lazy"
-      %(<li><a href="#{asset_path(:images, "#{it.file}.webp")}" data-lightbox="#{group}" data-alt="#{ERB::Util.html_escape(it.alt)}" class="group block overflow-hidden rounded-box border border-base-content/10 bg-base-200">) +
+      %(<li><a href="#{asset_path(:images, "#{it.file}.webp")}" data-lightbox="#{group}" data-alt="#{ERB::Util.html_escape(it.alt)}" class="group block overflow-hidden rounded-box bg-base-100 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">) +
         picture_tag(it.file, alt: it.alt, loading: eager, class: "aspect-[4/3] overflow-hidden",
                              style: "object-fit:cover;aspect-ratio:4/3") +
         %(</a></li>)
     end
-    %(<ul class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">#{lis.join}</ul>)
+    %(<ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">#{lis.join}</ul>)
   end
 end

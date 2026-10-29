@@ -97,3 +97,12 @@ dialog.lightbox {
   background: rgb(0 0 0 / .92); color: #fff;
 }
 dialog.lightbox::backdrop { background: transparent; }
+
+/* Hero: schmaler Glow in der Mitte (wie dd5md.de) */
+.hero-bg {
+  background-image: radial-gradient(
+    ellipse 40% 55% at 50% 35%,
+    color-mix(in oklab, var(--color-primary) 20%, transparent),
+    transparent 100%
+  );
+}
