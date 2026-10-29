@@ -1,0 +1,60 @@
+name: Fahrschule Guth
+legal_name: Fahrschule Ulrich Guth
+title: 'Fahrschule Uli Guth Bochum-Weitmar | ..total Guth!'
+title_separator: '•'
+description: 'Fahrschule Bochum Uli Guth für PKW und Motorrad. Wir bilden seit über 25 Jahren erfolgreich die Führerscheinklassen B, A1, A2 und A in Bochum aus.'
+slogan: 'Nicht in 7 Tagen aber total Guth..!'
+subtitle: 'Deine Fahrschule in Bochum-Weitmar!'
+owner: Ulrich Guth
+address:
+  street: Hattinger Str. 136
+  plz: '44795'
+  city: Bochum
+  district: Bochum-Weitmar
+  region: NRW
+  country: DE
+geo:
+  lat: 51.4659771
+  lon: 7.2060598
+contacts:
+  - name: Uli Guth
+    role: 'Inhaber | Fahrlehrer'
+    phone: '0172 | 233 666 0'
+    tel: '+491722336660'
+    email: uli@fahrschuleguth.de
+    image: galerie/fahrschule/fahrschule_10
+    image_alt: Fahrlehrer Uli Guth im Büro der Fahrschule
+  - name: Bettina Guth
+    role: 'Büro | Anmeldung'
+    phone: '0234 | 45 21 22'
+    tel: '+49234452122'
+    email: tina@fahrschuleguth.de
+    image: bilder/tina
+    image_alt: Motorradfahrer an einer Tankstelle
+facebook: 'https://www.facebook.com/fahrschuleguth'
+nav:
+  - { label: Home, href: / }
+  - { label: Über Uns, href: /ueberuns/ }
+  - { label: Galerie, href: /galerie/ }
+  - { label: News, href: /news/ }
+  - { label: Kontakt, href: /kontakt/ }
+  - { label: Impressum, href: /impressum/ }
+subnav:
+  ueberuns:
+    - { label: Über Uns, href: /ueberuns/ }
+    - { label: Preise, href: /ueberuns/preise/ }
+    - { label: Links, href: /ueberuns/links/ }
+    - { label: Downloads, href: /ueberuns/downloads/ }
+  galerie:
+    - { label: Fahrschule, href: /galerie/ }
+    - { label: Bestanden, href: /galerie/bestanden/ }
+    - { label: PKW, href: /galerie/fahrzeuge/ }
+    - { label: Motorräder, href: /galerie/motorraeder/ }
+    - { label: Videos, href: /galerie/videos/ }
+hours:
+  - { day: Montags, times: ['16:00 - 17:00 Uhr', '18:00 - 20:30 Uhr'], schema_day: Monday }
+  - { day: Donnerstags, times: ['16:00 - 17:00 Uhr', '18:00 - 20:30 Uhr'], schema_day: Thursday }
+hours_phone: 'Nach telefonischer Absprache: 0172 | 233 666 0 (außer Sonntags)'
+theory:
+  - { day: Montags, time: '19:00 bis 20:30 Uhr' }
+  - { day: Donnerstags, time: '19:00 bis 20:30 Uhr' }

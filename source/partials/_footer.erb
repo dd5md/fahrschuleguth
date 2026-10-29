@@ -1,0 +1,38 @@
+<footer class="mt-16 border-t border-base-content/10 bg-base-200/60">
+  <div class="mx-auto grid max-w-5xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <p class="text-lg font-extrabold">Fahrschule <span class="text-primary">Guth</span></p>
+      <address class="mt-3 text-sm not-italic leading-relaxed text-base-content/80">
+        <%= data.site.address.street %><br><%= data.site.address.plz %> <%= data.site.address.city %>
+      </address>
+      <p class="mt-3 text-sm text-base-content/70">Made with ❤️ in Bochum!</p>
+    </div>
+    <div>
+      <h2 class="font-bold">Fahrschule Guth</h2>
+      <ul class="mt-3 space-y-2 text-sm">
+        <% data.site.contacts.each do |c| %>
+          <li><a class="link link-hover inline-flex items-center gap-2" href="<%= tel_link c.tel %>"><%= icon :phone, css: "size-4 text-primary" %> <%= c.phone %></a></li>
+          <li><a class="link link-hover inline-flex items-center gap-2" href="mailto:<%= c.email %>"><%= icon :mail, css: "size-4 text-primary" %> <%= c.email %></a></li>
+        <% end %>
+      </ul>
+    </div>
+    <div>
+      <h2 class="font-bold">Nützliche Links</h2>
+      <ul class="mt-3 space-y-2 text-sm">
+        <% [["Preiswahrheit", "http://www.preiswahrheit.de/"], ["TÜV Essen", "http://www.tuev-nord.de/essen-frillendorf/"], ["Testbögen", "http://www.fahrschule.de/testbogen/"], ["Unfallhilfe", "http://www.deutsche-unfallhilfe.de/"], ["Bußgeldkatalog", "http://www.bmvbs.de/"]].each do |name, url| %>
+          <li><a class="link link-hover" href="<%= url %>" target="_blank" rel="noopener"><%= name %></a></li>
+        <% end %>
+      </ul>
+    </div>
+    <div>
+      <h2 class="font-bold">Links</h2>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li><a class="link link-hover" href="/kontakt/">Kontakt</a></li>
+        <li><a class="link link-hover" href="/ueberuns/">Über Uns</a></li>
+        <li><a class="link link-hover" href="/news/">News</a></li>
+        <li><a class="link link-hover" href="/impressum/">Impressum</a></li>
+        <li><a class="link link-hover inline-flex items-center gap-2" href="<%= data.site.facebook %>" target="_blank" rel="noopener"><%= social_icon :facebook %> Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

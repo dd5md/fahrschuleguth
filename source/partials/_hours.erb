@@ -1,0 +1,22 @@
+<section id="oeffnungszeiten" class="mx-auto mt-16 max-w-5xl px-4" aria-labelledby="hours-title">
+  <h2 id="hours-title" class="text-2xl font-extrabold sm:text-3xl">Wir sind für Dich da<span class="text-primary">!</span></h2>
+  <div class="mt-6 grid gap-4 md:grid-cols-2">
+    <div class="card-glass rounded-box p-5">
+      <h3 class="flex items-center gap-2 font-bold"><%= icon :clock, css: "size-5 text-primary" %> Öffnungszeiten:</h3>
+      <dl class="mt-4 divide-y divide-base-content/10 text-sm">
+        <% data.site.hours.each do |h| %>
+          <div class="grid gap-1 py-3 sm:grid-cols-2"><dt class="font-semibold"><%= h.day %>:</dt><dd><%= h.times.map { |t| "<span class=\"whitespace-nowrap\">#{t}</span>" }.join(" & ") %></dd></div>
+        <% end %>
+        <div class="py-3"><%= data.site.hours_phone %></div>
+      </dl>
+    </div>
+    <div class="card-glass rounded-box p-5">
+      <h3 class="flex items-center gap-2 font-bold"><%= icon :clock, css: "size-5 text-secondary" %> Theorie-Unterricht:</h3>
+      <dl class="mt-4 divide-y divide-base-content/10 text-sm">
+        <% data.site.theory.each do |t| %>
+          <div class="grid gap-1 py-3 sm:grid-cols-2"><dt class="font-semibold"><%= t.day %>:</dt><dd><%= t.time %></dd></div>
+        <% end %>
+      </dl>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title><%= page_title %></title>
+<meta name="description" content="<%= page_description %>">
+<link rel="canonical" href="<%= canonical_url %>">
+<meta name="robots" content="<%= current_page.data.robots || 'index, follow, max-image-preview:large, max-snippet:-1' %>">
+<meta name="theme-color" content="#0a0d14">
+<meta name="author" content="Fahrschule Uli Guth">
+<meta name="geo.region" content="DE-NW">
+<meta name="geo.placename" content="<%= data.site.address.district %>">
+<meta name="geo.position" content="<%= data.site.geo.lat %>;<%= data.site.geo.lon %>">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="<%= data.site.name %>">
+<meta property="og:locale" content="<%= config[:default_locale] %>">
+<meta property="og:title" content="<%= page_title %>">
+<meta property="og:description" content="<%= page_description %>">
+<meta property="og:url" content="<%= canonical_url %>">
+<meta property="og:image" content="<%= og_image_url %>">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%= page_title %>">
+<meta name="twitter:description" content="<%= page_description %>">
+<meta name="twitter:image" content="<%= og_image_url %>">
+
+<link rel="icon" href="<%= asset_path(:images, "favicon.svg") %>" type="image/svg+xml">
+<link rel="icon" href="<%= asset_path(:images, "favicon.ico") %>" sizes="any">
+<link rel="stylesheet" href="<%= asset_path(:css, "site") %>">
+
+<!-- Structured Data (Schema.org JSON-LD) -->
+<script type="application/ld+json"><%= JSON.generate(json_ld_graph) %></script>
+<%= yield_content :head %>

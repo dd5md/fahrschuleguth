@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@config "../../../tailwind.config.js";
+@source "../../**/*.{erb,html,md}";
+@source "../../../lib/**/*.rb";
+
+/* daisyUI 5 wird per @plugin in der CSS-Quelldatei registriert (nicht per require in tailwind.config.js) */
+@plugin "daisyui" {
+  themes: guth-dark --default --prefersdark, guth-light;
+}
+
+/* Akzent: Signal-Gelb/Amber (Verkehrs- und Fahrschul-Beschilderung, wie die Ladenfront), dazu Blau
+   als Zweitfarbe (blaue Stühle im Theorieraum, alte Seitenfarbe). */
+@plugin "daisyui/theme" {
+  name: "guth-dark";
+  default: true;
+  prefersdark: true;
+  color-scheme: dark;
+  --color-base-100: #0a0d14;
+  --color-base-200: #111621;
+  --color-base-300: #1b2230;
+  --color-base-content: #e8edf4;
+  --color-primary: #f5b301;
+  --color-primary-content: #1a1300;
+  --color-secondary: #4c6ef5;
+  --color-secondary-content: #ffffff;
+  --color-accent: #34d399;
+  --color-accent-content: #04130d;
+  --color-neutral: #161c28;
+  --color-neutral-content: #e8edf4;
+  --color-info: #38bdf8;
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+  --radius-selector: 1rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1.25rem;
+}
+
+@plugin "daisyui/theme" {
+  name: "guth-light";
+  color-scheme: light;
+  --color-base-100: #ffffff;
+  --color-base-200: #f4f6fa;
+  --color-base-300: #e3e8f0;
+  --color-base-content: #111621;
+  --color-primary: #b45309;
+  --color-primary-content: #ffffff;
+  --color-secondary: #3b5bdb;
+  --color-secondary-content: #ffffff;
+  --color-accent: #059669;
+  --color-accent-content: #ffffff;
+  --color-neutral: #111621;
+  --color-neutral-content: #ffffff;
+  --color-info: #0284c7;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --radius-selector: 1rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1.25rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  overflow-x: clip;
+}
+
+/* Glow-Hintergrund oben auf der Seite */
+.glow-bg {
+  background-image:
+    radial-gradient(ellipse 60% 40% at 15% 0%, color-mix(in oklab, var(--color-primary) 18%, transparent), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 90% 10%, color-mix(in oklab, var(--color-secondary) 16%, transparent), transparent 70%);
+}
+
+.glass {
+  background: color-mix(in oklab, var(--color-base-100) 60%, transparent);
+  border: 1px solid color-mix(in oklab, var(--color-base-content) 12%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+.card-glass {
+  background: color-mix(in oklab, var(--color-base-200) 80%, transparent);
+  border: 1px solid color-mix(in oklab, var(--color-base-content) 10%, transparent);
+}
+
+/* Lesbarer Fließtext für Rechtstexte */
+.prose-legal h2 { font-size: 1.25rem; font-weight: 700; margin: 2rem 0 .5rem; }
+.prose-legal h3 { font-size: 1.05rem; font-weight: 700; margin: 1.5rem 0 .4rem; }
+.prose-legal p { margin: 0 0 .9rem; line-height: 1.65; color: color-mix(in oklab, var(--color-base-content) 85%, transparent); }
+
+dialog.lightbox {
+  width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0;
+  background: rgb(0 0 0 / .92); color: #fff;
+}
+dialog.lightbox::backdrop { background: transparent; }
