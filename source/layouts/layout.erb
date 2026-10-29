@@ -15,7 +15,7 @@
       <%= yield %>
     </main>
 
-    <%= partial "partials/hours" unless current_page.data.hide_hours %>
+    <%= partial "partials/cta" unless current_page.data.hide_cta %>
     <%= partial "partials/footer" %>
     <script src="<%= asset_path(:js, "theme") %>" defer></script>
     <script src="<%= asset_path(:js, "lightbox") %>" defer></script>

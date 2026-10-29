@@ -1,0 +1,27 @@
+<section id="kontakt-cta" class="py-20" aria-labelledby="cta-title">
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="grid items-center gap-12 overflow-hidden rounded-3xl bg-primary p-8 text-primary-content sm:p-14 lg:grid-cols-2">
+      <div>
+        <h2 id="cta-title" class="text-3xl font-bold sm:text-4xl">Hast Du Fragen<strong>?</strong></h2>
+        <p class="mt-4 text-lg opacity-90">Uli: <a class="font-semibold underline" href="<%= tel_link data.site.contacts.first.tel %>"><%= data.site.contacts.first.phone %></a></p>
+        <h3 class="mt-8 flex items-center gap-2 text-xl font-bold"><%= icon :clock, css: "size-5" %> Wir sind für Dich da<strong>!</strong></h3>
+        <h4 class="mt-3 font-semibold">Öffnungszeiten:</h4>
+        <ul class="mt-2 space-y-1">
+          <% data.site.hours.each do |h| %>
+            <li><strong><%= h.day %>:</strong> <%= h.times.map { |t| "<span class=\"whitespace-nowrap\">#{t}</span>" }.join(" & ") %></li>
+          <% end %>
+          <li><%= data.site.hours_phone %></li>
+        </ul>
+        <h4 class="mt-4 font-semibold">Theorie-Unterricht:</h4>
+        <ul class="mt-2 space-y-1">
+          <% data.site.theory.each do |t| %><li><strong><%= t.day %>:</strong> <%= t.time %></li><% end %>
+        </ul>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-lg rounded-full border-0 bg-base-100 text-base-content hover:bg-base-200"><%= icon :phone, css: "size-5" %> Anrufen</a>
+          <a href="/kontakt/" class="btn btn-lg btn-outline rounded-full border-primary-content text-primary-content hover:bg-primary-content hover:text-primary"><%= icon :mail, css: "size-5" %> Kontakt</a>
+        </div>
+      </div>
+      <%= picture_tag "galerie/fahrschule/fahrschule_10", alt: "Fahrlehrer Uli Guth im Büro der Fahrschule", class: "mx-auto w-full max-w-sm overflow-hidden rounded-3xl shadow-2xl" %>
+    </div>
+  </div>
+</section>

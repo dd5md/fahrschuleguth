@@ -5,25 +5,32 @@ description: 'Unsere Vorteile: aktuelle Mercedes-A-Klasse mit AMG-Paket, Schutzk
 subnav: ueberuns
 ---
 <%= partial "partials/page_header" %>
-<section class="mx-auto mt-6 grid max-w-5xl items-center gap-8 px-4 md:grid-cols-2">
-  <div>
-    <h2 class="text-3xl font-extrabold">Unsere <span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">Vorteile</span><span class="text-primary">!</span></h2>
-    <ul class="mt-5 space-y-3">
-      <% ["Aktuelle Mercedes-A-Klasse mit AMG-Paket", "Schutzkleidung für die Motorradausbildung", "Übungsnotebooks zur freien Nutzung", "Theorieuntericht mit Smartboard & Beamer", "iPhone-App '360Grad'", "Neuste Sena Funk Technik"].each do |v| %>
-        <li class="flex items-start gap-3"><span class="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-success/20 text-success"><%= icon :check, css: "size-4", stroke: 2.5 %></span><span><%= v %></span></li>
-      <% end %>
-    </ul>
+<section class="py-16" aria-labelledby="vorteile">
+  <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2">
+    <div>
+      <h2 id="vorteile" class="text-3xl font-bold sm:text-4xl">Unsere <span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">Vorteile</span><span class="text-primary">!</span></h2>
+      <ol class="mt-8 space-y-6">
+        <% ["Aktuelle Mercedes-A-Klasse mit AMG-Paket", "Schutzkleidung für die Motorradausbildung", "Übungsnotebooks zur freien Nutzung", "Theorieuntericht mit Smartboard & Beamer", "iPhone-App '360Grad'", "Neuste Sena Funk Technik"].each_with_index do |v, i| %>
+          <li class="flex items-center gap-5">
+            <span class="grid size-12 shrink-0 place-items-center rounded-full bg-primary font-bold text-primary-content"><%= i + 1 %></span>
+            <h3 class="text-xl font-semibold"><%= v %></h3>
+          </li>
+        <% end %>
+      </ol>
+    </div>
+    <a href="<%= asset_path(:images, "bilder/helme.webp") %>" data-lightbox="ueberuns" data-alt="Motorradhelme mit Sena-Funktechnik" class="block overflow-hidden rounded-3xl border border-base-content/10 shadow-2xl shadow-primary/10">
+      <%= picture_tag "bilder/helme", alt: "Zwei Motorradhelme mit Sena-Funktechnik, Schutzkleidung für die Motorradausbildung" %>
+    </a>
   </div>
-  <a href="<%= asset_path(:images, "bilder/helme.webp") %>" data-lightbox="ueberuns" data-alt="Motorradhelme mit Sena-Funktechnik" class="block overflow-hidden rounded-box border border-base-content/10">
-    <%= picture_tag "bilder/helme", alt: "Zwei Motorradhelme mit Sena-Funktechnik, Schutzkleidung für die Motorradausbildung" %>
-  </a>
 </section>
-<section class="mx-auto mt-14 grid max-w-5xl items-center gap-8 px-4 md:grid-cols-2" aria-labelledby="fahrlehrer">
-  <%= picture_tag "galerie/fahrschule/fahrschule_10", alt: "Fahrlehrer Uli Guth im Büro der Fahrschule", class: "overflow-hidden rounded-box border border-base-content/10 md:order-2" %>
-  <div>
-    <p class="text-xs font-semibold uppercase tracking-wider text-primary">Inhaber | Fahrlehrer</p>
-    <h2 id="fahrlehrer" class="mt-1 text-3xl font-extrabold">Uli <span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">Guth</span></h2>
-    <p class="mt-3 text-base-content/80">Ansprechpartner der Fahrschule Guth in Bochum-Weitmar: 0172 | 233 666 0, uli@fahrschuleguth.de.</p>
-    <a href="/kontakt/" class="btn btn-primary mt-4 rounded-full">Kontakt aufnehmen</a>
+<section class="bg-base-200 py-20" aria-labelledby="fahrlehrer">
+  <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 md:grid-cols-2">
+    <%= picture_tag "galerie/fahrschule/fahrschule_10", alt: "Fahrlehrer Uli Guth im Büro der Fahrschule", class: "overflow-hidden rounded-3xl border border-base-content/10 shadow-xl md:order-2" %>
+    <div>
+      <span class="badge badge-primary badge-outline">Inhaber | Fahrlehrer</span>
+      <h2 id="fahrlehrer" class="mt-3 text-3xl font-bold sm:text-4xl">Uli <span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">Guth</span></h2>
+      <p class="mt-4 text-base-content/70">Ansprechpartner der Fahrschule Guth in Bochum-Weitmar: <%= data.site.contacts.first.phone %>, <%= data.site.contacts.first.email %>.</p>
+      <a href="/kontakt/" class="btn btn-primary mt-6 rounded-full">Kontakt aufnehmen</a>
+    </div>
   </div>
 </section>
