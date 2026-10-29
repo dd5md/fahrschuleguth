@@ -43,7 +43,7 @@ activate :external_pipeline,
          command: if build?
                     "NODE_ENV=production npx tailwindcss -i #{tailwind_input} -o #{tailwind_output} --minify"
                   else
-                    "npx tailwindcss -i #{tailwind_input} -o #{tailwind_output} --watch=always"
+                    "npx tailwindcss -i #{tailwind_input} -o #{tailwind_output} --watch=always < /dev/null"
                   end,
          source: ".tmp/dist",
          latency: 1
