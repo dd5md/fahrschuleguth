@@ -1,0 +1,20 @@
+---
+title: Über Uns
+pagetitle: Über Uns
+description: 'Unsere Vorteile: aktuelle Mercedes-A-Klasse mit AMG-Paket, Schutzkleidung für die Motorradausbildung, Übungsnotebooks, Theorieunterricht mit Smartboard & Beamer.'
+subnav: ueberuns
+---
+<%= partial "partials/page_header" %>
+<section class="mx-auto mt-6 grid max-w-5xl items-center gap-8 px-4 md:grid-cols-2">
+  <div>
+    <h2 class="text-3xl font-extrabold">Unsere <span class="text-primary">Vorteile</span><span class="text-primary">!</span></h2>
+    <ul class="mt-5 space-y-3">
+      <% ["Aktuelle Mercedes-A-Klasse mit AMG-Paket", "Schutzkleidung für die Motorradausbildung", "Übungsnotebooks zur freien Nutzung", "Theorieuntericht mit Smartboard & Beamer", "iPhone-App '360Grad'", "Neuste Sena Funk Technik"].each do |v| %>
+        <li class="flex items-start gap-3"><span class="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-success/20 text-success"><%= icon :check, css: "size-4", stroke: 2.5 %></span><span><%= v %></span></li>
+      <% end %>
+    </ul>
+  </div>
+  <a href="<%= asset_path(:images, "bilder/helme.webp") %>" data-lightbox="ueberuns" data-alt="Motorradhelme mit Sena-Funktechnik" class="block overflow-hidden rounded-box border border-base-content/10">
+    <%= picture_tag "bilder/helme", alt: "Zwei Motorradhelme mit Sena-Funktechnik, Schutzkleidung für die Motorradausbildung" %>
+  </a>
+</section>

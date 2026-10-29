@@ -1,0 +1,12 @@
+---
+title: Galerie
+pagetitle: Bestanden
+description: 'Wir haben bestanden! Fotos von Fahrschülern der Fahrschule Guth Bochum nach bestandener Führerscheinprüfung.'
+subnav: galerie
+breadcrumb_parents:
+  - { label: Galerie, href: /galerie/ }
+---
+<%= partial "partials/page_header" %>
+<section class="mx-auto mt-6 max-w-5xl px-4">
+  <%= gallery_grid data.galerie.bestanden, group: "bestanden" %>
+</section>

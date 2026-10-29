@@ -1,0 +1,20 @@
+---
+title: Links
+pagetitle: Links
+description: 'Nützliche Links der Fahrschule Guth Bochum: Frage- und Testbogen, Bußgeldkatalog, Deutsche Unfallhilfe, TÜV Essen-Frillendorf, Tipps zum Führerschein, Preiswahrheit.'
+subnav: ueberuns
+breadcrumb_parents:
+  - { label: Über Uns, href: /ueberuns/ }
+---
+<%= partial "partials/page_header" %>
+<section class="mx-auto mt-6 max-w-5xl px-4">
+  <h2 class="text-2xl font-extrabold">Nützliche <span class="text-primary">Links</span>!</h2>
+  <ul class="card-glass mt-4 divide-y divide-base-content/10 rounded-box">
+    <% data.links.links.each do |l| %>
+      <li class="flex flex-col gap-1 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <span class="font-semibold"><%= l.name %></span>
+        <a class="link link-primary inline-flex items-center gap-2 break-all text-sm" href="<%= l.url %>" target="_blank" rel="noopener" title="<%= l.name %>"><%= icon :external, css: "size-4 shrink-0" %> <%= l.label %></a>
+      </li>
+    <% end %>
+  </ul>
+</section>

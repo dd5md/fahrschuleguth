@@ -1,0 +1,19 @@
+links:
+  - { name: Frage- und Testbogen, label: 'http://www.fahrschule.de/testbogen', url: 'http://www.fahrschule.de/testbogen' }
+  - { name: Bußgeldkatalog, label: 'http://www.bmvbs.de', url: 'http://www.bmvbs.de/SharedDocs/DE/Artikel/StB-LA/bussgeldkatalog.html?linkToOverview=js' }
+  - { name: Deutsche-Unfallhilfe, label: 'http://www.deutsche-unfallhilfe.de', url: 'http://www.deutsche-unfallhilfe.de/' }
+  - { name: TÜV Essen-Frillendorf, label: 'www.tuev-nord.de/essen-frillendorf', url: 'http://www.tuev-nord.de/essen-frillendorf/' }
+  - { name: Tipps zum Führerschein, label: 'http://www.degener.de/tipps.html', url: 'http://www.degener.de/tipps_fuehrerschein.html' }
+  - { name: Preiswahrheit, label: 'http://www.preiswahrheit.de', url: 'http://www.preiswahrheit.de/' }
+downloads:
+  - { name: 'Checklist: Auswahl richtige Fahrschule', url: /assets/files/checkliste.pdf }
+  - { name: Flyer Fahrschule Guth, url: /assets/files/flyer.pdf }
+  - { name: 'Führerschein mit 17 - Anlage 1', url: /assets/files/fuehrerschein_mit_17_anlage_1.pdf }
+  - { name: 'Führerschein mit 17 - Anlage 2', url: /assets/files/fuehrerschein_mit_17_anlage_2.pdf }
+videos:
+  - { id: BoqdAa8k4cs, title: 'Video 1' }
+  - { id: jRoMArBkqdQ, title: 'Video 2' }
+  - { id: lI30PqhRbKw, title: 'Video 3' }
+  - { id: nrI4hIzTCT8, title: 'Video 4' }
+  - { id: Nx5IlK1K7JM, title: 'Video 5' }
+  - { id: DrfX62yJbJs, title: 'Video 6' }

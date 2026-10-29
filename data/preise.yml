@@ -1,0 +1,33 @@
+# Preislisten gemäß Preisaushang Fahrlehrergesetz § 32 (Werte unverändert aus der Altseite)
+hinweis: 'Preise in Euro inkl. MwSt. Die TÜV-Gebühren werden gesondert berechnet. Preisliste: Stand April 2022. Änderungen vorbehalten. Bei Nichtbestehen der praktischen oder theoretischen Prüfung wird kein weiterer Grundbetrag erhoben.'
+listen:
+  - id: klasse-b
+    title: 'Klasse B'
+    items:
+      - { text: Grundbetrag, sub: inkl. Theorieunterricht, preis: '470,00 €' }
+      - { text: Übungsstunde, sub: je 45 Minuten, preis: '60,00 €' }
+      - { text: Überlandfahrten, sub: je 45 Minuten, preis: '70,00 €' }
+      - { text: Autobahnfahrten, sub: je 45 Minuten, preis: '70,00 €' }
+      - { text: Dunkelheitsfahrten, sub: je 45 Minuten, preis: '70,00 €' }
+      - { text: Vorstellungsentgelt theoretische Prüfung, sub: 'zzgl. 24,99 € TÜV-Gebühren', preis: '75,00 €' }
+      - { text: Vorstellungsentgelt praktische Prüfung, sub: 'zzgl. 129,83 € TÜV-Gebühren', preis: '200,00 €' }
+  - id: klasse-a1
+    title: 'Klasse A1'
+    items:
+      - { text: Grundbetrag, sub: inkl. Theorieunterricht, preis: '470,00 €' }
+      - { text: Übungsstunde, sub: je 45 Minuten, preis: '70,00 €' }
+      - { text: Überlandfahrten, sub: je 45 Minuten, preis: '80,00 €' }
+      - { text: Autobahnfahrten, sub: je 45 Minuten, preis: '80,00 €' }
+      - { text: Dunkelheitsfahrten, sub: je 45 Minuten, preis: '80,00 €' }
+      - { text: Vorstellungsentgelt theoretische Prüfung, sub: 'zzgl. 24,99 € TÜV-Gebühren', preis: '75,00 €' }
+      - { text: Vorstellungsentgelt praktische Prüfung, sub: 'zzgl. 162,67 € TÜV-Gebühren', preis: '200,00 €' }
+  - id: klasse-a2-a
+    title: 'Klasse A2, A'
+    items:
+      - { text: Grundbetrag, sub: inkl. Theorieunterricht, preis: '470,00 €' }
+      - { text: Übungsstunde, sub: je 45 Minuten, preis: '70,00 €' }
+      - { text: Überlandfahrten, sub: je 45 Minuten, preis: '80,00 €' }
+      - { text: Autobahnfahrten, sub: je 45 Minuten, preis: '80,00 €' }
+      - { text: Dunkelheitsfahrten, sub: je 45 Minuten, preis: '80,00 €' }
+      - { text: Vorstellungsentgelt theoretische Prüfung, sub: 'zzgl. 24,99 € TÜV-Gebühren', preis: '75,00 €' }
+      - { text: Vorstellungsentgelt praktische Prüfung, sub: 'zzgl. 162,67 € TÜV-Gebühren', preis: '200,00 €' }

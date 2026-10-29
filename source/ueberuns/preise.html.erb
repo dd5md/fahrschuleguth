@@ -1,0 +1,27 @@
+---
+title: Preise
+pagetitle: Preise
+smalltitle: gemäß Preisaushang Fahrlehrergesetz § 32
+description: 'Preisliste der Fahrschule Guth Bochum für Klasse B, A1, A2 und A gemäß Preisaushang: Grundbetrag 470,00 € inkl. Theorieunterricht, Übungsstunde je 45 Minuten.'
+subnav: ueberuns
+breadcrumb_parents:
+  - { label: Über Uns, href: /ueberuns/ }
+---
+<%= partial "partials/page_header" %>
+<div class="mx-auto mt-6 max-w-5xl space-y-10 px-4">
+  <% data.preise.listen.each do |liste| %>
+    <section aria-labelledby="<%= liste.id %>">
+      <h2 id="<%= liste.id %>" class="text-2xl font-extrabold">Preisliste <span class="text-primary">Klasse <%= liste.title.sub("Klasse ", "") %></span></h2>
+      <p class="mt-1 text-sm italic text-base-content/70">gemäß Preisaushang Fahrlehrergesetz § 32</p>
+      <ul class="card-glass mt-4 divide-y divide-base-content/10 rounded-box">
+        <% liste["items"].each do |p| %>
+          <li class="flex items-center justify-between gap-4 px-5 py-4">
+            <div><p class="font-semibold"><%= p["text"] %></p><p class="text-sm text-base-content/70"><%= p["sub"] %></p></div>
+            <p class="whitespace-nowrap text-lg font-bold text-primary"><%= p["preis"] %></p>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+  <p class="text-sm leading-relaxed text-base-content/80"><%= data.preise.hinweis %></p>
+</div>

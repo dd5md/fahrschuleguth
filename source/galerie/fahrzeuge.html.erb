@@ -1,0 +1,12 @@
+---
+title: Fahrzeuge
+pagetitle: Fahrzeuge
+description: 'Unsere Fahrzeuge: die aktuelle Mercedes A-Klasse mit AMG-Paket der Fahrschule Guth in Bochum-Weitmar in Fotos.'
+subnav: galerie
+breadcrumb_parents:
+  - { label: Galerie, href: /galerie/ }
+---
+<%= partial "partials/page_header" %>
+<section class="mx-auto mt-6 max-w-5xl px-4">
+  <%= gallery_grid data.galerie.fahrzeuge, group: "fahrzeuge" %>
+</section>

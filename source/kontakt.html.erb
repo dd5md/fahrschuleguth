@@ -1,0 +1,33 @@
+---
+title: Kontakt
+pagetitle: Kontakt
+description: 'Kontakt zur Fahrschule Guth in Bochum-Weitmar, Hattinger Str. 136, 44795 Bochum: Uli Guth 0172 233 666 0, Bettina Guth (Büro, Anmeldung) 0234 45 21 22.'
+---
+<%= partial "partials/page_header" %>
+<section class="mx-auto mt-6 grid max-w-5xl gap-5 px-4 md:grid-cols-2">
+  <% data.site.contacts.each_with_index do |c, i| %>
+    <article id="<%= i == 1 ? 'anmeldung' : 'inhaber' %>" class="card-glass overflow-hidden rounded-box">
+      <%= picture_tag c.image, alt: c.image_alt, style: "object-fit:cover;aspect-ratio:4/3" %>
+      <div class="p-5">
+        <p class="text-xs font-semibold uppercase tracking-wider text-primary">Ansprechpartner</p>
+        <h2 class="mt-1 text-2xl font-extrabold uppercase"><%= c.name %></h2>
+        <ul class="mt-4 space-y-2">
+          <li><a class="link link-hover inline-flex items-center gap-3" href="<%= tel_link c.tel %>"><%= icon :phone, css: "size-5 text-primary" %> <%= c.phone %></a></li>
+          <li><a class="link link-hover inline-flex items-center gap-3 break-all" href="mailto:<%= c.email %>"><%= icon :mail, css: "size-5 text-primary" %> <%= c.email %></a></li>
+        </ul>
+        <p class="mt-4 flex items-center gap-3 border-t border-base-content/10 pt-4 text-sm font-semibold">
+          <%= picture_tag "bilder/ok", alt: "Daumen-hoch-Smiley", class: "w-8 shrink-0", style: "width:2rem;height:2rem" %> <%= c.role %>
+        </p>
+      </div>
+    </article>
+  <% end %>
+</section>
+<section class="mx-auto mt-10 max-w-5xl px-4" aria-labelledby="anfahrt">
+  <h2 id="anfahrt" class="flex items-center gap-2 text-2xl font-extrabold"><%= icon :pin, css: "size-6 text-primary" %> So finden Sie uns</h2>
+  <address class="mt-2 not-italic text-base-content/80">Fahrschule Uli Guth, <%= data.site.address.street %>, <%= data.site.address.plz %> <%= data.site.address.city %></address>
+  <div class="mt-4 aspect-[4/3] overflow-hidden rounded-box border border-base-content/10 sm:aspect-video">
+    <iframe class="size-full" title="Karte: Fahrschule Uli Guth, Hattinger Str. 136, Bochum" loading="lazy"
+      src="https://www.openstreetmap.org/export/embed.html?bbox=7.2030%2C51.4645%2C7.2090%2C51.4675&amp;layer=mapnik&amp;marker=<%= data.site.geo.lat %>%2C<%= data.site.geo.lon %>"></iframe>
+  </div>
+  <p class="mt-2 text-sm"><a class="link" href="https://www.openstreetmap.org/?mlat=<%= data.site.geo.lat %>&amp;mlon=<%= data.site.geo.lon %>#map=18/<%= data.site.geo.lat %>/<%= data.site.geo.lon %>" target="_blank" rel="noopener">Größere Karte öffnen</a> · &copy; OpenStreetMap-Mitwirkende</p>
+</section>
