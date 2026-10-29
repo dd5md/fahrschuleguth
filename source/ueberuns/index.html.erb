@@ -7,7 +7,7 @@ subnav: ueberuns
 <%= partial "partials/page_header" %>
 <section class="mx-auto mt-6 grid max-w-5xl items-center gap-8 px-4 md:grid-cols-2">
   <div>
-    <h2 class="text-3xl font-extrabold">Unsere <span class="text-primary">Vorteile</span><span class="text-primary">!</span></h2>
+    <h2 class="text-3xl font-extrabold">Unsere <span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">Vorteile</span><span class="text-primary">!</span></h2>
     <ul class="mt-5 space-y-3">
       <% ["Aktuelle Mercedes-A-Klasse mit AMG-Paket", "Schutzkleidung für die Motorradausbildung", "Übungsnotebooks zur freien Nutzung", "Theorieuntericht mit Smartboard & Beamer", "iPhone-App '360Grad'", "Neuste Sena Funk Technik"].each do |v| %>
         <li class="flex items-start gap-3"><span class="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-success/20 text-success"><%= icon :check, css: "size-4", stroke: 2.5 %></span><span><%= v %></span></li>
@@ -17,4 +17,13 @@ subnav: ueberuns
   <a href="<%= asset_path(:images, "bilder/helme.webp") %>" data-lightbox="ueberuns" data-alt="Motorradhelme mit Sena-Funktechnik" class="block overflow-hidden rounded-box border border-base-content/10">
     <%= picture_tag "bilder/helme", alt: "Zwei Motorradhelme mit Sena-Funktechnik, Schutzkleidung für die Motorradausbildung" %>
   </a>
+</section>
+<section class="mx-auto mt-14 grid max-w-5xl items-center gap-8 px-4 md:grid-cols-2" aria-labelledby="fahrlehrer">
+  <%= picture_tag "galerie/fahrschule/fahrschule_10", alt: "Fahrlehrer Uli Guth im Büro der Fahrschule", class: "overflow-hidden rounded-box border border-base-content/10 md:order-2" %>
+  <div>
+    <p class="text-xs font-semibold uppercase tracking-wider text-primary">Inhaber | Fahrlehrer</p>
+    <h2 id="fahrlehrer" class="mt-1 text-3xl font-extrabold">Uli <span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">Guth</span></h2>
+    <p class="mt-3 text-base-content/80">Ansprechpartner der Fahrschule Guth in Bochum-Weitmar: 0172 | 233 666 0, uli@fahrschuleguth.de.</p>
+    <a href="/kontakt/" class="btn btn-primary mt-4 rounded-full">Kontakt aufnehmen</a>
+  </div>
 </section>

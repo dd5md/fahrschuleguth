@@ -48,7 +48,7 @@ Abweichung von der Vorgabe „PNG + WebP“: Für Fotos ist der Fallback JPG (PN
 Dunkel als Standard, Umschalter Dark/Light mit `localStorage`. Akzent: Signal-Gelb/Amber (Verkehrs- und Fahrschul-Beschilderung, passt zur gelb-roten Ladenfront, sehr guter Kontrast auf dunklem Grund), Zweitfarbe Blau (blaue Stühle im Theorieraum, Farbe der Altseite).
 
 ### SEO
-Semantisches HTML5, Title/Meta wie Alt (Seitenname • Site-Titel), canonical, Open Graph/Twitter, `sitemap.xml`, `robots.txt`, `llms.txt`,
+Semantisches HTML5, Title wie Live-Seite (Seitenname • Fahrschule Bochum Uli Guth - Deine Fahrschule in Bochum-Weitmar!), Description der Startseite wie Live, canonical, Open Graph/Twitter, `sitemap.xml`, `robots.txt`, `llms.txt`,
 JSON-LD `@graph` mit `DrivingSchool`/`LocalBusiness` (Adresse, Telefon, Öffnungszeiten, Geo), `WebSite`, `WebPage`, `BreadcrumbList`.
 Keine Bewertungen und kein `FAQPage`, weil die Altseite weder Bewertungen noch Fragen/Antworten enthält.
 
