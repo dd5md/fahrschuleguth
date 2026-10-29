@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<% sitemap.resources.select { |r| r.destination_path =~ /\.html\z/ && r.path !~ /\A(404|layouts)/ && r.data.robots.to_s !~ /noindex/ }.sort_by(&:url).each do |r| %>
+  <url>
+    <loc><%= config[:site_url] %><%= r.url %></loc>
+    <changefreq><%= r.data.change_frequency || 'weekly' %></changefreq>
+    <priority><%= r.url == '/' ? '1.0' : '0.5' %></priority>
+  </url>
+<% end %>
+</urlset>

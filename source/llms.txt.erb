@@ -1,0 +1,23 @@
+# <%= data.site.legal_name %> – <%= data.site.name %>
+
+> <%= data.site.description %>
+
+## Seiten
+- [Startseite](<%= config[:site_url] %>/): Fahrschule in Bochum-Weitmar, Klassen B, A1, A2 und A
+- [Über Uns](<%= config[:site_url] %>/ueberuns/): Unsere Vorteile
+- [Preise](<%= config[:site_url] %>/ueberuns/preise/): Preislisten Klasse B, A1, A2/A (Stand April 2022)
+- [Links](<%= config[:site_url] %>/ueberuns/links/)
+- [Downloads](<%= config[:site_url] %>/ueberuns/downloads/)
+- [Galerie](<%= config[:site_url] %>/galerie/): Fahrschule, Bestanden, PKW, Motorräder, Videos
+- [News](<%= config[:site_url] %>/news/)
+- [Kontakt](<%= config[:site_url] %>/kontakt/)
+- [Impressum](<%= config[:site_url] %>/impressum/)
+
+## Fakten
+- Adresse: <%= data.site.address.street %>, <%= data.site.address.plz %> <%= data.site.address.city %> (<%= data.site.address.district %>)
+- Inhaber: <%= data.site.owner %>
+<% data.site.contacts.each do |c| %>- <%= c.name %> (<%= c.role %>): <%= c.phone %>, <%= c.email %>
+<% end %>- Öffnungszeiten: <%= data.site.hours.map { |h| "#{h.day} #{h.times.join(' & ')}" }.join('; ') %>; <%= data.site.hours_phone %>
+- Theorie-Unterricht: <%= data.site.theory.map { |t| "#{t.day} #{t.time}" }.join('; ') %>
+- Führerscheinklassen: B, A1, A2, A
+- Ausbildungsfahrzeug: aktuelle Mercedes-A-Klasse mit AMG-Paket
