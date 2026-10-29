@@ -15,7 +15,7 @@ npm install
 ## Entwicklung / Build
 
 ```bash
-bundle exec middleman server   # startet zusätzlich `tailwindcss --watch`
+bundle exec middleman server   # startet zusätzlich `tailwindcss --watch=always` (ohne `always` bricht der Watcher mit `read EIO` ab)
 bundle exec middleman build    # minifiziertes CSS + statische Seite in build/
 ```
 
