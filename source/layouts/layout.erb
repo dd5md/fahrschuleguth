@@ -1,23 +1,28 @@
 <!doctype html>
-<html lang="de" data-theme="guth-dark">
+<html lang='de' data-theme='guth-dark'>
   <head>
-    <%= partial "partials/head" %>
+    <!--Head-->
+    <%= partial 'partials/head' %>
+    <!--Script-->
     <script>
-      try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+      try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
     </script>
   </head>
-  <body class="bg-base-100 text-base-content antialiased">
-    <a href="#main" class="sr-only focus:not-sr-only btn btn-primary absolute z-50 m-2">Zum Inhalt springen</a>
 
-    <%= partial "partials/header" %>
-
-    <main id="main">
+  <body class='bg-base-100 text-base-content antialiased'>
+    <a href='#main' class='sr-only focus:not-sr-only btn btn-primary absolute z-50 m-2'>Zum Inhalt springen</a>
+    <!--Header-->
+    <%= partial 'partials/header' %>
+    <!--Main-->
+    <main id='main'>
       <%= yield %>
     </main>
-
-    <%= partial "partials/hours" unless current_page.data.hide_hours %>
-    <%= partial "partials/footer" %>
-    <script src="<%= asset_path(:js, "theme") %>" defer></script>
-    <script src="<%= asset_path(:js, "lightbox") %>" defer></script>
+    <!--Hours-->
+    <%= partial 'partials/hours' unless current_page.data.hide_hours %>
+    <!--Footer-->
+    <%= partial 'partials/footer' %>
+    <!--Script-->
+    <script src='<%= asset_path(:js, "theme") %>' defer></script>
+    <script src='<%= asset_path(:js, "lightbox") %>' defer></script>
   </body>
 </html>
