@@ -36,6 +36,7 @@
               <p class="text-sm text-base-content/70"><%= c.name %> · <%= c.role %></p>
               <a class="link link-hover" href="<%= tel_link c.tel %>"><%= phone(c.phone) %></a><br>
               <a class="link link-hover break-all text-sm" href="mailto:<%= c.email %>"><%= c.email %></a>
+              <% if c.whatsapp %><br><a class="link link-hover mt-1 inline-flex items-center gap-2 text-sm" href="<%= whatsapp_link(c) %>" target="_blank" rel="noopener noreferrer"><%= social_icon :whatsapp, css: "size-4 text-[#25d366]" %> WhatsApp</a><% end %>
             </li>
           <% end %>
         </ul>

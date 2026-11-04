@@ -19,7 +19,7 @@
           <div class="grid gap-8 lg:grid-cols-12">
             <div class="lg:col-span-4">
               <p class="eyebrow">Klasse <%= k.kurz %> · <%= k.titel %></p>
-              <p class="mt-4 text-sm text-base-content/70">Grundbetrag, <%= liste.items.first.sub %></p>
+              <p class="mt-4 text-sm text-base-content/70"><%= liste.items.first.text %>, <%= liste.items.first.sub %></p>
               <p class="mt-2 text-6xl font-bold tracking-[-0.03em] text-primary"><%= liste.items.first.preis %></p>
               <% if k.preis_hinweis %><p class="mt-2 text-sm text-base-content/70"><%= k.preis_hinweis.sub(/\A./, &:upcase) %></p><% end %>
               <% if liste.platzhalter %><p class="mt-2 text-sm text-base-content/70">Preise folgen in Kürze. Bis dahin: <a class="link link-primary whitespace-nowrap font-semibold" href="<%= tel_link data.site.contacts.first.tel %>"><%= phone data.site.contacts.first.phone %></a></p><% end %>
@@ -36,14 +36,14 @@
             </dl>
           </div>
         <% else %>
-          <%# Platzhalter, bis Uli die Preise nennt %>
+          <%# Klassen ohne Preisliste (AM): Preis auf Rücksprache %>
           <div class="grid gap-6 lg:grid-cols-12 lg:items-center">
-            <div class="lg:col-span-4">
+            <div class="lg:col-span-5">
               <p class="eyebrow">Klasse <%= k.kurz %> · <%= k.titel %></p>
-              <p class="mt-4 text-6xl font-bold tracking-[-0.03em] text-primary">???</p>
+              <p class="mt-4 text-3xl font-bold tracking-[-0.02em] text-primary sm:text-4xl">Preis <%= k.preis_text %></p>
             </div>
-            <div class="lg:col-span-8">
-              <p class="text-lg text-base-content/80">Die Preise für diese Klasse nennt dir Uli gern persönlich: <a class="link link-primary whitespace-nowrap font-semibold" href="<%= tel_link data.site.contacts.first.tel %>"><%= phone data.site.contacts.first.phone %></a></p>
+            <div class="lg:col-span-7">
+              <p class="text-lg text-base-content/80">Den Preis nennt dir Uli im Gespräch: <a class="link link-primary whitespace-nowrap font-semibold" href="<%= tel_link data.site.contacts.first.tel %>"><%= phone data.site.contacts.first.phone %></a></p>
               <a href="/anmelden/?klasse=<%= k.kurz %>#formular" class="btn btn-primary mt-6 rounded-full">Anmelden <%= icon :arrow, css: "size-5" %></a>
             </div>
           </div>

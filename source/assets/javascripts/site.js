@@ -5,17 +5,6 @@
   // Animationen erst nach dem ersten Laden starten (schont LCP/TBT)
   window.addEventListener("load", function () { root.classList.add("is-loaded"); });
 
-  // Dark/Light-Umschalter (Auswahl wird in localStorage gespeichert)
-  var toggle = document.getElementById("theme-toggle");
-  if (toggle) {
-    toggle.checked = root.getAttribute("data-theme") === "guth-light";
-    toggle.addEventListener("change", function () {
-      var theme = toggle.checked ? "guth-light" : "guth-dark";
-      root.setAttribute("data-theme", theme);
-      try { localStorage.setItem("theme", theme); } catch (e) {}
-    });
-  }
-
   // Handy-Menü: Tastatur (Enter/Leertaste), Esc zum Schließen, aria-expanded
   var navToggle = document.getElementById("nav-toggle");
   if (navToggle) {

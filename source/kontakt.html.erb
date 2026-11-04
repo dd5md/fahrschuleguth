@@ -13,6 +13,7 @@ description: 'Kontakt zur Fahrschule Guth in Bochum-Weitmar, Hattinger Str. 136,
         <h2 class="mt-1 text-2xl font-extrabold uppercase"><%= c.name %></h2>
         <ul class="mt-4 space-y-2">
           <li><a class="link link-hover inline-flex items-center gap-3" href="<%= tel_link c.tel %>"><%= icon :phone, css: "size-5 text-primary" %> <%= phone(c.phone) %></a></li>
+          <% if c.whatsapp %><li><a class="btn btn-wa btn-sm rounded-full" href="<%= whatsapp_link(c) %>" target="_blank" rel="noopener noreferrer"><%= social_icon :whatsapp, css: "size-4" %> Per WhatsApp schreiben</a></li><% end %>
           <li><a class="link link-hover inline-flex items-center gap-3 break-all" href="mailto:<%= c.email %>"><%= icon :mail, css: "size-5 text-primary" %> <%= c.email %></a></li>
         </ul>
         <p class="mt-4 flex items-center gap-3 border-t border-base-content/10 pt-4 text-sm font-semibold">
@@ -25,6 +26,10 @@ description: 'Kontakt zur Fahrschule Guth in Bochum-Weitmar, Hattinger Str. 136,
 <section class="mx-auto max-w-7xl px-4 pb-10 pt-6 sm:pb-16 sm:pt-10" aria-labelledby="anfahrt">
   <h2 id="anfahrt" class="flex items-center gap-2 text-2xl font-bold sm:text-3xl"><%= icon :pin, css: "size-6 text-primary" %> So finden Sie uns</h2>
   <address class="mt-2 not-italic text-base-content/80">Fahrschule Uli Guth, <%= data.site.address.street %>, <%= data.site.address.plz %> <%= data.site.address.city %></address>
+  <p class="mt-5 flex items-start gap-4 rounded-2xl border border-secondary/40 bg-secondary/10 p-4 text-base-content/90 sm:items-center sm:p-5">
+    <span class="grid size-12 shrink-0 place-items-center rounded-xl bg-secondary/20 text-secondary"><%= icon :bus, css: "size-7" %></span>
+    <span><strong class="text-base-content">Gut mit Bus und Bahn erreichbar.</strong> <%= data.site.anfahrt_oepnv %></span>
+  </p>
   <%# OpenStreetMap lädt direkt (setzt keine Cookies). Rechtsgrundlage und IP-Übermittlung stehen in der Datenschutzerklärung. %>
   <div class="tile mt-4 aspect-[4/3] sm:aspect-video">
     <iframe class="size-full" title="Karte: Fahrschule Uli Guth, Hattinger Str. 136, Bochum" loading="lazy" referrerpolicy="no-referrer"

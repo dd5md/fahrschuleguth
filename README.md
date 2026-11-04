@@ -46,7 +46,7 @@ Abweichung von der Vorgabe „PNG + WebP“: Für Fotos ist der Fallback JPG (PN
 
 ### Design
 Bewusst **kein** Nachbau der Altseite und nicht das Demo-Layout von dd5md.de, sondern ein eigenes Konzept (Briefing vom 30.10.2026):
-- Dunkelgrau (Graphit, nicht schwarz), Limette (Primär, Aktionen) und Orange (Sekundär, Hervorhebungen; Farben #c4ff4e und #fcb900), kein Rosa; Dark als Standard, Umschalter Hell/Dunkel (`localStorage`).
+- Dunkelgrau (Graphit, nicht schwarz), Limette (Primär, Aktionen) und Orange (Sekundär, Hervorhebungen; Farben #c4ff4e und #fcb900), kein Rosa; nur dunkles Design (der Hell/Dunkel-Schalter wurde auf Wunsch von Uli entfernt, das helle Theme `guth-light` bleibt ungenutzt im CSS).
 - Sehr große weiße Überschriften (Manrope, variabel, selbst gehostet, nur Latin-Teilsatz). Farbverlauf in der Schrift nur für einzelne Wörter.
 - Kein Hero-Foto-Block: Das Auto-Foto ist weich ausgeblendet im Hintergrund. Danach ein Kachel-Layout (Bento) mit Auto, 30+ Jahre, Klassen, Preise, Zeiten, Uli, Standort, Anmelden.
 - Reihenfolge der Startseite nach dem, was Besucher wissen wollen: Fahrschule/Auto, Klassen, Dein erster Fahrtag, Preise, Reform 2027, bestanden, FAQ, Kontakt.
@@ -87,7 +87,7 @@ Das Skript dreht Handy-Fotos richtig, **entfernt alle Metadaten (inkl. GPS)**, e
 
 ## Offene Punkte
 
-- [ ] **Preise ??? (Platzhalter)** für AM, AM, B196 und B96 in `data/klassen.yml` (Feld `preis` auf eine Preisliste in `data/preise.yml` setzen oder Text ergänzen) – Uli liefert sie nach. Vor dem Livegang ersetzen. BF17 nutzt die Preise von Klasse B (bestätigt).
+- [x] Preise: **AM** „auf Rücksprache mit dem Fahrlehrer“ (Uli will keinen Preis nennen, `preis_text` in `data/klassen.yml`), **B196** „ca. 700 €“ komplett (4 × Theorie, 5 × Praxis à 90 Min., keine Prüfungsgebühr, `data/preise.yml`), **B96** gestrichen (Uli hat keinen Anhänger), BF17 steht bei Klasse B.
 - [ ] **Drehender Kopf** (`.mascot-corner`, Hero): Quelldatei `bilder/kopf.webp` ist nur 50 × 50 Pixel und wirkt bei 90 Pixel weich (wie auf der Altseite). Für Schärfe ein größeres Original (mindestens 300 × 300 Pixel) liefern.
 - [ ] **Impressum:** Die angezeigte „Steuernummer 350/5084/0747“ hat das Format einer Steuernummer, keiner USt-IdNr. (die lautet DE + 9 Ziffern). Uli sagt, alles stimmt; bei Gelegenheit mit der Rechnung prüfen, ob zusätzlich „Umsatzsteuer-ID: DE…“ stehen soll.
 - [x] Anmeldungen gehen nur an `uli@fahrschuleguth.de` (`MAIL_TO` in `source/anmelden/senden.php`), Fotos der Bestandenen: Uli lässt sich von den Fahrschülern bestätigen (04.11.2026).
@@ -101,7 +101,9 @@ Das Skript dreht Handy-Fotos richtig, **entfernt alle Metadaten (inkl. GPS)**, e
 - [ ] **Datenschutzerklärung fehlt** (auch in der Altseite nicht vorhanden); rechtlich nötig, besonders mit Anmeldeformular. `/datenschutz/` ist ein **Entwurf** (`noindex`), der beschreibt, was die Seite technisch tut. Gelb markiert fehlen die Löschfrist der Logfiles und die Bestätigung des AV-Vertrags (Hoster ist UD Media GmbH, Kölner Straße 28, 41812 Erkelenz, eingetragen). Hinweis: UD Medias eigene Datenschutzerklärung nennt „spätestens sieben Tage“ nur für deren eigene Website; für Kunden-Webseiten beim Support nachfragen, bevor eine Frist eingetragen wird; Text vom Inhaber/Anwalt/Generator prüfen lassen, dann Hinweis und `noindex` entfernen.
 - [ ] **Impressum:** „§ 5 TMG“ auf „§ 5 DDG“ geändert, OS-Plattform-Hinweis (Plattform seit 2025 eingestellt) und Google-Fonts-Absatz (Schrift ist jetzt selbst gehostet) entfernt. Offen: Steuernummer ist im Impressum nicht vorgeschrieben (nur USt-IdNr., falls vorhanden) und könnte entfallen; Haftungsausschluss-Text ist Altbestand; Angaben zur Verbraucherstreitbeilegung prüfen.
 - [ ] **Entwürfe von Uli prüfen lassen, bevor live:** „Dein erster Fahrtag“ (`data/ablauf.yml`), FAQ-Antworten besonders zu Fahrschulwechsel und Finanzierung (`data/faq.yml`), Voraussetzungen je Klasse (`data/klassen.yml`: BF17, B196, B96, A), Reform 2027 (`data/reform.yml`; Quelle ist eine kommerzielle Seite, gegen Bundesverkehrsministerium/Bundesgesetzblatt prüfen).
-- [ ] **Preise für BF17, B196, B96 fehlen** (stehen als „auf Anfrage“); BF17 ist mit Klasse B verknüpft, bitte bestätigen.
+- [ ] **WhatsApp:** Der Knopf nutzt Ulis Mobilnummer 0172 233 666 0 (`whatsapp` in `data/site.yml`). Bestätigen, dass diese Nummer WhatsApp hat und gewollt ist (sonst Nummer ändern oder `whatsapp` entfernen).
+- [ ] **Anfahrt ÖPNV:** Text „direkt an der Haltestelle der BOGESTRA“ (`anfahrt_oepnv`). Haltestellenname und Linien nachtragen, wenn Uli sie nennt.
+- [ ] **Präsenzunterricht** (`data/theorie.yml`, Reform-Seite, Lesetipp DEGENER-Interview): Texte von Uli prüfen lassen, besonders „setzen wir auf den persönlichen Unterricht“.
 - [x] **Anmeldeformular** (`/anmelden/`) sendet über `source/anmelden/senden.php` (PHP 8.x, `mail()`) an `uli@fahrschuleguth.de`, mit Honeypot, Eingabeprüfung und Begrenzung auf 5 Anfragen pro IP-Hash und Stunde; danach Weiterleitung auf `/anmelden/danke/`. Im Dev-Server (`middleman server`) läuft kein PHP, dort öffnet das Formular das Mailprogramm (`config[:form_action]`). **Offen:** Nach dem Upload einmal ein echtes Testformular absenden (Zustellung hängt vom Hoster ab, Absender `noreply@fahrschuleguth.de` muss ggf. als Postfach/Alias existieren), Ordner `/anmelden/` braucht PHP-Ausführung.
 - [ ] Kurzes **Video** (Einsteigen/Fahrstunde) auf der Startseite ergänzen; bis dahin gibt es `/galerie/videos/` (Klick zum Laden).
 - [ ] Maskottchen-Quellbild (`bilder/kopf.webp`) ist nur 50 × 50 px; für größere Darstellung neu liefern.

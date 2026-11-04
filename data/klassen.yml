@@ -1,5 +1,6 @@
 # Führerscheinklassen. `home: true` = Karte auf der Startseite. `preis` verweist auf eine Preisliste (preise.yml id),
 # `preis_hinweis` ergänzt einen Zusatz, ohne `preis` erscheint der Platzhalter "???" (Preis von Uli nachliefern).
+# AM ist eine eigene Klasse (Mindestalter 15). Preis: `preis_text` statt Tabelle (Uli will keinen Preis nennen).
 # Quelle der Fahrzeug-Angaben: Bundesverkehrsministerium, "Fahrerlaubnisklassen: Übersicht"
 # (bmv.de/SharedDocs/DE/Artikel/StV/Strassenverkehr/fahrerlaubnisklassen-uebersicht.html).
 # Mindestalter, Ablauf und BF17: allgemeine Angaben (Fahrerlaubnis-Verordnung), von Uli bestätigen lassen.
@@ -22,15 +23,6 @@
   preis: klasse-b
   preis_hinweis: gleiche Preise wie Klasse B
   home: true
-- id: b96
-  kurz: B96
-  titel: Pkw mit schwerem Anhänger
-  lead: Mehr Gespann-Gewicht, ohne Prüfung.
-  alter: Klasse B erforderlich
-  darf: Zugfahrzeug der Klasse B mit Anhänger über 750 kg, wenn die Kombination mehr als 3.500 kg und höchstens 4.250 kg wiegt.
-  ablauf: Fahrerschulung in der Praxis, keine Prüfung. Voraussetzung ist der Besitz der Klasse B (oder die Erfüllung ihrer Voraussetzungen).
-  preis: b96
-  home: true
 - id: b196
   kurz: B196
   titel: 125er mit Pkw-Führerschein
@@ -44,10 +36,11 @@
   kurz: AM
   titel: Moped und Kleinkraftrad
   lead: Der Einstieg auf zwei und vier Rädern bis 45 km/h.
-  alter: ab 16 Jahren
+  alter: ab 15 Jahren
   darf: 'Zweirädrige Kleinkrafträder (Mopeds) mit einer bauartbedingten Höchstgeschwindigkeit von höchstens 45 km/h, einem Hubraum bis 50 cm³ und einer Leistung bis 4 kW. Dazu dreirädrige Kleinkrafträder und vierrädrige Leichtkraftfahrzeuge mit höchstens 45 km/h und zwei Sitzplätzen (einschließlich Fahrer).'
   ablauf: Theorieunterricht, Fahrstunden und Prüfung. Für Mofas und auf 25 km/h begrenzte Fahrzeuge der Klasse AM genügt statt einer Fahrerlaubnis eine Prüfbescheinigung.
-  preis: klasse-am
+  preis: null
+  preis_text: auf Rücksprache mit dem Fahrlehrer
   home: true
 - id: a1
   kurz: A1

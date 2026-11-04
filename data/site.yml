@@ -21,6 +21,7 @@ contacts:
     role: 'Inhaber | Fahrlehrer'
     phone: '0172 | 233 666 0'
     tel: '+491722336660'
+    whatsapp: '491722336660'
     email: uli@fahrschuleguth.de
     image: galerie/fahrschule/fahrschule_10
     image_alt: Fahrlehrer Uli Guth im Büro der Fahrschule
@@ -86,3 +87,5 @@ google:
   anzahl: 382
   url: 'https://www.google.com/maps/search/?api=1&query=Fahrschule+Ulrich+Guth+Hattinger+Stra%C3%9Fe+136+44795+Bochum'
   stand: 'November 2026'
+# Anfahrt mit öffentlichen Verkehrsmitteln (Angabe von Uli; Haltestellenname/Linien auf Wunsch ergänzen)
+anfahrt_oepnv: 'Die Fahrschule liegt direkt an der Haltestelle. Mit den Bussen und Bahnen der BOGESTRA kommst du bequem zu uns: aussteigen und du bist praktisch schon in der Fahrschule.'

@@ -3,7 +3,8 @@
 - { label: Preise und Grundbetrag, href: '/ueberuns/preise/', keywords: 'kosten preis preise euro grundbetrag fahrstunde' }
 - { label: 'Führerscheinklassen (B, A1, A2, A)', href: /fuehrerschein/, keywords: 'klassen klasse b a1 a2 a pkw motorrad' }
 - { label: Führerschein ab 17 (BF17), href: '/fuehrerschein/#bf17', keywords: 'bf17 begleitetes fahren 17 mit 17' }
-- { label: 'B196 und B96 (ohne Prüfung)', href: '/fuehrerschein/#b196', keywords: 'b196 b96 125er anhänger ohne prüfung' }
+- { label: 'B196 (125er ohne Prüfung)', href: '/fuehrerschein/#b196', keywords: 'b196 125er ohne prüfung motorrad' }
+- { label: Theorieunterricht (Präsenz), href: '/#theorie', keywords: 'theorie unterricht präsenz klassenraum fahrlehrer online' }
 - { label: Dein erster Fahrtag, href: '/#erster-fahrtag', keywords: 'erste fahrstunde angst kupplung ablauf' }
 - { label: Öffnungszeiten, href: '/#kontakt', keywords: 'öffnungszeiten zeiten büro wann geöffnet theorie' }
 - { label: Kontakt und Anruf, href: /kontakt/, keywords: 'telefon anrufen mail uli bettina kontakt adresse' }

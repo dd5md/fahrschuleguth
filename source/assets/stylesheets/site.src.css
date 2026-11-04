@@ -360,3 +360,7 @@ body:has(#nav-toggle:checked) { overflow: hidden; }
     0 1px 0 rgb(255 255 255 / 0.9),
     0 2px 0 rgb(255 255 255 / 0.5);
 }
+
+/* WhatsApp-Knopf in der Markenfarbe (dunkle Schrift für guten Kontrast) */
+.btn-wa { background: #25d366; border-color: #25d366; color: #052e13; box-shadow: none; }
+.btn-wa:hover { background: #3ee37f; border-color: #3ee37f; }

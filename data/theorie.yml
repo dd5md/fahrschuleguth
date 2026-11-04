@@ -1,0 +1,10 @@
+# Theorieunterricht als Präsenzunterricht (Wunsch von Uli). Fakten: Zeiten, Smartboard/Beamer und Übungsnotebooks stammen aus der Altseite.
+eyebrow: Theorie
+titel: Theorie live im Klassenraum
+intro: 'Unser Theorieunterricht ist Präsenzunterricht: vor Ort in der Fahrschule, direkt durch den Fahrlehrer. Auch wenn die geplante Reform digitalen Unterricht künftig erlauben soll, setzen wir auf den persönlichen Unterricht.'
+punkte:
+  - { titel: Fragen sofort stellen, text: 'Du fragst direkt nach und bekommst die Antwort vom Fahrlehrer, nicht von einer App.' }
+  - { titel: Gemeinsam lernen, text: 'Du lernst mit anderen Fahrschülern und kannst dich austauschen.' }
+  - { titel: Gut ausgestattet, text: 'Theorieraum mit Smartboard und Beamer, dazu Übungsnotebooks zur freien Nutzung.' }
+  - { titel: Feste Zeiten, text: 'Montags und donnerstags, 19:00 bis 20:30 Uhr.' }
+link: { href: '/reform-2027/#praesenz', label: 'Warum Präsenzunterricht wichtig ist' }

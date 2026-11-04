@@ -18,7 +18,7 @@ breadcrumb_parents:
         <article id="<%= liste.id %>" class="tile scroll-mt-24 <%= 'ring-2 ring-primary' if i == 0 %>" aria-labelledby="<%= liste.id %>-titel">
           <div class="p-6 sm:p-8">
             <h2 id="<%= liste.id %>-titel" class="text-2xl font-bold tracking-tight">Preisliste <span class="text-primary">Klasse <%= liste.title.sub("Klasse ", "") %></span></h2>
-            <p class="text-sm italic text-base-content/80"><%= liste.platzhalter ? "Preise folgen in Kürze" : "gemäß Preisaushang Fahrlehrergesetz § 32" %></p>
+            <p class="text-sm italic text-base-content/80"><%= liste.untertitel || (liste.platzhalter ? "Preise folgen in Kürze" : "gemäß Preisaushang Fahrlehrergesetz § 32") %></p>
             <ul class="mt-3 divide-y divide-base-content/10">
               <% liste["items"].each do |p| %>
                 <li class="flex items-center justify-between gap-4 py-3">
@@ -29,6 +29,20 @@ breadcrumb_parents:
             </ul>
           </div>
         </article>
+        <%# Klassen ohne Preisliste (z. B. AM): Karte „auf Rücksprache“ direkt hinter der ersten Liste %>
+        <% if i == 0 %>
+          <% data.klassen.select { |k| k.preis_text }.each do |k| %>
+            <article id="klasse-<%= k.id %>" class="tile scroll-mt-24" aria-labelledby="klasse-<%= k.id %>-titel">
+              <div class="p-6 sm:p-8">
+                <h2 id="klasse-<%= k.id %>-titel" class="text-2xl font-bold tracking-tight">Klasse <span class="text-primary"><%= k.kurz %></span></h2>
+                <p class="text-sm italic text-base-content/80"><%= k.titel %></p>
+                <p class="mt-6 text-2xl font-bold tracking-tight">Preis <span class="text-primary"><%= k.preis_text %></span></p>
+                <p class="mt-3 text-base-content/80">Ruf einfach an oder schreib uns: <a class="link link-primary whitespace-nowrap font-semibold" href="<%= tel_link data.site.contacts.first.tel %>"><%= phone data.site.contacts.first.phone %></a></p>
+                <a href="/fuehrerschein/#<%= k.id %>" class="link mt-5 inline-flex items-center gap-2 text-sm font-semibold">Zur Klasse <%= icon :arrow, css: "size-4" %></a>
+              </div>
+            </article>
+          <% end %>
+        <% end %>
       <% end %>
     </div>
 
@@ -36,15 +50,15 @@ breadcrumb_parents:
       <div class="groove my-12" aria-hidden="true"></div>
       <div class="max-w-3xl">
         <p class="eyebrow">Zusatzqualifikationen</p>
-        <h2 class="h3 mt-3">Erweiterungen zum Pkw-Führerschein (Klasse B)</h2>
-        <p class="mt-3 text-base-content/80">B96 und B196 sind keine eigenen Führerscheinklassen, sondern Schulungen, die du zusätzlich zur Klasse B machst, jeweils ohne Prüfung: B96 für schwerere Anhänger, B196 für 125er-Motorräder.</p>
+        <h2 class="h3 mt-3">Erweiterung zum Pkw-Führerschein (Klasse B)</h2>
+        <p class="mt-3 text-base-content/80">B196 ist keine eigene Führerscheinklasse, sondern eine Schulung, die du zusätzlich zur Klasse B machst, ohne Prüfung: Damit darfst du mit dem Pkw-Führerschein 125er-Motorräder fahren.</p>
       </div>
       <div class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <% zusatzlisten.each do |liste| %>
           <article id="<%= liste.id %>" class="tile scroll-mt-24" aria-labelledby="<%= liste.id %>-titel">
             <div class="p-6 sm:p-8">
               <h3 id="<%= liste.id %>-titel" class="text-2xl font-bold tracking-tight">Preisliste <span class="text-primary"><%= liste.title %></span></h3>
-              <p class="text-sm italic text-base-content/80"><%= liste.platzhalter ? "Preise folgen in Kürze" : "gemäß Preisaushang Fahrlehrergesetz § 32" %></p>
+              <p class="text-sm italic text-base-content/80"><%= liste.untertitel || (liste.platzhalter ? "Preise folgen in Kürze" : "gemäß Preisaushang Fahrlehrergesetz § 32") %></p>
               <ul class="mt-3 divide-y divide-base-content/10">
                 <% liste["items"].each do |p| %>
                   <li class="flex items-center justify-between gap-4 py-3">

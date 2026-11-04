@@ -1,6 +1,6 @@
 # Häufige Fragen (auch als FAQPage-JSON-LD). Antworten sind allgemein gehalten; Entwurf zur Prüfung durch Uli.
 - frage: Wie alt muss ich für den Führerschein sein?
-  antwort: 'Für Klasse B mit 18 Jahren, mit dem Begleiteten Fahren (BF17) kannst du schon mit 17 starten. Moped (AM) ab 16, Motorrad: A1 ab 16, A2 ab 18, A ab 24 (nach 2 Jahren A2 ab 20).'
+  antwort: 'Für Klasse B mit 18 Jahren, mit dem Begleiteten Fahren (BF17) kannst du schon mit 17 starten. Moped (AM) ab 15, Motorrad: A1 ab 16, A2 ab 18, A ab 24 (nach 2 Jahren A2 ab 20).'
   link: { href: '/fuehrerschein/', label: 'Alle Klassen im Überblick' }
 - frage: Was brauche ich zur Anmeldung?
   antwort: 'Meist brauchst du einen Ausweis, ein biometrisches Passfoto, eine Sehtest-Bescheinigung und die Bescheinigung über einen Erste-Hilfe-Kurs. Den Antrag stellen wir gemeinsam. Ruf uns einfach an oder melde dich online an.'
@@ -11,7 +11,8 @@
   antwort: 'Bei Klasse B beträgt der Grundbetrag 470 € inklusive Theorieunterricht, eine Übungsstunde (45 Minuten) kostet 60 €. Die vollständige Preisliste mit allen Klassen findest du auf der Preisseite. TÜV-Gebühren werden gesondert berechnet.'
   link: { href: '/ueberuns/preise/', label: 'Zur Preisliste' }
 - frage: Wann ist der Theorieunterricht?
-  antwort: 'Montags und donnerstags von 19:00 bis 20:30 Uhr in der Fahrschule, Hattinger Str. 136 in Bochum-Weitmar.'
+  antwort: 'Montags und donnerstags von 19:00 bis 20:30 Uhr als Präsenzunterricht in der Fahrschule, direkt beim Fahrlehrer: Hattinger Str. 136 in Bochum-Weitmar.'
+  link: { href: '/#theorie', label: 'Mehr zu unserem Unterricht' }
 - frage: Kann ich die Fahrschule wechseln?
   antwort: 'Ja. Ruf uns an oder schreib uns, dann besprechen wir deinen bisherigen Stand und wie es bei uns weitergeht.'
   link: { href: '/anmelden/#wechsel', label: 'Zum Anmeldeformular' }

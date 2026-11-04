@@ -1,8 +1,8 @@
 ---
 title: Führerscheinklassen
 pagetitle: Führerscheinklassen
-smalltitle: 'Klasse B, BF17, B96, B196, AM, A1, A2 und A: wer was fahren darf, ab welchem Alter und wie die Ausbildung abläuft.'
-description: 'Führerscheinklassen bei der Fahrschule Guth in Bochum-Weitmar: B, BF17, B96, B196, AM, A1, A2 und A mit Mindestalter, Voraussetzungen und Ablauf.'
+smalltitle: 'Klasse B, BF17, B196, AM, A1, A2 und A: wer was fahren darf, ab welchem Alter und wie die Ausbildung abläuft.'
+description: 'Führerscheinklassen bei der Fahrschule Guth in Bochum-Weitmar: B, BF17, B196, AM, A1, A2 und A mit Mindestalter, Voraussetzungen und Ablauf.'
 breadcrumb_parents: []
 ---
 <%= partial "partials/page_header" %>
@@ -23,10 +23,9 @@ breadcrumb_parents: []
             <div class="sm:col-span-2"><dt class="eyebrow">So läuft es ab</dt><dd class="mt-2"><%= k.ablauf %></dd></div>
             <div class="sm:col-span-2 flex flex-wrap items-center gap-4 border-t border-base-content/10 pt-5">
               <% if liste %>
-                <p class="text-lg">Grundbetrag <strong class="text-primary"><%= liste.items.first.preis %></strong> <span class="text-sm text-base-content/70"><%= liste.items.first.sub %><%= " · #{k.preis_hinweis}" if k.preis_hinweis %></span></p>
+                <p class="text-lg"><%= liste.items.first.text %> <strong class="text-primary"><%= liste.items.first.preis %></strong> <span class="text-sm text-base-content/70"><%= liste.items.first.sub %><%= " · #{k.preis_hinweis}" if k.preis_hinweis %></span></p>
               <% else %>
-                <%# Platzhalter, bis Uli die Preise nennt %>
-                <p class="text-lg">Preis <strong class="text-primary">???</strong></p>
+                <p class="text-lg">Preis <strong class="text-primary"><%= k.preis_text || "auf Anfrage" %></strong></p>
               <% end %>
               <a href="/anmelden/?klasse=<%= k.kurz %>#formular" class="btn btn-primary btn-sm ml-auto rounded-full">Anmelden</a>
             </div>

@@ -4,7 +4,7 @@
 
 ## Seiten
 - [Startseite](<%= config[:site_url] %>/): Fahrschule in Bochum-Weitmar, Klassen B, A1, A2 und A
-- [Führerscheinklassen](<%= config[:site_url] %>/fuehrerschein/): B, BF17 (ab 17), B96, B196, AM, A1, A2, A mit Voraussetzungen
+- [Führerscheinklassen](<%= config[:site_url] %>/fuehrerschein/): B, BF17 (ab 17), B196, AM, A1, A2, A mit Voraussetzungen
 - [Anmelden](<%= config[:site_url] %>/anmelden/): Online-Anfrage zur Anmeldung
 - [Führerscheinreform 2027](<%= config[:site_url] %>/reform-2027/): Was geplant ist (Stand der Planung, Quellen Bundesregierung und BMV)
 - [Über Uns](<%= config[:site_url] %>/ueberuns/): Unsere Vorteile
@@ -21,6 +21,9 @@
 - Inhaber: <%= data.site.owner %>
 <% data.site.contacts.each do |c| %>- <%= c.name %> (<%= c.role %>): <%= c.phone %>, <%= c.email %>
 <% end %>- Öffnungszeiten: <%= data.site.hours.map { |h| "#{h.day} #{h.times.join(' & ')}" }.join('; ') %>; <%= data.site.hours_phone %>
+- Theorieunterricht: Präsenzunterricht in der Fahrschule, direkt durch den Fahrlehrer
+- Anfahrt: <%= data.site.anfahrt_oepnv %>
+- Kontakt per WhatsApp: <%= data.site.contacts.first.phone %> (Uli Guth)
 - Theorie-Unterricht: <%= data.site.theory.map { |t| "#{t.day} #{t.time}" }.join('; ') %>
-- Führerscheinklassen: B, BF17, B96, B196, AM, A1, A2, A
+- Führerscheinklassen: B, BF17, B196, AM, A1, A2, A
 - Ausbildungsfahrzeug: aktuelle Mercedes-A-Klasse mit AMG-Paket

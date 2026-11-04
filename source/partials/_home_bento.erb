@@ -71,7 +71,10 @@
         </div>
       </div>
       <p class="text-base-content/85">Fragen zur Ausbildung? Ruf einfach an, Uli beantwortet sie dir persönlich.</p>
-      <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-outline rounded-full border-base-content/25"><%= icon :phone, css: "size-5 text-primary" %> <%= phone(data.site.contacts.first.phone) %></a>
+      <div class="flex flex-col gap-2">
+        <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-outline rounded-full border-base-content/25"><%= icon :phone, css: "size-5 text-primary" %> <%= phone(data.site.contacts.first.phone) %></a>
+        <a href="<%= whatsapp_link %>" target="_blank" rel="noopener noreferrer" class="btn btn-wa rounded-full"><%= social_icon :whatsapp, css: "size-5" %> WhatsApp schreiben</a>
+      </div>
     </div>
 
     <%# 7 Standort %>
@@ -79,6 +82,7 @@
       <div>
         <p class="eyebrow">Standort</p>
         <address class="h3 mt-4 not-italic">Hattinger Str. 136<br>44795 Bochum-Weitmar</address>
+        <p class="mt-3 flex items-start gap-2 text-sm text-base-content/85"><%= icon :bus, css: "mt-0.5 size-5 shrink-0 text-secondary" %> Direkt an der Haltestelle der BOGESTRA</p>
       </div>
       <p class="inline-flex items-center gap-2 text-sm font-semibold text-primary"><%= icon :pin, css: "size-4" %> Route ansehen <%= icon :external, css: "size-4" %></p>
     </a>
