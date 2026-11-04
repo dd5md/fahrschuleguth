@@ -87,5 +87,9 @@ google:
   anzahl: 382
   url: 'https://www.google.com/maps/search/?api=1&query=Fahrschule+Ulrich+Guth+Hattinger+Stra%C3%9Fe+136+44795+Bochum'
   stand: 'November 2026'
-# Anfahrt mit öffentlichen Verkehrsmitteln (Angabe von Uli; Haltestellenname/Linien auf Wunsch ergänzen)
-anfahrt_oepnv: 'Die Fahrschule liegt direkt an der Haltestelle. Mit den Bussen und Bahnen der BOGESTRA kommst du bequem zu uns: aussteigen und du bist praktisch schon in der Fahrschule.'
+# Anfahrt mit öffentlichen Verkehrsmitteln (Angaben von Uli/Mathias, 04.11.2026). Linie 318 ist in OpenStreetMap für Friederikastraße
+# belegt; Linie 308 und die Lage direkt an der Haltestelle vor dem Livegang im BOGESTRA-Fahrplan bzw. mit Uli bestätigen.
+oepnv:
+  haltestelle: Friederikastraße
+  linien: ['308', '318']
+  text: 'Die Fahrschule liegt direkt an der Haltestelle Friederikastraße in Bochum-Weitmar, die von den BOGESTRA-Straßenbahnlinien 308 und 318 bedient wird. Du steigst aus und bist praktisch schon bei uns.'
