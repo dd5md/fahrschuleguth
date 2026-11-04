@@ -21,7 +21,7 @@
 - Inhaber: <%= data.site.owner %>
 <% data.site.contacts.each do |c| %>- <%= c.name %> (<%= c.role %>): <%= c.phone %>, <%= c.email %>
 <% end %>- Öffnungszeiten: <%= data.site.hours.map { |h| "#{h.day} #{h.times.join(' & ')}" }.join('; ') %>; <%= data.site.hours_phone %>
-- Theorieunterricht: Präsenzunterricht in der Fahrschule, direkt durch den Fahrlehrer
+- Theorieunterricht: Präsenzunterricht in der Fahrschule, direkt durch den Fahrlehrer, mit interaktivem Smartboard (SMART QX Pro) und Übungsnotebooks
 - Anfahrt mit Bus und Bahn: <%= data.site.oepnv.text %>
 - Kontakt per WhatsApp: <%= data.site.contacts.first.phone %> (Uli Guth)
 - Theorie-Unterricht: <%= data.site.theory.map { |t| "#{t.day} #{t.time}" }.join('; ') %>

@@ -5,6 +5,12 @@ intro: 'Unser Theorieunterricht ist Präsenzunterricht: vor Ort in der Fahrschul
 punkte:
   - { titel: Fragen sofort stellen, text: 'Du fragst direkt nach und bekommst die Antwort vom Fahrlehrer, nicht von einer App.' }
   - { titel: Gemeinsam lernen, text: 'Du lernst mit anderen Fahrschülern und kannst dich austauschen.' }
-  - { titel: Gut ausgestattet, text: 'Theorieraum mit Smartboard und Beamer, dazu Übungsnotebooks zur freien Nutzung.' }
+  - { titel: Interaktiver Unterricht, text: 'Aktiver Multimedia-Unterricht am interaktiven Smartboard, dazu Übungsnotebooks zur freien Nutzung.' }
   - { titel: Feste Zeiten, text: 'Montags und donnerstags, 19:00 bis 20:30 Uhr.' }
 link: { href: '/reform-2027/#praesenz', label: 'Warum Präsenzunterricht wichtig ist' }
+# Smartboard (Foto von Uli): Modell laut Aufdruck und Link von Uli. Beschreibung nur mit dem, was am Gerät sichtbar ist (Whiteboard, Browser, Vorlagen).
+smartboard:
+  bild: bilder/smartboard
+  alt: 'Interaktives SMART-Board QX Pro im Theorieraum der Fahrschule Guth mit Menü für Whiteboard, Browser und Vorlagen'
+  titel: 'Multimedia-Unterricht am Smartboard'
+  text: 'Wir unterrichten an einem interaktiven SMART-Board (QX Pro): Der Fahrlehrer erklärt Verkehrssituationen am Bildschirm, zeichnet direkt auf dem Whiteboard und zeigt Beispiele, damit der Stoff lebendig bleibt.'
