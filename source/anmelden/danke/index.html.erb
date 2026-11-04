@@ -1,0 +1,15 @@
+---
+title: Danke
+pagetitle: Danke für deine Anfrage
+smalltitle: Wir melden uns so schnell wie möglich bei dir.
+description: Deine Anmeldung ist bei der Fahrschule Guth angekommen.
+robots: 'noindex, follow'
+breadcrumb_parents:
+  - { label: Anmelden, href: /anmelden/ }
+---
+<%= partial "partials/page_header" %>
+<section class="mx-auto max-w-3xl px-4 py-16 text-center">
+  <p class="text-lg text-base-content/80">Deine Anfrage ist angekommen. In der Regel melden wir uns innerhalb von ein bis zwei Werktagen telefonisch oder per E-Mail.</p>
+  <p class="mt-4 text-base-content/70">Es eilt? Ruf uns einfach an: <a class="link link-primary whitespace-nowrap font-semibold" href="<%= tel_link data.site.contacts.first.tel %>"><%= data.site.contacts.first.phone %></a></p>
+  <a href="/" class="btn btn-primary mt-8 rounded-full px-8">Zur Startseite</a>
+</section>

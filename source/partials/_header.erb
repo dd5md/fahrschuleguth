@@ -4,17 +4,16 @@
       <button tabindex="0" class="btn btn-ghost btn-circle" aria-label="Menü öffnen"><%= icon :menu %></button>
       <ul tabindex="0" class="menu dropdown-content z-10 mt-3 w-64 rounded-box bg-base-200 p-2 shadow-xl">
         <% data.site.nav.each do |item| %>
-          <li><a href="<%= item.href %>" class="text-base"><%= item.label %></a></li>
+          <li><a href="<%= item.href %>" class="text-sm font-semibold uppercase tracking-wider"><%= item.label %></a></li>
         <% end %>
       </ul>
     </div>
 
-    <a href="/" class="flex items-baseline gap-1.5 pr-2" aria-label="Fahrschule Guth, zur Startseite">
-      <span class="text-2xl font-extrabold tracking-tighter">Guth</span>
-      <span class="text-xs font-semibold uppercase tracking-[0.18em] text-base-content/60">Fahrschule</span>
+    <a href="/" class="logo-wrap shrink-0">
+      <img src="<%= asset_path(:images, "logo.svg") %>" alt="Fahrschule Guth – total Guth" width="935" height="225" class="h-8 w-auto sm:h-11" fetchpriority="low">
     </a>
 
-    <ul class="ml-6 hidden items-center gap-1 text-[0.95rem] font-semibold lg:flex">
+    <ul class="ml-6 hidden items-center gap-1 text-[0.78rem] font-bold uppercase tracking-[0.1em] lg:flex">
       <% data.site.nav.each do |item| %>
         <% active = item.href == "/" ? home? : current_page.url.start_with?(item.href) %>
         <li><a class="rounded-full px-3.5 py-2 transition hover:bg-base-content/10 <%= 'bg-base-content/10 text-primary' if active %>" href="<%= item.href %>" <%= 'aria-current="page"' if active %>><%= item.label %></a></li>
@@ -23,8 +22,8 @@
 
     <div class="ml-auto flex items-center gap-1">
       <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-ghost btn-circle hidden sm:inline-flex" aria-label="Uli Guth anrufen: <%= data.site.contacts.first.phone %>"><%= icon :phone, css: "size-5" %></a>
-      <a href="/anmelden/" class="btn btn-primary rounded-full px-4 sm:px-5">Anmelden</a>
-      <label class="swap swap-rotate btn btn-ghost btn-circle" aria-label="Zwischen dunklem und hellem Design wechseln">
+      <a href="/anmelden/" class="btn btn-primary rounded-full px-3 text-[0.72rem] font-bold uppercase tracking-[0.06em] sm:px-5 sm:text-[0.78rem] sm:tracking-[0.08em]">Anmelden</a>
+      <label class="swap swap-rotate btn btn-ghost btn-circle max-[339px]:hidden" aria-label="Zwischen dunklem und hellem Design wechseln">
         <input type="checkbox" id="theme-toggle">
         <%= icon :moon, css: "swap-off size-5" %>
         <%= icon :sun, css: "swap-on size-5" %>

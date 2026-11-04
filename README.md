@@ -46,7 +46,7 @@ Abweichung von der Vorgabe „PNG + WebP“: Für Fotos ist der Fallback JPG (PN
 
 ### Design
 Bewusst **kein** Nachbau der Altseite und nicht das Demo-Layout von dd5md.de, sondern ein eigenes Konzept (Briefing vom 30.10.2026):
-- Dunkelgrau (Graphit, nicht schwarz), **eine** Akzentfarbe (Rosa), kein Gelb; Dark als Standard, Umschalter Hell/Dunkel (`localStorage`).
+- Dunkelgrau (Graphit, nicht schwarz), Limette (Primär, Aktionen) und Orange (Sekundär, Hervorhebungen; Farben #c4ff4e und #fcb900), kein Rosa; Dark als Standard, Umschalter Hell/Dunkel (`localStorage`).
 - Sehr große weiße Überschriften mit engem Zeichenabstand (Inter Tight, selbst gehostet, nur Latin-Teilsatz). Farbverlauf in der Schrift nur für einzelne Wörter.
 - Kein Hero-Foto-Block: Das Auto-Foto ist weich ausgeblendet im Hintergrund. Danach ein Kachel-Layout (Bento) mit Auto, 30+ Jahre, Klassen, Preise, Zeiten, Uli, Standort, Anmelden.
 - Reihenfolge der Startseite nach dem, was Besucher wissen wollen: Fahrschule/Auto, Klassen, Dein erster Fahrtag, Preise, Reform 2027, bestanden, FAQ, Kontakt.
@@ -71,10 +71,11 @@ Alle URLs der Altseite bleiben identisch (Verzeichnis-URLs mit Slash): `/`, `/ue
 Es sind daher keine Weiterleitungen nötig. Einzige Abweichung: Das Alt-Menü verlinkte `/galerie/bestanden` ohne Slash – das wird vom Webserver auf `/galerie/bestanden/` umgeleitet.
 
 ## Offene Punkte
-- [ ] **Datenschutzerklärung fehlt** (auch in der Altseite nicht vorhanden); rechtlich nötig, besonders mit Anmeldeformular. `/datenschutz/` ist nur ein Platzhalter (`noindex`); Text muss vom Inhaber/Anwalt oder aus einem Generator kommen.
+- [ ] **Datenschutzerklärung fehlt** (auch in der Altseite nicht vorhanden); rechtlich nötig, besonders mit Anmeldeformular. `/datenschutz/` ist ein **Entwurf** (`noindex`), der beschreibt, was die Seite technisch tut. Gelb markiert fehlen Hoster, Löschfrist der Logfiles und die Anpassung ans Formular; Text vom Inhaber/Anwalt/Generator prüfen lassen, dann Hinweis und `noindex` entfernen.
+- [ ] **Impressum:** „§ 5 TMG“ auf „§ 5 DDG“ geändert, OS-Plattform-Hinweis (Plattform seit 2025 eingestellt) und Google-Fonts-Absatz (Schrift ist jetzt selbst gehostet) entfernt. Offen: Steuernummer ist im Impressum nicht vorgeschrieben (nur USt-IdNr., falls vorhanden) und könnte entfallen; Haftungsausschluss-Text ist Altbestand; Angaben zur Verbraucherstreitbeilegung prüfen.
 - [ ] **Entwürfe von Uli prüfen lassen, bevor live:** „Dein erster Fahrtag“ (`data/ablauf.yml`), FAQ-Antworten besonders zu Fahrschulwechsel und Finanzierung (`data/faq.yml`), Voraussetzungen je Klasse (`data/klassen.yml`: BF17, B196, B96, A), Reform 2027 (`data/reform.yml`; Quelle ist eine kommerzielle Seite, gegen Bundesverkehrsministerium/Bundesgesetzblatt prüfen).
 - [ ] **Preise für BF17, B196, B96 fehlen** (stehen als „auf Anfrage“); BF17 ist mit Klasse B verknüpft, bitte bestätigen.
-- [ ] **Anmeldeformular** (`/anmelden/`) sendet derzeit per `mailto:` an `uli@fahrschuleguth.de` und öffnet nur das Mailprogramm der Besucher. Für echten Versand ein Formular-Skript/-Dienst anbinden (Apache + PHP vorhanden?).
+- [x] **Anmeldeformular** (`/anmelden/`) sendet über `source/anmelden/senden.php` (PHP 8.x, `mail()`) an `uli@fahrschuleguth.de`, mit Honeypot, Eingabeprüfung und Begrenzung auf 5 Anfragen pro IP-Hash und Stunde; danach Weiterleitung auf `/anmelden/danke/`. Im Dev-Server (`middleman server`) läuft kein PHP, dort öffnet das Formular das Mailprogramm (`config[:form_action]`). **Offen:** Nach dem Upload einmal ein echtes Testformular absenden (Zustellung hängt vom Hoster ab, Absender `noreply@fahrschuleguth.de` muss ggf. als Postfach/Alias existieren), Ordner `/anmelden/` braucht PHP-Ausführung.
 - [ ] Kurzes **Video** (Einsteigen/Fahrstunde) auf der Startseite ergänzen; bis dahin gibt es `/galerie/videos/` (Klick zum Laden).
 - [ ] Maskottchen-Quellbild (`bilder/kopf.webp`) ist nur 50 × 50 px; für größere Darstellung neu liefern.
 - [ ] Nach dem Livegang echten PageSpeed (mobil) und die Google-Search-Console prüfen, Ranking für „Fahrschule Bochum-Weitmar“ beobachten.

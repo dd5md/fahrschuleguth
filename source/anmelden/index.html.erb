@@ -7,23 +7,26 @@ breadcrumb_parents: []
 ---
 <%= partial "partials/page_header" %>
 <section class="mx-auto grid max-w-7xl gap-8 px-4 py-14 lg:grid-cols-12 lg:py-20">
-  <form id="formular" class="tile scroll-mt-24 p-7 sm:p-10 lg:col-span-7" action="mailto:<%= data.site.contacts.first.email %>" method="post" enctype="text/plain">
+  <%# Live: PHP-Skript (senden.php). Im Dev-Server läuft kein PHP, dort öffnet das Formular das Mailprogramm. %>
+  <% mailto = config[:form_action].to_s.start_with?("mailto:") %>
+  <form id="formular" class="tile scroll-mt-24 p-7 sm:p-10 lg:col-span-7" action="<%= config[:form_action] %>" method="post"<%= ' enctype="text/plain"'.html_safe if mailto %>>
     <h2 class="h3">Deine Anfrage</h2>
     <div class="mt-6 grid gap-4 sm:grid-cols-2">
-      <label class="block"><span class="mb-1 block text-sm font-semibold">Vorname</span><input class="input w-full" type="text" name="Vorname" autocomplete="given-name" required></label>
-      <label class="block"><span class="mb-1 block text-sm font-semibold">Nachname</span><input class="input w-full" type="text" name="Nachname" autocomplete="family-name" required></label>
-      <label class="block"><span class="mb-1 block text-sm font-semibold">Telefon</span><input class="input w-full" type="tel" name="Telefon" autocomplete="tel" required></label>
-      <label class="block"><span class="mb-1 block text-sm font-semibold">E-Mail</span><input class="input w-full" type="email" name="E-Mail" autocomplete="email" required></label>
+      <label class="block"><span class="mb-1 block text-sm font-semibold">Vorname</span><input class="input w-full" type="text" name="vorname" autocomplete="given-name" required></label>
+      <label class="block"><span class="mb-1 block text-sm font-semibold">Nachname</span><input class="input w-full" type="text" name="nachname" autocomplete="family-name" required></label>
+      <label class="block"><span class="mb-1 block text-sm font-semibold">Telefon</span><input class="input w-full" type="tel" name="telefon" autocomplete="tel" inputmode="tel" pattern="[0-9 +\-\/().|]{5,40}" required></label>
+      <label class="block"><span class="mb-1 block text-sm font-semibold">E-Mail</span><input class="input w-full" type="email" name="email" autocomplete="email" required></label>
       <label class="block sm:col-span-2"><span class="mb-1 block text-sm font-semibold">Welchen Führerschein möchtest du?</span>
-        <select class="select w-full" name="Klasse" id="klasse">
+        <select class="select w-full" name="klasse" id="klasse">
           <option>Klasse B (Pkw)</option><option>BF17 (Führerschein ab 17)</option><option>B196 / B96</option>
           <option>A1 (Leichtkraftrad)</option><option>A2</option><option>A</option><option>Weiß ich noch nicht</option>
         </select>
       </label>
-      <label class="block sm:col-span-2"><span class="mb-1 block text-sm font-semibold">Nachricht (optional)</span><textarea class="textarea w-full" name="Nachricht" rows="4" placeholder="z. B. Wunschzeit, Vorkenntnisse, Fahrschulwechsel …"></textarea></label>
+      <label class="block sm:col-span-2"><span class="mb-1 block text-sm font-semibold">Nachricht (optional)</span><textarea class="textarea w-full" name="nachricht" rows="4" placeholder="z. B. Wunschzeit, Vorkenntnisse, Fahrschulwechsel …"></textarea></label>
     </div>
+    <div class="hidden" aria-hidden="true"><label>Bitte leer lassen <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
     <label class="mt-5 flex items-start gap-3 text-sm text-base-content/75">
-      <input type="checkbox" class="checkbox checkbox-primary checkbox-sm mt-0.5" name="Einwilligung" required>
+      <input type="checkbox" class="checkbox checkbox-primary checkbox-sm mt-0.5" name="einwilligung" value="ja" required>
       <span>Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. Mehr dazu in der <a class="link" href="/datenschutz/">Datenschutzerklärung</a>.</span>
     </label>
     <button type="submit" class="btn btn-primary btn-lg mt-6 rounded-full px-8">Anfrage senden <%= icon :arrow, css: "size-5" %></button>

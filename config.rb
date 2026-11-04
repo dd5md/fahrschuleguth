@@ -9,6 +9,9 @@ set :site_url, ENV.fetch("SITE_URL", "https://fahrschuleguth.de")
 set :default_og_image, "/assets/images/og-image.jpg"
 set :default_locale, "de_DE"
 
+# Anmeldeformular: PHP-Skript auf dem Server (source/anmelden/senden.php)
+set :form_action, "/anmelden/senden.php"
+
 set :relative_links, true
 
 # Markup
@@ -23,6 +26,7 @@ config[:fonts_dir]   = "assets/fonts"
 # URLs wie auf der Altseite: /ueberuns/preise/ (Verzeichnis + Slash)
 activate :directory_indexes
 page "/404.html", directory_index: false, layout: "layout"
+page "/anmelden/senden.php", directory_index: false, layout: false
 
 # Tailwind-Quelldatei ist nur Input für die Tailwind CLI und wird nicht ausgeliefert
 ignore "assets/stylesheets/site.src.css"
@@ -55,6 +59,7 @@ helpers SiteHelpers
 
 # Live-Reload im Browser beim Speichern (nur im Dev-Server)
 configure :development do
+  set :form_action, "mailto:uli@fahrschuleguth.de" # im Dev-Server läuft kein PHP
   activate :livereload
 end
 
