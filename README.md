@@ -51,7 +51,7 @@ Bewusst **kein** Nachbau der Altseite und nicht das Demo-Layout von dd5md.de, so
 - Kein Hero-Foto-Block: Das Auto-Foto ist weich ausgeblendet im Hintergrund. Danach ein Kachel-Layout (Bento) mit Auto, 30+ Jahre, Klassen, Preise, Zeiten, Uli, Standort, Anmelden.
 - Reihenfolge der Startseite nach dem, was Besucher wissen wollen: Fahrschule/Auto, Klassen, Dein erster Fahrtag, Preise, Reform 2027, bestanden, FAQ, Kontakt.
 - Schnellauswahl (Suchleiste mit Themen, `data/search.yml`) ohne KI und ohne Server; Chips funktionieren auch ohne JavaScript.
-- Maskottchen (Kopf von Uli) als leichte CSS-Animation, startet erst nach dem Laden (`.is-loaded`) und respektiert `prefers-reduced-motion`.
+- Hüpfender Kopf (`.mascot-corner`, Hero rechts oben) wie auf der Altseite: hüpft dauernd (0,875 s), beim vierten Hüpfer dreht er sich einmal um sich selbst; ohne Rand, Seitenverhältnis 1:1, reine CSS-Animation ohne JavaScript-Bibliothek, startet erst nach dem Laden (`.is-loaded`) und respektiert `prefers-reduced-motion`. Sprunghöhe, Größe und Position je Bildschirmbreite in `site.src.css` (`--hop`, `--s`).
 - Themes `guth-dark`/`guth-light` in `assets/stylesheets/site.src.css`; daisyUI ist auf die genutzten Komponenten beschränkt (`include:`). Neue daisyUI-Komponente nutzen? Name dort ergänzen (Dateiname der Komponente, z. B. `button` für `btn`).
 
 ### Datenschutz / Cookies

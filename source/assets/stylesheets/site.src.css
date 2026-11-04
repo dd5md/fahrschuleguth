@@ -210,29 +210,13 @@ a.tile:hover,
 }
 
 /* ---------------------------------------------------------------------------
-   Maskottchen (Kopf des Inhabers): leichte CSS-Animation, startet erst nach dem Laden
+   Maskottchen: kleiner Kopf im Spruch (ohne Rand, ruhig)
    --------------------------------------------------------------------------- */
 .mascot {
   width: 3rem;
   height: 3rem;
   border-radius: 999px;
   background: url("/assets/images/bilder/kopf.webp") center / cover no-repeat;
-  box-shadow: 0 0 0 2px color-mix(in oklab, var(--color-primary) 60%, transparent);
-}
-
-.is-loaded .mascot {
-  animation: mascot-hop 9s ease-in-out 1.2s infinite;
-}
-
-@keyframes mascot-hop {
-  0%, 6%, 100% { transform: translateY(0) rotate(0); }
-  2% { transform: translateY(-1.1rem) rotate(180deg); }
-  4% { transform: translateY(0) rotate(360deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .is-loaded .mascot { animation: none; }
-  html { scroll-behavior: auto; }
 }
 
 /* Lesbarer Fließtext für Rechtstexte */
@@ -314,27 +298,36 @@ dialog.lightbox::backdrop { background: transparent; }
 body:has(#nav-toggle:checked) { overflow: hidden; }
 #nav-burger:focus-visible, #nav-drawer label:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
 
-/* Drehender Kopf rechts oben (Markenzeichen der Altseite, jetzt als leichte CSS-Animation) */
+/* Hüpfender Kopf rechts oben (wie auf der Altseite): hüpft dauernd, nach drei Hüpfern dreht er sich beim vierten
+   einmal um sich selbst. Seitenverhältnis 1:1, kein Rand, keine Verzerrung. Startet erst nach dem Laden. */
 .mascot-corner {
+  --s: 3.5rem;
+  --hop: 4.5rem;
   position: absolute;
   z-index: 5;
-  right: 0.75rem;
-  top: 6.3rem;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 999px;
-  background: url("/assets/images/bilder/kopf.webp") center / cover no-repeat;
-  box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-primary) 70%, transparent), 0 10px 30px rgb(0 0 0 / 0.45);
-  image-rendering: auto;
+  right: 0.5rem;
+  top: 6.8rem;
+  width: var(--s);
+  height: var(--s);
+  pointer-events: none;
 }
-@media (max-width: 359px) { .mascot-corner { right: 0.5rem; top: 0.5rem; width: 2.75rem; height: 2.75rem; } }
-@media (min-width: 560px) { .mascot-corner { right: 1.25rem; top: 1rem; width: 5rem; height: 5rem; } }
-@media (min-width: 768px) { .mascot-corner { right: 1.5rem; top: 1.25rem; width: 5.5rem; height: 5.5rem; } }
-@media (min-width: 1280px) { .mascot-corner { right: max(1.5rem, calc((100vw - 80rem) / 2 + 1rem)); width: 6rem; height: 6rem; } }
-.is-loaded .mascot-corner { animation: corner-hop 8s ease-in-out 1.5s infinite; }
-@keyframes corner-hop {
-  0%, 7%, 100% { transform: translateY(0) rotate(0); }
-  2.5% { transform: translateY(-1.6rem) rotate(-180deg) scale(1.05); }
-  5% { transform: translateY(0) rotate(-360deg); }
+.mascot-corner img { display: block; width: 100%; height: 100%; }
+@media (min-width: 560px) { .mascot-corner { --s: 5rem; --hop: 8rem; right: 1.25rem; top: 8.5rem; } }
+@media (min-width: 768px) { .mascot-corner { --s: 5.5rem; --hop: 9.5rem; right: 1.5rem; top: 10.5rem; } }
+@media (min-width: 1280px) {
+  .mascot-corner { --s: 6rem; --hop: 11rem; right: max(1.5rem, calc((100vw - 80rem) / 2 + 2rem)); top: 12.5rem; }
 }
-@media (prefers-reduced-motion: reduce) { .is-loaded .mascot-corner { animation: none; } }
+.is-loaded .mascot-corner { animation: corner-bounce 0.875s infinite 1s; }
+.is-loaded .mascot-corner .mascot-spin { animation: corner-spin 3.5s infinite 1s; }
+@keyframes corner-bounce {
+  0%   { transform: translateY(0); animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1); }
+  40%  { transform: translateY(calc(var(--hop) * -1)); animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.4); }
+  85%, 100% { transform: translateY(0); }
+}
+@keyframes corner-spin {
+  0%, 76% { transform: rotate(0deg); animation-timing-function: ease-in-out; }
+  96%, 100% { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-loaded .mascot-corner, .is-loaded .mascot-corner .mascot-spin { animation: none; }
+}
