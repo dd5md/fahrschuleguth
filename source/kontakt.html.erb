@@ -12,7 +12,7 @@ description: 'Kontakt zur Fahrschule Guth in Bochum-Weitmar, Hattinger Str. 136,
         <p class="text-xs font-semibold uppercase tracking-wider text-primary">Ansprechpartner</p>
         <h2 class="mt-1 text-2xl font-extrabold uppercase"><%= c.name %></h2>
         <ul class="mt-4 space-y-2">
-          <li><a class="link link-hover inline-flex items-center gap-3" href="<%= tel_link c.tel %>"><%= icon :phone, css: "size-5 text-primary" %> <%= c.phone %></a></li>
+          <li><a class="link link-hover inline-flex items-center gap-3" href="<%= tel_link c.tel %>"><%= icon :phone, css: "size-5 text-primary" %> <%= phone(c.phone) %></a></li>
           <li><a class="link link-hover inline-flex items-center gap-3 break-all" href="mailto:<%= c.email %>"><%= icon :mail, css: "size-5 text-primary" %> <%= c.email %></a></li>
         </ul>
         <p class="mt-4 flex items-center gap-3 border-t border-base-content/10 pt-4 text-sm font-semibold">

@@ -3,7 +3,7 @@
     <div class="lg:col-span-4">
       <p class="eyebrow">FAQ</p>
       <h2 id="faq-title" class="h2 mt-3">Häufige <span class="text-gradient">Fragen</span></h2>
-      <p class="mt-5 text-base-content/70">Deine Frage ist nicht dabei? Ruf uns an: <a class="link link-primary whitespace-nowrap font-semibold" href="<%= tel_link data.site.contacts.first.tel %>"><%= data.site.contacts.first.phone %></a></p>
+      <p class="mt-5 text-base-content/70">Deine Frage ist nicht dabei? Ruf uns an: <a class="link link-primary whitespace-nowrap font-semibold" href="<%= tel_link data.site.contacts.first.tel %>"><%= phone(data.site.contacts.first.phone) %></a></p>
     </div>
     <div class="space-y-3 lg:col-span-8">
       <% data.faq.each do |f| %>
