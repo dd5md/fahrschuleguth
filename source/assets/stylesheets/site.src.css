@@ -332,15 +332,31 @@ body:has(#nav-toggle:checked) { overflow: hidden; }
   .is-loaded .mascot-corner, .is-loaded .mascot-corner .mascot-spin { animation: none; }
 }
 
-/* Geprägter Trenner (wie bei Hardware-Oberflächen): genau zwei Pixel,
-   oben eine dunkle Linie, direkt darunter eine helle Linie. Wirkt wie eine eingedrückte Fuge. */
+/* Eingedrückte Fuge (Inset-Effekt): ein 8 px hoher Kanal. Oben tiefer Schatten, der nach unten ausläuft,
+   unten eine deutlich hellere Lippe mit Lichtsaum. Auf dunklem Grund trägt vor allem die helle Lippe den Effekt. */
 .groove {
-  height: 0;
+  height: 8px;
   border: 0;
-  border-top: 1px solid rgb(0 0 0 / 0.6);
-  border-bottom: 1px solid rgb(255 255 255 / 0.1);
+  background: linear-gradient(to bottom,
+    rgb(0 0 0 / 0.95) 0,
+    rgb(0 0 0 / 0.7) 2px,
+    rgb(0 0 0 / 0.38) 5px,
+    rgb(0 0 0 / 0.12) 7px,
+    transparent 8px);
+  box-shadow:
+    inset 0 -1px 0 rgb(255 255 255 / 0.24),
+    0 1px 0 rgb(255 255 255 / 0.11),
+    0 2px 0 rgb(255 255 255 / 0.04);
 }
 [data-theme="guth-light"] .groove {
-  border-top-color: rgb(0 0 0 / 0.18);
-  border-bottom-color: rgb(255 255 255 / 1);
+  background: linear-gradient(to bottom,
+    rgb(0 0 0 / 0.34) 0,
+    rgb(0 0 0 / 0.22) 2px,
+    rgb(0 0 0 / 0.1) 5px,
+    rgb(0 0 0 / 0.04) 7px,
+    transparent 8px);
+  box-shadow:
+    inset 0 -1px 0 rgb(255 255 255 / 1),
+    0 1px 0 rgb(255 255 255 / 0.9),
+    0 2px 0 rgb(255 255 255 / 0.5);
 }
