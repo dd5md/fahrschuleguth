@@ -26,7 +26,7 @@ breadcrumb_parents: []
     </div>
     <div class="hidden" aria-hidden="true"><label>Bitte leer lassen <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
     <label class="mt-5 flex items-start gap-3 text-sm text-base-content/75">
-      <input type="checkbox" class="checkbox checkbox-primary checkbox-sm mt-0.5" name="einwilligung" value="ja" required>
+      <input type="checkbox" class="guth-check mt-0.5" name="einwilligung" value="ja" required>
       <span>Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. Mehr dazu in der <a class="link" href="/datenschutz/">Datenschutzerklärung</a>.</span>
     </label>
     <button type="submit" class="btn btn-primary btn-lg mt-6 rounded-full px-8">Anfrage senden <%= icon :arrow, css: "size-5" %></button>
@@ -37,7 +37,7 @@ breadcrumb_parents: []
       <h2 class="eyebrow">Lieber telefonisch?</h2>
       <ul class="mt-4 space-y-4">
         <% data.site.contacts.each do |c| %>
-          <li><p class="text-sm text-base-content/60"><%= c.name %> · <%= c.role %></p><a class="text-2xl font-bold tracking-tight hover:text-primary" href="<%= tel_link c.tel %>"><%= c.phone %></a></li>
+          <li><p class="text-sm text-base-content/60"><%= c.name %> · <%= c.role %></p><a class="text-2xl font-bold tracking-tight hover:text-primary" href="<%= tel_link c.tel %>"><%= phone(c.phone) %></a></li>
         <% end %>
       </ul>
     </div>

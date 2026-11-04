@@ -33,7 +33,7 @@
           <% data.site.contacts.each do |c| %>
             <li>
               <p class="text-sm text-base-content/60"><%= c.name %> · <%= c.role %></p>
-              <a class="link link-hover" href="<%= tel_link c.tel %>"><%= c.phone %></a><br>
+              <a class="link link-hover" href="<%= tel_link c.tel %>"><%= phone(c.phone) %></a><br>
               <a class="link link-hover break-all text-sm" href="mailto:<%= c.email %>"><%= c.email %></a>
             </li>
           <% end %>

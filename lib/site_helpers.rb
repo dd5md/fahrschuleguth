@@ -27,6 +27,11 @@ module SiteHelpers
     image.start_with?("http") ? image : "#{site_url}#{image}"
   end
 
+  # Telefonnummer mit farbigem Trenner (| zwischen Vorwahl und Nummer). `sep:` = CSS-Klassen für den Trenner.
+  def phone(text, sep: "text-primary")
+    ERB::Util.html_escape(text.to_s).gsub("|", %(<span class="#{sep}">|</span>))
+  end
+
   def tel_link(number)
     %(tel:#{number})
   end

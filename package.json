@@ -8,7 +8,7 @@
     "build": "NODE_ENV=production tailwindcss -i source/assets/stylesheets/site.src.css -o .tmp/dist/source/assets/stylesheets/site.src.css --minify"
   },
   "devDependencies": {
-    "@fontsource-variable/inter-tight": "^5.3.0",
+    "@fontsource/titillium-web": "^5.3.0",
     "@tailwindcss/cli": "^4.3.3",
     "daisyui": "^5.7.50",
     "tailwindcss": "^4.3.3"

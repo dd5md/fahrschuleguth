@@ -22,7 +22,7 @@
 
     <div class="mt-9 flex flex-wrap items-center gap-3">
       <a href="/anmelden/" class="btn btn-primary btn-lg rounded-full px-8">Jetzt anmelden <%= icon :arrow, css: "size-5" %></a>
-      <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-lg rounded-full border-base-content/20 bg-base-100/40 px-6 backdrop-blur hover:bg-base-content/10"><%= icon :phone, css: "size-5 text-primary" %> <%= data.site.contacts.first.phone %></a>
+      <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-lg rounded-full border-base-content/20 bg-base-100/40 px-6 backdrop-blur hover:bg-base-content/10"><%= icon :phone, css: "size-5 text-primary" %> <%= phone(data.site.contacts.first.phone) %></a>
     </div>
 
     <%# Schnellauswahl: ohne KI, ohne Server; Chips funktionieren auch ohne JavaScript %>

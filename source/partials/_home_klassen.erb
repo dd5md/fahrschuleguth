@@ -8,7 +8,7 @@
     <% data.klassen.select(&:home).each do |k| %>
       <li>
         <a href="/fuehrerschein/#<%= k.id %>" class="tile group flex h-full flex-col gap-4 p-6">
-          <span class="text-5xl font-bold leading-none tracking-[-0.05em] text-primary"><%= k.kurz %></span>
+          <span class="text-5xl font-bold leading-none tracking-[-0.02em] text-primary"><%= k.kurz %></span>
           <div>
             <h3 class="h3"><%= k.titel %></h3>
             <p class="mt-2 text-sm text-base-content/70"><%= k.lead %></p>
