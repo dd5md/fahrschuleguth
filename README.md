@@ -96,6 +96,8 @@ Das Skript dreht Handy-Fotos richtig, **entfernt alle Metadaten (inkl. GPS)**, e
 
 ## Offene Punkte
 
+- [ ] **WhatsApp wird von Uli privat genutzt** (bestätigt 04.11.2026). Dem Anwalt als Frage mitgeben (private Nutzung für Kundenanfragen, Kontaktabgleich), ob ein Zusatz in der Datenschutzerklärung nötig ist.
+- [ ] **Hosting-Vertrag läuft auf Mathias, Seiteninhaber ist Uli:** Anwalt klärt, wer Verantwortlicher ist und ob der AV-Vertrag mit UD Media auf Ulis Namen gehört (siehe Checkliste Livegang, Punkt 4).
 - [ ] **Smartboard-Text** (`data/theorie.yml`, Foto `bilder/smartboard`): Beschreibung nur mit dem, was auf dem Foto sichtbar ist (SMART QX Pro, Whiteboard, Browser, Vorlagen). Uli prüft, ob „Verkehrssituationen am Bildschirm erklären“ so passt.
 - [ ] **Google-Zitate** (`data/bewertungen.yml`, `items: []`): Solange leer, zeigt die Startseite nur die Zusammenfassung (4,9 · 382 · 30+ Jahre · ~20 m). Uli/Mathias wählen 3 bis 6 echte Bewertungen aus; Name nur als Vorname plus Initial oder anonym, kurzer Text, kein Foto. Keine Bewertung erfinden, keine Profile verlinken.
 - [ ] **Klassenseiten** `/fuehrerschein/<id>/` (b, bf17, b196, am, a1, a2, a): Texte aus `data/klassen.yml` (Felder `seo_titel`, `pruefung`). Anmeldeunterlagen (Ausweis, Passfoto, Sehtest, Erste Hilfe) sind allgemeine Angaben und mit Uli zu bestätigen.
