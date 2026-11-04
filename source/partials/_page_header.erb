@@ -1,6 +1,6 @@
 <%# Seitenkopf für Unterseiten: große Überschrift links, optional Brotkrumen und Unternavigation (Frontmatter `subnav:`) %>
 <% subnav = current_page.data.subnav %>
-<section class="relative isolate overflow-hidden border-b border-base-content/10" aria-labelledby="page-title">
+<section class="relative isolate overflow-hidden" aria-labelledby="page-title">
   <div class="hero-glow absolute inset-0 -z-10"></div>
   <div class="mx-auto max-w-7xl px-4 pb-8 pt-8 sm:pb-10 sm:pt-16">
     <% unless breadcrumbs.empty? %>
@@ -29,3 +29,4 @@
     <% end %>
   </div>
 </section>
+<div class="groove" aria-hidden="true"></div>

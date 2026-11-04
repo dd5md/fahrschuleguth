@@ -1,17 +1,22 @@
 # Häufige Fragen (auch als FAQPage-JSON-LD). Antworten sind allgemein gehalten; Entwurf zur Prüfung durch Uli.
 - frage: Wie alt muss ich für den Führerschein sein?
   antwort: 'Für Klasse B mit 18 Jahren, mit dem Begleiteten Fahren (BF17) kannst du schon mit 17 starten. Moped (AM) ab 16, Motorrad: A1 ab 16, A2 ab 18, A ab 24 (nach 2 Jahren A2 ab 20).'
+  link: { href: '/fuehrerschein/', label: 'Alle Klassen im Überblick' }
 - frage: Was brauche ich zur Anmeldung?
   antwort: 'Meist brauchst du einen Ausweis, ein biometrisches Passfoto, eine Sehtest-Bescheinigung und die Bescheinigung über einen Erste-Hilfe-Kurs. Den Antrag stellen wir gemeinsam. Ruf uns einfach an oder melde dich online an.'
+  link: { href: '/anmelden/', label: 'Jetzt anmelden' }
 - frage: Wie lange dauert der Führerschein?
   antwort: 'Nicht in 7 Tagen, aber total Guth. Wie schnell du fertig bist, hängt davon ab, wie oft du fährst und wie sicher du dich fühlst. Wir planen Termine gemeinsam mit dir.'
 - frage: Was kostet der Führerschein bei euch?
   antwort: 'Bei Klasse B beträgt der Grundbetrag 470 € inklusive Theorieunterricht, eine Übungsstunde (45 Minuten) kostet 60 €. Die vollständige Preisliste mit allen Klassen findest du auf der Preisseite. TÜV-Gebühren werden gesondert berechnet.'
+  link: { href: '/ueberuns/preise/', label: 'Zur Preisliste' }
 - frage: Wann ist der Theorieunterricht?
   antwort: 'Montags und donnerstags von 19:00 bis 20:30 Uhr in der Fahrschule, Hattinger Str. 136 in Bochum-Weitmar.'
 - frage: Kann ich die Fahrschule wechseln?
   antwort: 'Ja. Ruf uns an oder schreib uns, dann besprechen wir deinen bisherigen Stand und wie es bei uns weitergeht.'
+  link: { href: '/anmelden/#wechsel', label: 'Zum Anmeldeformular' }
 - frage: Bietet ihr eine Finanzierung oder Ratenzahlung an?
   antwort: 'Sprich uns gern darauf an. Wir klären das persönlich mit dir.'
 - frage: Was ändert sich durch die Führerscheinreform 2027?
-  antwort: 'Geplant sind unter anderem digitale Theorie ohne Präsenzpflicht, ein um etwa ein Drittel kürzerer Fragenkatalog, keine feste Zahl an Pflicht-Sonderfahrten und eine Prüfungsfahrt mit 25 Minuten reiner Fahrzeit. Alles ist noch im Gesetzgebungsverfahren, Ziel ist Anfang 2027. Mehr dazu auf unserer Reform-Seite.'
+  antwort: 'Geplant sind unter anderem digitale Theorie ohne Präsenzpflicht, ein um etwa ein Drittel kürzerer Fragenkatalog, keine feste Zahl an Pflicht-Sonderfahrten und eine Prüfungsfahrt mit 25 Minuten reiner Fahrzeit. Alles ist noch im Gesetzgebungsverfahren, Ziel ist Anfang 2027. Mehr dazu auf der Seite „Führerscheinreform 2027“.'
+  link: { href: '/reform-2027/', label: 'Zur Seite Führerscheinreform 2027' }

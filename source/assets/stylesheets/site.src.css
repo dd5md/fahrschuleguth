@@ -331,3 +331,18 @@ body:has(#nav-toggle:checked) { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .is-loaded .mascot-corner, .is-loaded .mascot-corner .mascot-spin { animation: none; }
 }
+
+/* Geprägter Trenner zwischen Abschnitten: nach innen gedrückte Rille (inset-Schatten oben, Lichtkante unten) */
+.groove {
+  height: 10px;
+  background: color-mix(in oklab, var(--color-base-100) 78%, black);
+  box-shadow:
+    inset 0 4px 6px -2px rgb(0 0 0 / 0.65),
+    inset 0 -1px 0 color-mix(in oklab, var(--color-base-content) 9%, transparent);
+}
+[data-theme="guth-light"] .groove {
+  background: color-mix(in oklab, var(--color-base-200) 92%, black);
+  box-shadow:
+    inset 0 4px 6px -2px rgb(0 0 0 / 0.22),
+    inset 0 -1px 0 rgb(255 255 255 / 0.9);
+}
