@@ -16,7 +16,7 @@ const MAX_PER_HOUR = 5;                            // Anfragen pro IP und Stunde
 const SUCCESS_URL = '/anmelden/danke/';
 const FORM_URL = '/anmelden/';
 const CLASSES = [
-    'Klasse B (Pkw)', 'BF17 (Führerschein ab 17)', 'B196 / B96',
+    'Klasse B (Pkw)', 'BF17 (Führerschein ab 17)', 'B96 / B196', 'AM (Moped)',
     'A1 (Leichtkraftrad)', 'A2', 'A', 'Weiß ich noch nicht',
 ];
 

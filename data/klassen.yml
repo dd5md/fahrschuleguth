@@ -22,15 +22,6 @@
   preis: klasse-b
   preis_hinweis: gleiche Preise wie Klasse B
   home: true
-- id: b196
-  kurz: B196
-  titel: 125er mit Pkw-Führerschein
-  lead: Mit dem Auto-Führerschein 125er fahren, ohne Prüfung.
-  alter: ab 25 Jahren, Klasse B seit mindestens 5 Jahren
-  darf: Im Inland Krafträder (auch mit Beiwagen) der Klasse A1, also bis 125 cm³ Hubraum und 11 kW Leistung. Gilt nur in Deutschland.
-  ablauf: Fahrerschulung von mindestens 13,5 Zeitstunden (4 Unterrichtseinheiten Theorie und 5 Unterrichtseinheiten Praxis zu je 90 Minuten), keine Prüfung. Der Fahrlehrer bestätigt die Teilnahme.
-  preis: null
-  home: true
 - id: b96
   kurz: B96
   titel: Pkw mit schwerem Anhänger
@@ -38,6 +29,15 @@
   alter: Klasse B erforderlich
   darf: Zugfahrzeug der Klasse B mit Anhänger über 750 kg, wenn die Kombination mehr als 3.500 kg und höchstens 4.250 kg wiegt.
   ablauf: Fahrerschulung in der Praxis, keine Prüfung. Voraussetzung ist der Besitz der Klasse B (oder die Erfüllung ihrer Voraussetzungen).
+  preis: null
+  home: true
+- id: b196
+  kurz: B196
+  titel: 125er mit Pkw-Führerschein
+  lead: Mit dem Auto-Führerschein 125er fahren, ohne Prüfung.
+  alter: ab 25 Jahren, Klasse B seit mindestens 5 Jahren
+  darf: Im Inland Krafträder (auch mit Beiwagen) der Klasse A1, also bis 125 cm³ Hubraum und 11 kW Leistung. Gilt nur in Deutschland.
+  ablauf: Fahrerschulung von mindestens 13,5 Zeitstunden (4 Unterrichtseinheiten Theorie und 5 Unterrichtseinheiten Praxis zu je 90 Minuten), keine Prüfung. Der Fahrlehrer bestätigt die Teilnahme.
   preis: null
   home: true
 - id: am

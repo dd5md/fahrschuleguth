@@ -18,8 +18,7 @@ breadcrumb_parents: []
       <label class="block"><span class="mb-1 block text-sm font-semibold">E-Mail</span><input class="input w-full" type="email" name="email" autocomplete="email" required></label>
       <label class="block sm:col-span-2"><span class="mb-1 block text-sm font-semibold">Welchen Führerschein möchtest du?</span>
         <select class="select w-full" name="klasse" id="klasse">
-          <option>Klasse B (Pkw)</option><option>BF17 (Führerschein ab 17)</option><option>B196 / B96</option>
-          <option>A1 (Leichtkraftrad)</option><option>A2</option><option>A</option><option>Weiß ich noch nicht</option>
+          <option data-codes="B">Klasse B (Pkw)</option><option data-codes="BF17">BF17 (Führerschein ab 17)</option><option data-codes="B96 B196">B96 / B196</option><option data-codes="AM">AM (Moped)</option><option data-codes="A1">A1 (Leichtkraftrad)</option><option data-codes="A2">A2</option><option data-codes="A">A</option><option data-codes="">Weiß ich noch nicht</option>
         </select>
       </label>
       <label class="block sm:col-span-2"><span class="mb-1 block text-sm font-semibold">Nachricht (optional)</span><textarea class="textarea w-full" name="nachricht" rows="4" placeholder="z. B. Wunschzeit, Vorkenntnisse, Fahrschulwechsel …"></textarea></label>
@@ -56,6 +55,6 @@ breadcrumb_parents: []
   (function () {
     var p = new URLSearchParams(location.search).get("klasse"), s = document.getElementById("klasse");
     if (!p || !s) return;
-    for (var i = 0; i < s.options.length; i++) { if (s.options[i].text.indexOf(p) === 0) { s.selectedIndex = i; break; } }
+    for (var i = 0; i < s.options.length; i++) { if ((s.options[i].getAttribute("data-codes") || "").split(" ").indexOf(p) !== -1) { s.selectedIndex = i; break; } }
   })();
 </script>

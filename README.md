@@ -87,7 +87,7 @@ Das Skript dreht Handy-Fotos richtig, **entfernt alle Metadaten (inkl. GPS)**, e
 
 ## Offene Punkte
 
-- [ ] **Preise ??? (Platzhalter)** für AM, B196 und B96 in `data/klassen.yml` (Feld `preis` auf eine Preisliste in `data/preise.yml` setzen oder Text ergänzen) – Uli liefert sie nach. Vor dem Livegang ersetzen. BF17 nutzt die Preise von Klasse B (bestätigt).
+- [ ] **Preise ??? (Platzhalter)** für AM, AM, B196 und B96 in `data/klassen.yml` (Feld `preis` auf eine Preisliste in `data/preise.yml` setzen oder Text ergänzen) – Uli liefert sie nach. Vor dem Livegang ersetzen. BF17 nutzt die Preise von Klasse B (bestätigt).
 - [ ] **Drehender Kopf** (`.mascot-corner`, Hero): Quelldatei `bilder/kopf.webp` ist nur 50 × 50 Pixel und wirkt bei 90 Pixel weich (wie auf der Altseite). Für Schärfe ein größeres Original (mindestens 300 × 300 Pixel) liefern.
 - [ ] **Impressum:** Die angezeigte „Steuernummer 350/5084/0747“ hat das Format einer Steuernummer, keiner USt-IdNr. (die lautet DE + 9 Ziffern). Uli sagt, alles stimmt; bei Gelegenheit mit der Rechnung prüfen, ob zusätzlich „Umsatzsteuer-ID: DE…“ stehen soll.
 - [x] Anmeldungen gehen nur an `uli@fahrschuleguth.de` (`MAIL_TO` in `source/anmelden/senden.php`), Fotos der Bestandenen: Uli lässt sich von den Fahrschülern bestätigen (04.11.2026).
