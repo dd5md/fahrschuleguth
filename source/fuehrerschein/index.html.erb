@@ -14,8 +14,8 @@ breadcrumb_parents: []
         <div class="grid gap-8 lg:grid-cols-12">
           <div class="lg:col-span-4">
             <p class="text-7xl font-bold leading-none tracking-[-0.03em] text-primary"><%= k.kurz %></p>
-            <h2 class="h3 mt-4"><%= k.titel %></h2>
-            <p class="mt-2 text-base-content/80"><%= k.lead %></p>
+            <h2 class="h3 mt-4"><%= tidy k.titel %></h2>
+            <p class="mt-2 text-base-content/80"><%= tidy k.lead %></p>
           </div>
           <dl class="grid gap-6 sm:grid-cols-2 lg:col-span-8">
             <div><dt class="eyebrow">Mindestalter</dt><dd class="mt-2"><%= k.alter %></dd></div>

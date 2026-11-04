@@ -20,7 +20,7 @@
   home: true
 - id: b196
   kurz: B196
-  titel: Leichtkraftrad mit dem Pkw-Führerschein
+  titel: 125er mit Pkw-Führerschein
   lead: Mit dem Auto-Führerschein 125er fahren, ohne Prüfung.
   alter: ab 25 Jahren, Klasse B seit mindestens 5 Jahren
   darf: Leichtkrafträder bis 125 ccm und 11 kW, gilt nur in Deutschland.
@@ -29,7 +29,7 @@
   home: true
 - id: b96
   kurz: B96
-  titel: Pkw mit schwererem Anhänger
+  titel: Pkw mit schwerem Anhänger
   lead: Mehr Gespann-Gewicht, ohne Prüfung.
   alter: Klasse B erforderlich
   darf: Pkw mit Anhänger, wenn die zulässige Gesamtmasse des Zuges 4.250 kg nicht übersteigt.

@@ -32,6 +32,14 @@ module SiteHelpers
     ERB::Util.html_escape(text.to_s).gsub("|", %(<span class="#{sep}">|</span>))
   end
 
+  # Typografie: verhindert Einzelwörter in der letzten Zeile ("ab 17", "35 kW") durch geschützte Leerzeichen.
+  # Zahl + Einheit bleiben zusammen, die letzten zwei Wörter ebenfalls (wenn das letzte kurz ist).
+  def tidy(text)
+    t = ERB::Util.html_escape(text.to_s)
+    t = t.gsub(/(\d)\s+(kW|kg|ccm|km|€|Jahre[n]?|Uhr|Minuten|Tage[n]?)/, '\1&nbsp;\2')
+    t.sub(/\s+(\S{1,4})\z/, '&nbsp;\1')
+  end
+
   def tel_link(number)
     %(tel:#{number})
   end
