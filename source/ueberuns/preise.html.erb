@@ -12,7 +12,7 @@ breadcrumb_parents:
   <div class="mx-auto max-w-7xl px-4">
     <div class="grid gap-6 lg:grid-cols-3">
       <% data.preise.listen.each_with_index do |liste, i| %>
-        <article class="card bg-base-200 shadow-sm <%= 'ring-2 ring-primary' if i == 0 %>" aria-labelledby="<%= liste.id %>">
+        <article class="tile <%= 'ring-2 ring-primary' if i == 0 %>" aria-labelledby="<%= liste.id %>">
           <div class="card-body">
             <h2 id="<%= liste.id %>" class="card-title text-2xl">Preisliste <span class="text-primary">Klasse <%= liste.title.sub("Klasse ", "") %></span></h2>
             <p class="text-sm italic text-base-content/70">gemäß Preisaushang Fahrlehrergesetz § 32</p>

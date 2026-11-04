@@ -30,6 +30,11 @@
   AddType application/x-font-ttf               .ttf
 </IfModule>
 
+# MOD DEFLATE (Textkompression: kleinere HTML-/CSS-/JS-Dateien, schnellere Ladezeit)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript image/svg+xml application/json
+</IfModule>
+
 # MOD EXPIRES CHACHING
 <IfModule mod_expires.c>
   ExpiresActive on

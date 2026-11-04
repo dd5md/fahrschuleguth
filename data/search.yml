@@ -1,0 +1,13 @@
+# Schnellauswahl: Treffer der Suchleiste auf der Startseite (keywords = zusätzliche Suchbegriffe)
+- { label: Jetzt anmelden, href: /anmelden/, keywords: 'anmeldung anmelden einschreiben start beginnen' }
+- { label: Preise und Grundbetrag, href: '/ueberuns/preise/', keywords: 'kosten preis preise euro grundbetrag fahrstunde' }
+- { label: 'Führerscheinklassen (B, A1, A2, A)', href: /fuehrerschein/, keywords: 'klassen klasse b a1 a2 a pkw motorrad' }
+- { label: Führerschein ab 17 (BF17), href: '/fuehrerschein/#bf17', keywords: 'bf17 begleitetes fahren 17 mit 17' }
+- { label: 'B196 und B96 (ohne Prüfung)', href: '/fuehrerschein/#b196', keywords: 'b196 b96 125er anhänger ohne prüfung' }
+- { label: Dein erster Fahrtag, href: '/#erster-fahrtag', keywords: 'erste fahrstunde angst kupplung ablauf' }
+- { label: Öffnungszeiten, href: '/#kontakt', keywords: 'öffnungszeiten zeiten büro wann geöffnet theorie' }
+- { label: Kontakt und Anruf, href: /kontakt/, keywords: 'telefon anrufen mail uli bettina kontakt adresse' }
+- { label: Führerscheinreform 2027, href: /reform-2027/, keywords: 'reform 2027 neuerungen online theorie' }
+- { label: Fahrschulwechsel, href: '/anmelden/#wechsel', keywords: 'wechsel fahrschule wechseln' }
+- { label: Fahrzeuge (Mercedes A-Klasse), href: /galerie/fahrzeuge/, keywords: 'auto mercedes a-klasse amg fahrzeuge' }
+- { label: Wir haben bestanden (Galerie), href: /galerie/bestanden/, keywords: 'bestanden fotos galerie' }

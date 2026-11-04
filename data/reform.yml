@@ -1,0 +1,14 @@
+# Führerscheinreform 2027: Stand der Planung, Quelle fahrschulreform2027.de (123fahrschule). Vor Veröffentlichung gegen BMV/Bundesgesetzblatt prüfen.
+stand: 'November 2026'
+hinweis: 'Alle Punkte sind geplant. Das Gesetzgebungsverfahren läuft noch, Termine und Inhalte können sich ändern.'
+punkte:
+  - { titel: 'Theorie auch online', text: 'Online-Unterricht soll als gleichwertige Alternative zum Präsenzunterricht zugelassen werden, auch als Mischform.' }
+  - { titel: 'Kürzerer Fragenkatalog', text: 'Der Fragenkatalog soll um etwa 30 % gekürzt werden. Dauer, Fragenanzahl und Bestehensgrenze der Theorieprüfung sollen gleich bleiben.' }
+  - { titel: 'Weniger Pflicht-Sonderfahrten', text: 'Für Klasse B sollen die Pflicht-Sonderfahrten von zwölf auf drei sinken: Überland, Autobahn und Nacht.' }
+  - { titel: 'Kürzere Praxisprüfung', text: 'Die praktische Prüfung soll von etwa 55 auf etwa 40 Minuten verkürzt werden.' }
+  - { titel: 'Mehr Preis-Transparenz', text: 'Fahrschulen sollen Preise und Bestehensquoten online veröffentlichen müssen.' }
+zeitplan:
+  - { wann: '20.05.2026', was: 'Kabinettsbeschluss' }
+  - { wann: 'Herbst 2026', was: 'Beratung in Bundestag und Bundesrat' }
+  - { wann: '01.01.2027', was: 'Geplantes Inkrafttreten der Verordnung (mit Übergangsfristen)' }
+  - { wann: '01.07.2027', was: 'Geplantes Inkrafttreten des begleitenden Gesetzes' }

@@ -1,0 +1,39 @@
+---
+title: Führerscheinreform 2027
+pagetitle: Führerscheinreform 2027
+smalltitle: Das ist geplant und was das für dich bedeutet. Stand der Planung, Änderungen vorbehalten.
+description: 'Führerscheinreform 2027: Online-Theorie, kürzerer Fragenkatalog, weniger Pflicht-Sonderfahrten, kürzere Praxisprüfung. Was geplant ist, erklärt die Fahrschule Guth Bochum.'
+breadcrumb_parents: []
+---
+<%= partial "partials/page_header" %>
+<section class="mx-auto max-w-7xl px-4 py-14 lg:py-20">
+  <p class="max-w-3xl rounded-2xl border border-warning/40 bg-warning/10 p-4 text-sm"><strong>Wichtig:</strong> <%= data.reform.hinweis %> Stand: <%= data.reform.stand %>.</p>
+  <ul class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <% data.reform.punkte.each_with_index do |p, i| %>
+      <li class="tile p-7">
+        <span class="text-5xl font-bold leading-none tracking-[-0.06em] text-primary"><%= i + 1 %></span>
+        <h2 class="h3 mt-4"><%= p.titel %></h2>
+        <p class="mt-2 text-base-content/70"><%= p.text %></p>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="mt-16 grid gap-10 lg:grid-cols-12">
+    <div class="lg:col-span-5">
+      <h2 class="h2">Zeitplan</h2>
+      <p class="mt-3 text-base-content/70">Das ist der aktuell bekannte Fahrplan. Termine können sich verschieben.</p>
+    </div>
+    <ol class="space-y-3 lg:col-span-7">
+      <% data.reform.zeitplan.each do |z| %>
+        <li class="tile flex items-baseline gap-5 p-5"><span class="w-28 shrink-0 font-bold tracking-tight text-primary"><%= z.wann %></span><span><%= z.was %></span></li>
+      <% end %>
+    </ol>
+  </div>
+
+  <div class="tile tile-accent mt-16 flex flex-col items-start gap-5 p-8 sm:p-12">
+    <h2 class="h2">Du willst jetzt anfangen?</h2>
+    <p class="max-w-2xl opacity-90">Wir halten dich auf dem Laufenden und besprechen mit dir, wie sich die Reform auf deine Ausbildung auswirkt.</p>
+    <a href="/anmelden/" class="btn btn-lg rounded-full border-0 bg-base-100 text-base-content hover:bg-base-200">Jetzt anmelden <%= icon :arrow, css: "size-5" %></a>
+  </div>
+  <p class="mt-8 text-sm text-base-content/60">Quelle der Angaben: <a class="link" href="https://fahrschulreform2027.de/" target="_blank" rel="noopener noreferrer">fahrschulreform2027.de</a> (Stand der Planung). Verbindlich sind nur das Bundesverkehrsministerium und das Bundesgesetzblatt.</p>
+</section>
