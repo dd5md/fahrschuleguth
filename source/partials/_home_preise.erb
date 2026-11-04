@@ -2,7 +2,7 @@
   <div class="max-w-3xl">
     <p class="eyebrow">Preise</p>
     <h2 id="preise-title" class="h2 mt-3">Transparent. Ohne <span class="text-gradient">Überraschungen</span>.</h2>
-    <p class="mt-5 text-lg text-base-content/70">Preisliste gemäß Preisaushang Fahrlehrergesetz § 32.</p>
+    <p class="mt-5 text-lg text-base-content/80">Preisliste gemäß Preisaushang Fahrlehrergesetz § 32.</p>
   </div>
 
   <div data-tabs class="mt-10">
@@ -15,14 +15,14 @@
       <div role="tabpanel" id="panel-<%= liste.id %>" aria-labelledby="tab-<%= liste.id %>" class="tile mt-4 p-6 sm:p-9">
         <div class="grid gap-8 lg:grid-cols-12">
           <div class="lg:col-span-4">
-            <p class="text-sm text-base-content/60">Grundbetrag, <%= liste.items.first.sub %></p>
-            <p class="mt-2 text-6xl font-bold tracking-[-0.02em] text-primary"><%= liste.items.first.preis %></p>
+            <p class="text-sm text-base-content/70">Grundbetrag, <%= liste.items.first.sub %></p>
+            <p class="mt-2 text-6xl font-bold tracking-[-0.03em] text-primary"><%= liste.items.first.preis %></p>
             <a href="/anmelden/" class="btn btn-primary mt-6 rounded-full">Anmelden <%= icon :arrow, css: "size-5" %></a>
           </div>
           <dl class="divide-y divide-base-content/10 lg:col-span-8">
             <% liste.items.drop(1).each do |item| %>
               <div class="flex items-baseline justify-between gap-4 py-3">
-                <dt><%= item.text %> <span class="text-sm text-base-content/55">(<%= item.sub %>)</span></dt>
+                <dt><%= item.text %> <span class="text-sm text-base-content/65">(<%= item.sub %>)</span></dt>
                 <dd class="whitespace-nowrap font-semibold"><%= item.preis %></dd>
               </div>
             <% end %>
@@ -31,5 +31,5 @@
       </div>
     <% end %>
   </div>
-  <p class="mt-5 max-w-4xl text-sm text-base-content/60"><%= data.preise.hinweis %> <a class="link" href="/ueberuns/preise/">Alle Preise</a></p>
+  <p class="mt-5 max-w-4xl text-sm text-base-content/70"><%= data.preise.hinweis %> <a class="link" href="/ueberuns/preise/">Alle Preise</a></p>
 </section>

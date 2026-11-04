@@ -25,7 +25,7 @@ breadcrumb_parents: []
       <label class="block sm:col-span-2"><span class="mb-1 block text-sm font-semibold">Nachricht (optional)</span><textarea class="textarea w-full" name="nachricht" rows="4" placeholder="z. B. Wunschzeit, Vorkenntnisse, Fahrschulwechsel …"></textarea></label>
     </div>
     <div class="hidden" aria-hidden="true"><label>Bitte leer lassen <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-    <label class="mt-5 flex items-start gap-3 text-sm text-base-content/75">
+    <label class="mt-5 flex items-start gap-3 text-sm text-base-content/85">
       <input type="checkbox" class="guth-check mt-0.5" name="einwilligung" value="ja" required>
       <span>Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. Mehr dazu in der <a class="link" href="/datenschutz/">Datenschutzerklärung</a>.</span>
     </label>
@@ -37,17 +37,17 @@ breadcrumb_parents: []
       <h2 class="eyebrow">Lieber telefonisch?</h2>
       <ul class="mt-4 space-y-4">
         <% data.site.contacts.each do |c| %>
-          <li><p class="text-sm text-base-content/60"><%= c.name %> · <%= c.role %></p><a class="text-2xl font-bold tracking-tight hover:text-primary" href="<%= tel_link c.tel %>"><%= phone(c.phone) %></a></li>
+          <li><p class="text-sm text-base-content/70"><%= c.name %> · <%= c.role %></p><a class="text-2xl font-bold tracking-tight hover:text-primary" href="<%= tel_link c.tel %>"><%= phone(c.phone) %></a></li>
         <% end %>
       </ul>
     </div>
     <div id="wechsel" class="tile scroll-mt-24 p-7">
       <h2 class="h3">Fahrschulwechsel?</h2>
-      <p class="mt-2 text-base-content/70">Du hast schon angefangen? Schreib uns in die Nachricht, wo du stehst. Wir besprechen mit dir, wie es bei uns weitergeht.</p>
+      <p class="mt-2 text-base-content/80">Du hast schon angefangen? Schreib uns in die Nachricht, wo du stehst. Wir besprechen mit dir, wie es bei uns weitergeht.</p>
     </div>
     <div class="tile p-7">
       <h2 class="h3">Finanzierung</h2>
-      <p class="mt-2 text-base-content/70">Sprich uns gern darauf an, wir klären das persönlich mit dir.</p>
+      <p class="mt-2 text-base-content/80">Sprich uns gern darauf an, wir klären das persönlich mit dir.</p>
     </div>
   </aside>
 </section>

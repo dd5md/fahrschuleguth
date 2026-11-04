@@ -18,8 +18,8 @@
     <%# 2 Erfahrung %>
     <div class="tile tile-hover flex flex-col justify-between p-7 sm:p-9 lg:col-span-5">
       <p class="eyebrow">Erfahrung</p>
-      <p class="mt-4 text-[clamp(5rem,13vw,9rem)] font-bold leading-[0.85] tracking-[-0.02em]"><span class="text-gradient">30+</span></p>
-      <p class="mt-3 max-w-xs text-base-content/70">Jahre Fahrschule in Bochum-Weitmar. Klassen B, A1, A2 &amp; A.</p>
+      <p class="mt-4 text-[clamp(5rem,13vw,9rem)] font-bold leading-[0.85] tracking-[-0.03em]"><span class="text-gradient">30+</span></p>
+      <p class="mt-3 max-w-xs text-base-content/80">Jahre Fahrschule in Bochum-Weitmar. Klassen B, A1, A2 &amp; A.</p>
     </div>
 
     <%# 3 Klassen %>
@@ -36,8 +36,8 @@
     <%# 4 Preise %>
     <a href="/ueberuns/preise/" class="tile group p-7 sm:p-9 lg:col-span-4">
       <p class="eyebrow">Preise</p>
-      <p class="mt-4 text-[clamp(3.5rem,8vw,5.5rem)] font-bold leading-[0.9] tracking-[-0.02em]">470 €</p>
-      <p class="mt-2 text-base-content/70">Grundbetrag inkl. Theorieunterricht, Klasse B. Übungsstunde 60 €.</p>
+      <p class="mt-4 text-[clamp(3.5rem,8vw,5.5rem)] font-bold leading-[0.9] tracking-[-0.03em]">470 €</p>
+      <p class="mt-2 text-base-content/80">Grundbetrag inkl. Theorieunterricht, Klasse B. Übungsstunde 60 €.</p>
       <p class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary">Zur Preisliste <%= icon :arrow, css: "size-4 transition group-hover:translate-x-1" %></p>
     </a>
 
@@ -47,12 +47,12 @@
       <dl class="mt-5 space-y-4">
         <% data.site.hours.each do |h| %>
           <div>
-            <dt class="text-sm text-base-content/60"><%= h.day %></dt>
+            <dt class="text-sm text-base-content/70"><%= h.day %></dt>
             <dd class="text-lg font-semibold tracking-tight"><%= h.times.join(" · ").gsub(" Uhr", "") %> Uhr</dd>
           </div>
         <% end %>
         <div>
-          <dt class="text-sm text-base-content/60">Theorie-Unterricht</dt>
+          <dt class="text-sm text-base-content/70">Theorie-Unterricht</dt>
           <dd class="text-lg font-semibold tracking-tight">Mo &amp; Do, 19:00 bis 20:30 Uhr</dd>
         </div>
       </dl>
@@ -66,10 +66,10 @@
         </div>
         <div>
           <p class="text-xl font-bold tracking-tight">Uli Guth</p>
-          <p class="text-sm text-base-content/60">Inhaber · Fahrlehrer</p>
+          <p class="text-sm text-base-content/70">Inhaber · Fahrlehrer</p>
         </div>
       </div>
-      <p class="text-base-content/75">Fragen zur Ausbildung? Ruf einfach an, Uli beantwortet sie dir persönlich.</p>
+      <p class="text-base-content/85">Fragen zur Ausbildung? Ruf einfach an, Uli beantwortet sie dir persönlich.</p>
       <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-outline rounded-full border-base-content/25"><%= icon :phone, css: "size-5 text-primary" %> <%= phone(data.site.contacts.first.phone) %></a>
     </div>
 

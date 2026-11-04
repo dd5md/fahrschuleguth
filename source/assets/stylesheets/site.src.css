@@ -63,35 +63,26 @@
 }
 
 /* ---------------------------------------------------------------------------
-   Schrift: Titillium Web (SIL Open Font License), selbst gehostet, Latin-Teilsatz (Umlaute, ß)
+   Schrift: Manrope (variabel, SIL Open Font License), selbst gehostet, Latin-Teilsatz (Umlaute, ß)
    --------------------------------------------------------------------------- */
 @font-face {
-  font-family: "Titillium Web";
+  font-family: "Manrope";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 200 800;
   font-display: swap;
-  src: url("/assets/fonts/titillium-web-latin-400-normal.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Titillium Web";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("/assets/fonts/titillium-web-latin-600-normal.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Titillium Web";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/assets/fonts/titillium-web-latin-700-normal.woff2") format("woff2");
+  src: url("/assets/fonts/manrope-latin-wght-normal.woff2") format("woff2-variations");
+  src: url("/assets/fonts/manrope-latin-wght-normal.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @theme {
-  --font-sans: "Titillium Web", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Etwas größere Textstufen für bessere Lesbarkeit */
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-xl: 1.3125rem;
 }
 
 html {
@@ -101,32 +92,33 @@ html {
 
 body {
   overflow-x: clip;
-  font-size: 1.0625rem; /* Titillium hat eine kleinere x-Höhe als die meisten Schriften */
+  font-size: 1.0625rem;
+  line-height: 1.6;
 }
 
 /* ---------------------------------------------------------------------------
    Typografie: sehr große Überschriften, enge Zeichenabstände
    --------------------------------------------------------------------------- */
 .display {
-  font-size: clamp(2.5rem, 9.2vw, 8.25rem);
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  font-weight: 700;
+  font-size: clamp(2.4rem, 8.2vw, 7.25rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-weight: 800;
   text-wrap: balance;
 }
 
 .h2 {
   font-size: clamp(2.1rem, 5.4vw, 4.25rem);
-  line-height: 1;
-  letter-spacing: -0.015em;
-  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  font-weight: 800;
   text-wrap: balance;
 }
 
 .h3 {
   font-size: clamp(1.35rem, 2.4vw, 1.9rem);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
   font-weight: 700;
 }
 

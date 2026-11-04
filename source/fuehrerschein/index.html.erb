@@ -13,9 +13,9 @@ breadcrumb_parents: []
       <li id="<%= k.id %>" class="tile scroll-mt-24 p-7 sm:p-10">
         <div class="grid gap-8 lg:grid-cols-12">
           <div class="lg:col-span-4">
-            <p class="text-7xl font-bold leading-none tracking-[-0.02em] text-primary"><%= k.kurz %></p>
+            <p class="text-7xl font-bold leading-none tracking-[-0.03em] text-primary"><%= k.kurz %></p>
             <h2 class="h3 mt-4"><%= k.titel %></h2>
-            <p class="mt-2 text-base-content/70"><%= k.lead %></p>
+            <p class="mt-2 text-base-content/80"><%= k.lead %></p>
           </div>
           <dl class="grid gap-6 sm:grid-cols-2 lg:col-span-8">
             <div><dt class="eyebrow">Mindestalter</dt><dd class="mt-2"><%= k.alter %></dd></div>
@@ -23,7 +23,7 @@ breadcrumb_parents: []
             <div class="sm:col-span-2"><dt class="eyebrow">So läuft es ab</dt><dd class="mt-2"><%= k.ablauf %></dd></div>
             <div class="sm:col-span-2 flex flex-wrap items-center gap-4 border-t border-base-content/10 pt-5">
               <% if liste %>
-                <p class="text-lg">Grundbetrag <strong class="text-primary"><%= liste.items.first.preis %></strong> <span class="text-sm text-base-content/60">inkl. Theorieunterricht</span></p>
+                <p class="text-lg">Grundbetrag <strong class="text-primary"><%= liste.items.first.preis %></strong> <span class="text-sm text-base-content/70">inkl. Theorieunterricht</span></p>
               <% else %>
                 <p class="text-lg">Preis <strong>auf Anfrage</strong></p>
               <% end %>
@@ -34,5 +34,5 @@ breadcrumb_parents: []
       </li>
     <% end %>
   </ul>
-  <p class="mt-8 max-w-3xl text-sm text-base-content/60">Allgemeine Angaben, Stand 2026, ohne Gewähr. Die genauen Voraussetzungen besprechen wir persönlich mit dir. Wegen der <a class="link" href="/reform-2027/">Führerscheinreform 2027</a> können sich Details ändern.</p>
+  <p class="mt-8 max-w-3xl text-sm text-base-content/70">Allgemeine Angaben, Stand 2026, ohne Gewähr. Die genauen Voraussetzungen besprechen wir persönlich mit dir. Wegen der <a class="link" href="/reform-2027/">Führerscheinreform 2027</a> können sich Details ändern.</p>
 </section>

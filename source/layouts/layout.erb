@@ -9,6 +9,10 @@
   <body class="bg-base-100 text-base-content antialiased">
     <a href="#main" class="sr-only focus:not-sr-only btn btn-primary absolute z-50 m-2">Zum Inhalt springen</a>
 
+    <% if config[:noindex] %>
+      <p class="bg-secondary px-4 py-1.5 text-center text-sm font-bold uppercase tracking-wider text-secondary-content">Testversion, noch nicht veröffentlicht</p>
+    <% end %>
+
     <%= partial "partials/header" %>
 
     <main id="main">

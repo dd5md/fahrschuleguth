@@ -6,6 +6,9 @@ require_relative "lib/site_helpers"
 # Site-Konfiguration
 # ---------------------------------------------------------------------------
 set :site_url, ENV.fetch("SITE_URL", "https://fahrschuleguth.de")
+# Testbau (z. B. für test.fahrschuleguth.de): NOINDEX=1 sperrt Suchmaschinen und zeigt ein Banner.
+# Beispiel: NOINDEX=1 SITE_URL=https://test.fahrschuleguth.de bundle exec middleman build
+set :noindex, ENV["NOINDEX"] == "1"
 set :default_og_image, "/assets/images/og-image.jpg"
 set :default_locale, "de_DE"
 
