@@ -79,7 +79,6 @@ Es sind daher keine Weiterleitungen nötig. Einzige Abweichung: Das Alt-Menü ve
 - [ ] Maskottchen-Quellbild (`bilder/kopf.webp`) ist nur 50 × 50 px; für größere Darstellung neu liefern.
 - [ ] Nach dem Livegang echten PageSpeed (mobil) und die Google-Search-Console prüfen, Ranking für „Fahrschule Bochum-Weitmar“ beobachten.
 - [ ] **PDFs fehlen**: `/assets/files/checkliste.pdf`, `flyer.pdf`, `fuehrerschein_mit_17_anlage_1.pdf`, `…_2.pdf` sind im Alt-Repo nicht enthalten (kamen aus einem Ordner `statics/files`, der nicht eingecheckt ist). In `source/assets/files/` ablegen.
-- [ ] Widerspruch in den Altseiten-Texten: Meta-Description „über 25 Jahren“, Startseitentext „über 30 Jahren“ – beides unverändert übernommen, bitte klären.
 - [ ] Preisliste trägt „Stand April 2022“ – Aktualität prüfen (Preisaushang).
 - [ ] Tippfehler der Altseite bewusst unverändert: „Theorieuntericht“, „Neuste Sena Funk Technik“, „Sebtember 2021“, „Gallerie“.
 - [ ] Fotos zeigen erkennbare Fahrschüler, News nennen Vornamen: Einwilligungen prüfen.
