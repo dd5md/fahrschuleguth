@@ -133,7 +133,7 @@ body {
 }
 
 /* Fließtext ohne Einzelwort in der letzten Zeile (wo vom Browser unterstützt) */
-p, li, dd, summary h3 { text-wrap: pretty; }
+p, li, dd, summary h3 { text-wrap-style: pretty; }
 
 .eyebrow {
   font-size: 0.8rem;

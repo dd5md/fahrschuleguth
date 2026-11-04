@@ -6,7 +6,7 @@ description: 'Führerscheinklassen bei der Fahrschule Guth in Bochum-Weitmar: Kl
 breadcrumb_parents: []
 ---
 <%= partial "partials/page_header" %>
-<section class="mx-auto max-w-7xl px-4 py-14 lg:py-20">
+<section class="mx-auto max-w-7xl px-4 py-8 sm:py-14 lg:py-20">
   <ul class="space-y-5">
     <% data.klassen.each do |k| %>
       <% liste = k.preis && data.preise.listen.find { |l| l.id == k.preis } %>

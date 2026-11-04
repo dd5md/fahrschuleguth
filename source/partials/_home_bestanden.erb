@@ -1,4 +1,4 @@
-<section id="bestanden" class="mx-auto max-w-7xl px-4 pb-20 lg:pb-28" aria-labelledby="bestanden-title">
+<section id="bestanden" class="mx-auto max-w-7xl px-4 pb-8 sm:pb-16 lg:pb-28" aria-labelledby="bestanden-title">
   <div class="flex flex-wrap items-end justify-between gap-6">
     <div class="max-w-3xl">
       <p class="eyebrow">Geschafft</p>
@@ -7,7 +7,7 @@
     </div>
     <a href="/galerie/bestanden/" class="btn btn-outline rounded-full border-base-content/25">Mehr Fotos <%= icon :arrow, css: "size-5" %></a>
   </div>
-  <div class="mt-10">
+  <div class="mt-6 sm:mt-10">
     <%= gallery_grid data.galerie.bestanden.first(8), group: "bestanden-start" %>
   </div>
 </section>

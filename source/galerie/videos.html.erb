@@ -7,7 +7,7 @@ breadcrumb_parents:
   - { label: Galerie, href: /galerie/ }
 ---
 <%= partial "partials/page_header" %>
-<section class="mx-auto grid max-w-7xl gap-6 px-4 pb-16 pt-6 sm:grid-cols-2 lg:grid-cols-3">
+<section class="mx-auto grid max-w-7xl gap-6 px-4 pb-10 pt-4 sm:pb-16 sm:pt-6 sm:grid-cols-2 lg:grid-cols-3">
   <% data.links.videos.each do |v| %>
     <div class="tile aspect-video" data-embed="https://www.youtube-nocookie.com/embed/<%= v.id %>?rel=0&amp;autoplay=1" data-title="<%= v.title %> der Fahrschule Guth">
       <button type="button" class="flex size-full flex-col items-center justify-center gap-3 p-6 text-center transition hover:bg-base-content/5">

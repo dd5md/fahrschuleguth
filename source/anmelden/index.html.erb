@@ -6,7 +6,7 @@ description: 'Online-Anmeldung zur Fahrschule Guth in Bochum-Weitmar: Klasse B, 
 breadcrumb_parents: []
 ---
 <%= partial "partials/page_header" %>
-<section class="mx-auto grid max-w-7xl gap-8 px-4 py-14 lg:grid-cols-12 lg:py-20">
+<section class="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:py-14 lg:grid-cols-12 lg:py-20">
   <%# Live: PHP-Skript (senden.php). Im Dev-Server läuft kein PHP, dort öffnet das Formular das Mailprogramm. %>
   <% mailto = config[:form_action].to_s.start_with?("mailto:") %>
   <form id="formular" class="tile scroll-mt-24 p-7 sm:p-10 lg:col-span-7" action="<%= config[:form_action] %>" method="post"<%= ' enctype="text/plain"'.html_safe if mailto %>>

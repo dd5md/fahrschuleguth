@@ -6,7 +6,7 @@ description: 'Führerscheinreform 2027: Online-Theorie, kürzerer Fragenkatalog,
 breadcrumb_parents: []
 ---
 <%= partial "partials/page_header" %>
-<section class="mx-auto max-w-7xl px-4 py-14 lg:py-20">
+<section class="mx-auto max-w-7xl px-4 py-8 sm:py-14 lg:py-20">
   <p class="max-w-3xl rounded-2xl border border-warning/40 bg-warning/10 p-4 text-sm"><strong>Wichtig:</strong> <%= data.reform.hinweis %> Stand: <%= data.reform.stand %>.</p>
   <ul class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
     <% data.reform.punkte.each_with_index do |p, i| %>
@@ -18,7 +18,7 @@ breadcrumb_parents: []
     <% end %>
   </ul>
 
-  <div class="mt-16 grid gap-10 lg:grid-cols-12">
+  <div class="mt-10 grid sm:mt-16 gap-10 lg:grid-cols-12">
     <div class="lg:col-span-5">
       <h2 class="h2">Zeitplan</h2>
       <p class="mt-3 text-base-content/80">Das ist der aktuell bekannte Fahrplan. Termine können sich verschieben.</p>
@@ -30,7 +30,7 @@ breadcrumb_parents: []
     </ol>
   </div>
 
-  <div class="tile tile-accent mt-16 flex flex-col items-start gap-5 p-8 sm:p-12">
+  <div class="tile tile-accent mt-10 flex sm:mt-16 flex-col items-start gap-5 p-8 sm:p-12">
     <h2 class="h2">Du willst jetzt anfangen?</h2>
     <p class="max-w-2xl opacity-90">Wir halten dich auf dem Laufenden und besprechen mit dir, wie sich die Reform auf deine Ausbildung auswirkt.</p>
     <a href="/anmelden/" class="btn btn-lg rounded-full border-0 bg-base-100 text-base-content hover:bg-base-200">Jetzt anmelden <%= icon :arrow, css: "size-5" %></a>
