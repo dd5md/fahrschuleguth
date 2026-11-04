@@ -168,6 +168,7 @@ p, li, dd, summary h3 { text-wrap-style: pretty; }
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
+/* Nur klickbare Kacheln (a.tile) heben sich beim Überfahren an; .tile-hover erzwingt das bei Bedarf auch für nicht klickbare. */
 a.tile:hover,
 .tile-hover:hover {
   transform: translateY(-3px);
