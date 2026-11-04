@@ -28,6 +28,24 @@ breadcrumb_parents:
         </article>
       <% end %>
     </div>
+
+    <%# Weitere Klassen ohne eigene Preisliste: BF17 wie Klasse B, übrige mit Platzhalter ??? (Preise von Uli nachliefern) %>
+    <h2 class="h3 mt-12">Weitere Klassen</h2>
+    <ul class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <% data.klassen.reject { |k| %w[b a1 a2 a].include?(k.id) }.each do |k| %>
+        <li class="tile flex flex-col gap-3 p-6">
+          <p class="text-4xl font-bold leading-none tracking-[-0.03em] text-primary"><%= k.kurz %></p>
+          <p class="font-semibold"><%= tidy k.titel %></p>
+          <% if k.preis %>
+            <p class="text-base-content/80"><%= k.preis_hinweis.to_s.sub(/\A./, &:upcase) %>: <a class="link link-primary font-semibold" href="#<%= k.preis %>">Preisliste Klasse B</a></p>
+          <% else %>
+            <p class="text-3xl font-bold text-primary">???</p>
+            <p class="text-sm text-base-content/80">Preise folgen. Bis dahin: <a class="link link-primary whitespace-nowrap font-semibold" href="<%= tel_link data.site.contacts.first.tel %>"><%= phone data.site.contacts.first.phone %></a></p>
+          <% end %>
+          <a href="/fuehrerschein/#<%= k.id %>" class="link mt-auto inline-flex items-center gap-2 pt-2 text-sm font-semibold">Zur Klasse <%= icon :arrow, css: "size-4" %></a>
+        </li>
+      <% end %>
+    </ul>
     <p class="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-base-content/80"><%= data.preise.hinweis %></p>
   </div>
 </section>
