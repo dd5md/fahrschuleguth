@@ -1,14 +1,21 @@
-# Führerscheinreform 2027: Stand der Planung, Quelle fahrschulreform2027.de (123fahrschule). Vor Veröffentlichung gegen BMV/Bundesgesetzblatt prüfen.
+# Führerscheinreform: Stand der Planung. Quellen: Bundesregierung (bundesregierung.de, "Reform für einen bezahlbaren und
+# modernen Führerschein") und Bundesverkehrsministerium (Pressemitteilung 043/2026). Vor Veröffentlichung gegen den aktuellen
+# Stand im Bundestag/Bundesgesetzblatt prüfen. NICHTS davon ist beschlossenes Recht.
 stand: 'November 2026'
-hinweis: 'Alle Punkte sind geplant. Das Gesetzgebungsverfahren läuft noch, Termine und Inhalte können sich ändern.'
+hinweis: 'Alle Punkte sind geplant. Gesetzentwurf und Verordnung werden noch in Bundestag und Bundesrat beraten, Inhalte und Termine können sich ändern.'
 punkte:
-  - { titel: 'Theorie auch online', text: 'Online-Unterricht soll als gleichwertige Alternative zum Präsenzunterricht zugelassen werden, auch als Mischform.' }
-  - { titel: 'Kürzerer Fragenkatalog', text: 'Der Fragenkatalog soll um etwa 30 % gekürzt werden. Dauer, Fragenanzahl und Bestehensgrenze der Theorieprüfung sollen gleich bleiben.' }
-  - { titel: 'Weniger Pflicht-Sonderfahrten', text: 'Für Klasse B sollen die Pflicht-Sonderfahrten von zwölf auf drei sinken: Überland, Autobahn und Nacht.' }
-  - { titel: 'Kürzere Praxisprüfung', text: 'Die praktische Prüfung soll von etwa 55 auf etwa 40 Minuten verkürzt werden.' }
-  - { titel: 'Mehr Preis-Transparenz', text: 'Fahrschulen sollen Preise und Bestehensquoten online veröffentlichen müssen.' }
+  - { titel: 'Theorie digital', text: 'Die Pflicht zum Präsenzunterricht soll entfallen. Das Wissen kann auch digital, zum Beispiel per App, erworben werden. Fahrschulen entscheiden selbst, ob und wie sie Theorieunterricht anbieten.' }
+  - { titel: 'Kürzerer Fragenkatalog', text: 'Der Fragenkatalog (derzeit über 1.100 Fragen) soll um rund ein Drittel gekürzt, das Bewertungssystem vereinfacht werden. Fragen zur Verkehrssicherheit bekommen einen Schwerpunkt.' }
+  - { titel: 'Sonderfahrten nach Einschätzung des Fahrlehrers', text: 'Die feste Zahl von zwölf Sonderfahrten (Klasse B) soll entfallen. Fahrten über Land, auf der Autobahn und bei Dunkelheit bleiben vorgeschrieben, der Umfang richtet sich nach dem Können. Übungen im Fahrsimulator sollen grundsätzlich möglich sein.' }
+  - { titel: 'Prüfungsfahrt mit 25 Minuten Fahrzeit', text: 'Die reine Fahrzeit in der praktischen Prüfung soll auf das EU-Mindestmaß von 25 Minuten zurückgeführt werden.' }
+  - { titel: 'Üben mit nahestehenden Personen', text: 'In einer Erprobung (Experimentierklausel) sollen Fahrschüler nach bestandener Theorieprüfung auch mit nahestehenden Personen auf öffentlichen Straßen üben können, ergänzt durch die praktische Ausbildung in der Fahrschule. Die Bundesländer entscheiden, ob sie das umsetzen.' }
+  - { titel: 'Preise und Erfolgsquoten', text: 'Preise und Erfolgsquoten aller Fahrschulen sollen künftig online in der Mobilithek, der zentralen Datenbank für Mobilitätsdaten, veröffentlicht werden. Wann und wie genau, ist noch offen.' }
+kosten: 'Ein bestimmter Preisvorteil ist nicht garantiert, die Fahrschulen legen ihre Preise weiter selbst fest. Laut Bundesverkehrsministerium kostet der Führerschein Klasse B derzeit im Schnitt rund 3.400 Euro.'
 zeitplan:
-  - { wann: '20.05.2026', was: 'Kabinettsbeschluss' }
-  - { wann: 'Herbst 2026', was: 'Beratung in Bundestag und Bundesrat' }
-  - { wann: '01.01.2027', was: 'Geplantes Inkrafttreten der Verordnung (mit Übergangsfristen)' }
-  - { wann: '01.07.2027', was: 'Geplantes Inkrafttreten des begleitenden Gesetzes' }
+  - { wann: '20.05.2026', was: 'Kabinett beschließt den Gesetzentwurf zur Änderung des Fahrlehrergesetzes' }
+  - { wann: '10.06.2026', was: 'Kabinett beschließt die Verordnung zur Modernisierung der Fahrschulausbildung' }
+  - { wann: 'Aktuell', was: 'Beratung in Bundestag und Bundesrat' }
+  - { wann: 'Anfang 2027', was: 'Ziel für das Inkrafttreten, wenn das Verfahren ohne Verzögerung läuft' }
+quellen:
+  - { name: 'Bundesregierung: Reform für einen bezahlbaren und modernen Führerschein', url: 'https://www.bundesregierung.de/breg-de/aktuelles/kabinett-startet-reform-fahrschulausbildung-2431088' }
+  - { name: 'Bundesverkehrsministerium: Pressemitteilung zur Reform', url: 'https://www.bmv.de/SharedDocs/DE/Pressemitteilungen/2026/043-schnieder-bezahlbarer-fuehrerschein.html' }

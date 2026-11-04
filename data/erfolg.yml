@@ -1,0 +1,7 @@
+# Erfolgsquote der Fahrschule (für die geplante Veröffentlichung von Preisen und Erfolgsquoten).
+# Nur eintragen, was Uli belegen kann (z. B. aus Aufzeichnungen oder TÜV-Rückmeldungen). Solange alles leer ist, erscheint nichts auf der Seite.
+zeitraum:            # z. B. "2025"
+theorie_quote:       # z. B. 78 (Prozent bestanden im ersten Versuch)
+praxis_quote:        # z. B. 72 (Prozent bestanden im ersten Versuch)
+ausgebildet:         # z. B. 120 (Anzahl erfolgreich Ausgebildete im Zeitraum)
+hinweis: 'Erste Prüfungsversuche, Angaben der Fahrschule.'

@@ -70,3 +70,10 @@ hours_phone: 'Nach telefonischer Absprache: 0172 | 233 666 0 (außer Sonntags)'
 theory:
   - { day: Montags, time: '19:00 bis 20:30 Uhr' }
   - { day: Donnerstags, time: '19:00 bis 20:30 Uhr' }
+# Google-Bewertung (Angaben von Uli; nur anzeigen, was stimmt und aktuell ist).
+# anzahl = Anzahl der Bewertungen, url = Link zum Google-Unternehmensprofil (Maps), stand = Datum der Angabe
+google:
+  rating: 4.9
+  anzahl:
+  url:
+  stand: 'November 2026'

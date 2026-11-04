@@ -26,6 +26,15 @@
       <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-lg rounded-full border-base-content/20 bg-base-100/40 px-6 backdrop-blur hover:bg-base-content/10"><%= icon :phone, css: "size-5 text-primary" %> <%= phone(data.site.contacts.first.phone) %></a>
     </div>
 
+    <% g = data.site.google %>
+    <% if g && g.rating %>
+      <p class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-base">
+        <span class="text-secondary" role="img" aria-label="<%= g.rating.to_s.tr('.', ',') %> von 5 Sternen bei Google">★★★★★</span>
+        <span><strong><%= g.rating.to_s.tr('.', ',') %></strong> von 5 bei Google<%= " · #{g.anzahl} Bewertungen" if g.anzahl %></span>
+        <% if g.url %><a class="link link-primary text-sm" href="<%= g.url %>" target="_blank" rel="noopener noreferrer">Bewertungen ansehen</a><% end %>
+      </p>
+    <% end %>
+
     <%# Schnellauswahl: ohne KI, ohne Server; Chips funktionieren auch ohne JavaScript %>
     <form class="relative mt-14 max-w-2xl" role="search" data-quicksearch>
       <label for="quicksearch" class="eyebrow mb-3 block">Was möchtest du wissen?</label>

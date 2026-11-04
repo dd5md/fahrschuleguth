@@ -2,7 +2,7 @@
 title: Führerscheinreform 2027
 pagetitle: Führerscheinreform 2027
 smalltitle: Das ist geplant und was das für dich bedeutet. Stand der Planung, Änderungen vorbehalten.
-description: 'Führerscheinreform 2027: Online-Theorie, kürzerer Fragenkatalog, weniger Pflicht-Sonderfahrten, kürzere Praxisprüfung. Was geplant ist, erklärt die Fahrschule Guth Bochum.'
+description: 'Führerscheinreform 2027: digitale Theorie, kürzerer Fragenkatalog, keine feste Sonderfahrten-Zahl, 25 Minuten Prüfungsfahrt. Stand der Planung.'
 breadcrumb_parents: []
 ---
 <%= partial "partials/page_header" %>
@@ -35,5 +35,6 @@ breadcrumb_parents: []
     <p class="max-w-2xl opacity-90">Wir halten dich auf dem Laufenden und besprechen mit dir, wie sich die Reform auf deine Ausbildung auswirkt.</p>
     <a href="/anmelden/" class="btn btn-lg rounded-full border-0 bg-base-100 text-base-content hover:bg-base-200">Jetzt anmelden <%= icon :arrow, css: "size-5" %></a>
   </div>
-  <p class="mt-8 text-sm text-base-content/70">Quelle der Angaben: <a class="link" href="https://fahrschulreform2027.de/" target="_blank" rel="noopener noreferrer">fahrschulreform2027.de</a> (Stand der Planung). Verbindlich sind nur das Bundesverkehrsministerium und das Bundesgesetzblatt.</p>
+  <p class="mt-10 max-w-3xl text-base-content/80"><strong>Kosten:</strong> <%= data.reform.kosten %></p>
+  <p class="mt-6 max-w-3xl text-sm text-base-content/70">Quellen (Stand der Planung): <% data.reform.quellen.each_with_index do |q, i| %><%= ", " if i > 0 %><a class="link" href="<%= q.url %>" target="_blank" rel="noopener noreferrer"><%= q.name %></a><% end %>. Verbindlich sind nur das Bundesverkehrsministerium und das Bundesgesetzblatt.</p>
 </section>
