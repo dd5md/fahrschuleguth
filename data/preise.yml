@@ -1,4 +1,6 @@
-# Preislisten gemäß Preisaushang Fahrlehrergesetz § 32 (Werte unverändert aus der Altseite)
+# Preislisten gemäß Preisaushang Fahrlehrergesetz § 32 (Werte unverändert aus der Altseite).
+# Listen mit `platzhalter: true` (AM, B96, B196) sind PLATZHALTER mit ???: Zeilen und Preise von Uli bestätigen lassen und
+# `platzhalter` entfernen. `gruppe: zusatz` = Zusatzqualifikation zur Klasse B (eigener Bereich mit Trenner auf der Preisseite).
 hinweis: 'Preise in Euro inkl. MwSt. Die TÜV-Gebühren werden gesondert berechnet. Preisliste: Stand November 2026. Änderungen vorbehalten. Bei Nichtbestehen der praktischen oder theoretischen Prüfung wird kein weiterer Grundbetrag erhoben.'
 listen:
   - id: klasse-b
@@ -11,6 +13,14 @@ listen:
       - { text: Dunkelheitsfahrten, sub: je 45 Minuten, preis: '70,00 €' }
       - { text: Vorstellungsentgelt theoretische Prüfung, sub: 'zzgl. 24,99 € TÜV-Gebühren', preis: '75,00 €' }
       - { text: Vorstellungsentgelt praktische Prüfung, sub: 'zzgl. 129,83 € TÜV-Gebühren', preis: '200,00 €' }
+  - id: klasse-am
+    title: 'Klasse AM'
+    platzhalter: true
+    items:
+      - { text: Grundbetrag, sub: inkl. Theorieunterricht, preis: '???' }
+      - { text: Übungsstunde, sub: je 45 Minuten, preis: '???' }
+      - { text: Vorstellungsentgelt theoretische Prüfung, sub: zzgl. TÜV-Gebühren, preis: '???' }
+      - { text: Vorstellungsentgelt praktische Prüfung, sub: zzgl. TÜV-Gebühren, preis: '???' }
   - id: klasse-a1
     title: 'Klasse A1'
     items:
@@ -31,3 +41,17 @@ listen:
       - { text: Dunkelheitsfahrten, sub: je 45 Minuten, preis: '80,00 €' }
       - { text: Vorstellungsentgelt theoretische Prüfung, sub: 'zzgl. 24,99 € TÜV-Gebühren', preis: '75,00 €' }
       - { text: Vorstellungsentgelt praktische Prüfung, sub: 'zzgl. 162,67 € TÜV-Gebühren', preis: '200,00 €' }
+  - id: b96
+    title: 'B96'
+    gruppe: zusatz
+    platzhalter: true
+    items:
+      - { text: Grundbetrag, sub: Fahrerschulung, preis: '???' }
+      - { text: Übungsstunde, sub: je 45 Minuten, preis: '???' }
+  - id: b196
+    title: 'B196'
+    gruppe: zusatz
+    platzhalter: true
+    items:
+      - { text: Grundbetrag, sub: Fahrerschulung, preis: '???' }
+      - { text: Übungsstunde, sub: je 45 Minuten, preis: '???' }

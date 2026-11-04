@@ -29,7 +29,7 @@
   alter: Klasse B erforderlich
   darf: Zugfahrzeug der Klasse B mit Anhänger über 750 kg, wenn die Kombination mehr als 3.500 kg und höchstens 4.250 kg wiegt.
   ablauf: Fahrerschulung in der Praxis, keine Prüfung. Voraussetzung ist der Besitz der Klasse B (oder die Erfüllung ihrer Voraussetzungen).
-  preis: null
+  preis: b96
   home: true
 - id: b196
   kurz: B196
@@ -38,7 +38,7 @@
   alter: ab 25 Jahren, Klasse B seit mindestens 5 Jahren
   darf: Im Inland Krafträder (auch mit Beiwagen) der Klasse A1, also bis 125 cm³ Hubraum und 11 kW Leistung. Gilt nur in Deutschland.
   ablauf: Fahrerschulung von mindestens 13,5 Zeitstunden (4 Unterrichtseinheiten Theorie und 5 Unterrichtseinheiten Praxis zu je 90 Minuten), keine Prüfung. Der Fahrlehrer bestätigt die Teilnahme.
-  preis: null
+  preis: b196
   home: true
 - id: am
   kurz: AM
@@ -47,7 +47,7 @@
   alter: ab 16 Jahren
   darf: 'Zweirädrige Kleinkrafträder (Mopeds) mit einer bauartbedingten Höchstgeschwindigkeit von höchstens 45 km/h, einem Hubraum bis 50 cm³ und einer Leistung bis 4 kW. Dazu dreirädrige Kleinkrafträder und vierrädrige Leichtkraftfahrzeuge mit höchstens 45 km/h und zwei Sitzplätzen (einschließlich Fahrer).'
   ablauf: Theorieunterricht, Fahrstunden und Prüfung. Für Mofas und auf 25 km/h begrenzte Fahrzeuge der Klasse AM genügt statt einer Fahrerlaubnis eine Prüfbescheinigung.
-  preis: null
+  preis: klasse-am
   home: true
 - id: a1
   kurz: A1
