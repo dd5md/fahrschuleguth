@@ -25,13 +25,10 @@ description: 'Kontakt zur Fahrschule Guth in Bochum-Weitmar, Hattinger Str. 136,
 <section class="mx-auto max-w-7xl px-4 pb-10 pt-6 sm:pb-16 sm:pt-10" aria-labelledby="anfahrt">
   <h2 id="anfahrt" class="flex items-center gap-2 text-2xl font-bold sm:text-3xl"><%= icon :pin, css: "size-6 text-primary" %> So finden Sie uns</h2>
   <address class="mt-2 not-italic text-base-content/80">Fahrschule Uli Guth, <%= data.site.address.street %>, <%= data.site.address.plz %> <%= data.site.address.city %></address>
-  <div class="tile mt-4 aspect-[4/3] sm:aspect-video" data-title="Karte: Fahrschule Uli Guth, Hattinger Str. 136, Bochum"
-       data-embed="https://www.openstreetmap.org/export/embed.html?bbox=7.2030%2C51.4645%2C7.2090%2C51.4675&amp;layer=mapnik&amp;marker=<%= data.site.geo.lat %>%2C<%= data.site.geo.lon %>">
-    <button type="button" class="flex size-full flex-col items-center justify-center gap-3 p-6 text-center transition hover:bg-base-content/5">
-      <%= icon :pin, css: "size-10 text-primary" %>
-      <span class="font-semibold">Karte laden</span>
-      <span class="max-w-sm text-xs text-base-content/70">Beim Klick wird eine Verbindung zu OpenStreetMap hergestellt.</span>
-    </button>
+  <%# OpenStreetMap lädt direkt (setzt keine Cookies). Rechtsgrundlage und IP-Übermittlung stehen in der Datenschutzerklärung. %>
+  <div class="tile mt-4 aspect-[4/3] sm:aspect-video">
+    <iframe class="size-full" title="Karte: Fahrschule Uli Guth, Hattinger Str. 136, Bochum" loading="lazy" referrerpolicy="no-referrer"
+      src="https://www.openstreetmap.org/export/embed.html?bbox=7.2030%2C51.4645%2C7.2090%2C51.4675&amp;layer=mapnik&amp;marker=<%= data.site.geo.lat %>%2C<%= data.site.geo.lon %>"></iframe>
   </div>
   <p class="mt-2 text-sm"><a class="link" href="https://www.openstreetmap.org/?mlat=<%= data.site.geo.lat %>&amp;mlon=<%= data.site.geo.lon %>#map=18/<%= data.site.geo.lat %>/<%= data.site.geo.lon %>" target="_blank" rel="noopener">Größere Karte öffnen</a> · &copy; OpenStreetMap-Mitwirkende</p>
 </section>

@@ -39,6 +39,15 @@ nav:
   - { label: Galerie, href: /galerie/ }
   - { label: News, href: /news/ }
   - { label: Kontakt, href: /kontakt/ }
+drawer_more:
+  - { label: Anmelden, href: /anmelden/, primary: true }
+  - { label: Führerscheinreform 2027, href: /reform-2027/ }
+  - { label: Fahrzeuge (Pkw), href: /galerie/fahrzeuge/ }
+  - { label: Motorräder, href: /galerie/motorraeder/ }
+  - { label: Videos, href: /galerie/videos/ }
+  - { label: Wir haben bestanden, href: /galerie/bestanden/ }
+  - { label: Links, href: /ueberuns/links/ }
+  - { label: Downloads, href: /ueberuns/downloads/ }
 footer_nav:
   - { label: Anmelden, href: /anmelden/ }
   - { label: Führerschein, href: /fuehrerschein/ }
@@ -75,5 +84,5 @@ theory:
 google:
   rating: 4.9
   anzahl: 382
-  url:
+  url: 'https://www.google.com/maps/search/?api=1&query=Fahrschule+Ulrich+Guth+Hattinger+Stra%C3%9Fe+136+44795+Bochum'
   stand: 'November 2026'

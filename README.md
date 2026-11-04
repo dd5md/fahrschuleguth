@@ -55,7 +55,7 @@ Bewusst **kein** Nachbau der Altseite und nicht das Demo-Layout von dd5md.de, so
 - Themes `guth-dark`/`guth-light` in `assets/stylesheets/site.src.css`; daisyUI ist auf die genutzten Komponenten beschränkt (`include:`). Neue daisyUI-Komponente nutzen? Name dort ergänzen (Dateiname der Komponente, z. B. `button` für `btn`).
 
 ### Datenschutz / Cookies
-Kein Cookie-Banner nötig: keine Tracker, keine externen Schriften, YouTube-Videos und Karte laden erst nach Klick (`data-embed` in `site.js`), Anfragen gehen vorher an keinen Fremdserver. Eine **rechtssichere Datenschutzerklärung** ist trotzdem Pflicht (aktuell Platzhalter `/datenschutz/`, `noindex`).
+Kein Cookie-Banner nötig: keine Tracker, keine externen Schriften, YouTube-Videos laden erst nach Klick (`data-embed` in `site.js`). Die OpenStreetMap-Karte auf `/kontakt/` lädt auf Wunsch von Uli **sofort** (setzt nach unserem Kenntnisstand keine Cookies, übermittelt aber die IP-Adresse an die OpenStreetMap Foundation; Rechtsgrundlage berechtigtes Interesse, im Datenschutz beschrieben). Wer das Risiko vermeiden will, nimmt den Block wieder mit `data-embed` wie bei den Videos (siehe Git-Verlauf). Eine **rechtssichere Datenschutzerklärung** ist trotzdem Pflicht (aktuell Platzhalter `/datenschutz/`, `noindex`).
 
 ### Performance (Lighthouse, Mobil-Simulation, mit Textkompression)
 Leistung 96 · Barrierefreiheit 100 · Best Practices 100 · SEO 100 · LCP 2,9 s · CLS 0 (Altseite laut PageSpeed: Mobil-Leistung 63, CLS 0,694).
@@ -87,9 +87,14 @@ Das Skript dreht Handy-Fotos richtig, **entfernt alle Metadaten (inkl. GPS)**, e
 
 ## Offene Punkte
 
+- [ ] **Preise ??? (Platzhalter)** für AM, B196 und B96 in `data/klassen.yml` (Feld `preis` auf eine Preisliste in `data/preise.yml` setzen oder Text ergänzen) – Uli liefert sie nach. Vor dem Livegang ersetzen. BF17 nutzt die Preise von Klasse B (bestätigt).
+- [ ] **Drehender Kopf** (`.mascot-corner`, Hero): Quelldatei `bilder/kopf.webp` ist nur 50 × 50 Pixel und wirkt bei 90 Pixel weich (wie auf der Altseite). Für Schärfe ein größeres Original (mindestens 300 × 300 Pixel) liefern.
+- [ ] **Impressum:** Die angezeigte „Steuernummer 350/5084/0747“ hat das Format einer Steuernummer, keiner USt-IdNr. (die lautet DE + 9 Ziffern). Uli sagt, alles stimmt; bei Gelegenheit mit der Rechnung prüfen, ob zusätzlich „Umsatzsteuer-ID: DE…“ stehen soll.
+- [x] Anmeldungen gehen nur an `uli@fahrschuleguth.de` (`MAIL_TO` in `source/anmelden/senden.php`), Fotos der Bestandenen: Uli lässt sich von den Fahrschülern bestätigen (04.11.2026).
+
 - [ ] **Facebook:** Das Seitenplugin wurde bewusst nicht eingebaut (passt nicht ins dunkle Design, Fotos der Fahrschüler liefen ungefiltert mit). Es gibt nur den Link zur Seite `facebook.com/FahrschuleGuth/` (Footer, News). Fotos der Bestandenen weiter von Hand pflegen.
 
-- [ ] **Google-Bewertung** steht im Hero („4,9 von 5 bei Google“, `data/site.yml` unter `google:`). Anzahl (382, laut Google-Suche vom 04.11.2026) ist eingetragen. Es fehlt noch der **Link zum Google-Unternehmensprofil** (`url`); den Link zum Profil bei Google Maps öffnen und über „Teilen“ kopieren. Nur Zahlen eintragen, die stimmen und aktuell sind. Bewusst **kein** `AggregateRating` im JSON-LD: Google zeigt Sterne für selbst eingebundene Bewertungen eigener Firmenseiten nicht und wertet das ggf. als irreführend.
+- [ ] **Google-Bewertung** steht im Hero („4,9 von 5 bei Google“, `data/site.yml` unter `google:`). Anzahl (382, laut Google-Suche vom 04.11.2026) ist eingetragen. Der Link `url` führt auf eine Google-Maps-Suche nach „Fahrschule Ulrich Guth“ (der alte Google+-Link ist seit 2019 tot). Optional später durch den „Teilen“-Link aus dem Maps-Profil ersetzen. Nur Zahlen eintragen, die stimmen und aktuell sind. Bewusst **kein** `AggregateRating` im JSON-LD: Google zeigt Sterne für selbst eingebundene Bewertungen eigener Firmenseiten nicht und wertet das ggf. als irreführend.
 - [ ] **Erfolgsquoten** (`data/erfolg.yml`): Solange leer, erscheint nichts. Uli kann Quote Theorie/Praxis, Zeitraum und Anzahl Ausgebildete eintragen lassen. Ob und wie die Veröffentlichung Pflicht wird, ist laut Bundesregierung/BMV noch offen („sollen künftig in der Mobilithek veröffentlicht werden“).
 - [ ] **Slogan „100% Erfolg“** (Bereich „Wir haben bestanden!“, Altbestand) mit Uli klären: Bei offiziell zu veröffentlichenden Erfolgsquoten und wegen irreführender Werbung (UWG) nur stehen lassen, wenn es stimmt.
 - [x] **Reform-Seite auf amtliche Quellen umgestellt** (Bundesregierung, BMV): u. a. keine feste Zahl Sonderfahrten, 25 Minuten Prüfungsfahrzeit, Üben mit nahestehenden Personen, Preise/Erfolgsquoten in der Mobilithek. Vorherige Angaben (12→3 Sonderfahrten, 40 Minuten) stammten aus einer kommerziellen Quelle und waren falsch/ungesichert.
@@ -102,7 +107,7 @@ Das Skript dreht Handy-Fotos richtig, **entfernt alle Metadaten (inkl. GPS)**, e
 - [ ] Maskottchen-Quellbild (`bilder/kopf.webp`) ist nur 50 × 50 px; für größere Darstellung neu liefern.
 - [ ] Nach dem Livegang echten PageSpeed (mobil) und die Google-Search-Console prüfen, Ranking für „Fahrschule Bochum-Weitmar“ beobachten.
 - [ ] **PDFs fehlen**: `/assets/files/checkliste.pdf`, `flyer.pdf`, `fuehrerschein_mit_17_anlage_1.pdf`, `…_2.pdf` sind im Alt-Repo nicht enthalten (kamen aus einem Ordner `statics/files`, der nicht eingecheckt ist). In `source/assets/files/` ablegen.
-- [ ] Preisliste trägt „Stand April 2022“ – Aktualität prüfen (Preisaushang).
+- [x] Preisliste auf „Stand November 2026“ gesetzt (Uli hat die Preise am 04.11.2026 bestätigt).
 - [ ] Tippfehler der Altseite bewusst unverändert: „Theorieuntericht“, „Neuste Sena Funk Technik“, „Sebtember 2021“, „Gallerie“.
 - [ ] Fotos zeigen erkennbare Fahrschüler, News nennen Vornamen: Einwilligungen prüfen.
 - [ ] Alt-Texte der Galerie-Bilder wurden beschreibend ergänzt; „Bestanden“-Bilder haben generische Alt-Texte mit Monat/Jahr.

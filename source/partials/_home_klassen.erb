@@ -2,7 +2,7 @@
   <div class="max-w-3xl">
     <p class="eyebrow">Führerscheinklassen</p>
     <h2 id="klassen-title" class="h2 mt-3">Welcher Führerschein passt zu <span class="text-gradient">dir</span>?</h2>
-    <p class="mt-5 text-lg text-base-content/80">Auto, Motorrad, mit 17 oder ohne Prüfung: kurz erklärt. Alle Details findest du auf der Seite zu den Klassen.</p>
+    <p class="mt-5 text-lg text-base-content/80">Auto, Moped, Motorrad, mit 17 oder ohne Prüfung: kurz erklärt. Alle Details findest du auf der Seite zu den Klassen.</p>
   </div>
   <ul class="mt-8 grid sm:mt-12 gap-4 sm:grid-cols-2 lg:grid-cols-4">
     <% data.klassen.select(&:home).each do |k| %>
@@ -17,8 +17,8 @@
         </a>
       </li>
     <% end %>
-    <li>
-      <a href="/fuehrerschein/" class="tile tile-accent group flex h-full min-h-[12rem] flex-col justify-between gap-4 p-6">
+    <li class="sm:col-span-2 lg:col-span-4">
+      <a href="/fuehrerschein/" class="tile tile-accent group flex h-full min-h-[12rem] flex-col justify-between gap-4 p-6 lg:min-h-0 lg:flex-row lg:items-center lg:gap-8">
         <span class="text-sm font-bold uppercase tracking-[0.14em] opacity-80">Alle Details</span>
         <span class="h3">Klassen, Voraussetzungen und Ablauf</span>
         <span class="inline-flex items-center gap-2 font-semibold">Zur Übersicht <%= icon :arrow, css: "size-5 transition group-hover:translate-x-1" %></span>

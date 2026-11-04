@@ -309,3 +309,32 @@ dialog.lightbox::backdrop { background: transparent; }
 /* Logo: weißer Schriftzug, im hellen Design auf dunkler Pille */
 .logo-wrap { display: block; border-radius: 999px; padding: 0.15rem 0.5rem; }
 [data-theme="guth-light"] .logo-wrap { background: #17181c; padding-inline: 0.9rem; }
+
+/* Offenes Handy-Menü: Seite dahinter nicht scrollen */
+body:has(#nav-toggle:checked) { overflow: hidden; }
+#nav-burger:focus-visible, #nav-drawer label:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+
+/* Drehender Kopf rechts oben (Markenzeichen der Altseite, jetzt als leichte CSS-Animation) */
+.mascot-corner {
+  position: absolute;
+  z-index: 5;
+  right: 0.75rem;
+  top: 6.3rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 999px;
+  background: url("/assets/images/bilder/kopf.webp") center / cover no-repeat;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-primary) 70%, transparent), 0 10px 30px rgb(0 0 0 / 0.45);
+  image-rendering: auto;
+}
+@media (max-width: 359px) { .mascot-corner { right: 0.5rem; top: 0.5rem; width: 2.75rem; height: 2.75rem; } }
+@media (min-width: 560px) { .mascot-corner { right: 1.25rem; top: 1rem; width: 5rem; height: 5rem; } }
+@media (min-width: 768px) { .mascot-corner { right: 1.5rem; top: 1.25rem; width: 5.5rem; height: 5.5rem; } }
+@media (min-width: 1280px) { .mascot-corner { right: max(1.5rem, calc((100vw - 80rem) / 2 + 1rem)); width: 6rem; height: 6rem; } }
+.is-loaded .mascot-corner { animation: corner-hop 8s ease-in-out 1.5s infinite; }
+@keyframes corner-hop {
+  0%, 7%, 100% { transform: translateY(0) rotate(0); }
+  2.5% { transform: translateY(-1.6rem) rotate(-180deg) scale(1.05); }
+  5% { transform: translateY(0) rotate(-360deg); }
+}
+@media (prefers-reduced-motion: reduce) { .is-loaded .mascot-corner { animation: none; } }

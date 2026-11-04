@@ -8,7 +8,7 @@
 - [Anmelden](<%= config[:site_url] %>/anmelden/): Online-Anfrage zur Anmeldung
 - [Führerscheinreform 2027](<%= config[:site_url] %>/reform-2027/): Was geplant ist (Stand der Planung, Quellen Bundesregierung und BMV)
 - [Über Uns](<%= config[:site_url] %>/ueberuns/): Unsere Vorteile
-- [Preise](<%= config[:site_url] %>/ueberuns/preise/): Preislisten Klasse B, A1, A2/A (Stand April 2022)
+- [Preise](<%= config[:site_url] %>/ueberuns/preise/): Preislisten Klasse B (gilt auch für BF17), A1, A2/A (Stand November 2026)
 - [Links](<%= config[:site_url] %>/ueberuns/links/)
 - [Downloads](<%= config[:site_url] %>/ueberuns/downloads/)
 - [Galerie](<%= config[:site_url] %>/galerie/): Fahrschule, Bestanden, PKW, Motorräder, Videos
@@ -22,5 +22,5 @@
 <% data.site.contacts.each do |c| %>- <%= c.name %> (<%= c.role %>): <%= c.phone %>, <%= c.email %>
 <% end %>- Öffnungszeiten: <%= data.site.hours.map { |h| "#{h.day} #{h.times.join(' & ')}" }.join('; ') %>; <%= data.site.hours_phone %>
 - Theorie-Unterricht: <%= data.site.theory.map { |t| "#{t.day} #{t.time}" }.join('; ') %>
-- Führerscheinklassen: B, BF17, B196, B96, A1, A2, A
+- Führerscheinklassen: B, BF17, B196, B96, AM, A1, A2, A
 - Ausbildungsfahrzeug: aktuelle Mercedes-A-Klasse mit AMG-Paket

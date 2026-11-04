@@ -16,6 +16,27 @@
     });
   }
 
+  // Handy-Menü: Tastatur (Enter/Leertaste), Esc zum Schließen, aria-expanded
+  var navToggle = document.getElementById("nav-toggle");
+  if (navToggle) {
+    var burger = document.getElementById("nav-burger");
+    var sync = function () {
+      if (burger) burger.setAttribute("aria-expanded", navToggle.checked ? "true" : "false");
+    };
+    navToggle.addEventListener("change", sync);
+    [].forEach.call(document.querySelectorAll('label[for="nav-toggle"][role="button"]'), function (lb) {
+      lb.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); navToggle.checked = !navToggle.checked; sync(); }
+      });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && navToggle.checked) { navToggle.checked = false; sync(); if (burger) burger.focus(); }
+    });
+    [].forEach.call(document.querySelectorAll("#nav-drawer a"), function (a) {
+      a.addEventListener("click", function () { navToggle.checked = false; sync(); });
+    });
+  }
+
   // Schnellauswahl: filtert die Themenliste und springt direkt zum Ziel
   var form = document.querySelector("[data-quicksearch]");
   if (form) {
