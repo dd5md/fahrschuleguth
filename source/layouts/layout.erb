@@ -20,7 +20,7 @@
     </main>
 
     <%= partial "partials/footer" %>
-    <script src="<%= asset_path(:js, "site") %>" defer></script>
-    <script src="<%= asset_path(:js, "lightbox") %>" defer></script>
+    <script src="<%= versioned asset_path(:js, "site") %>" defer></script>
+    <script src="<%= versioned asset_path(:js, "lightbox") %>" defer></script>
   </body>
 </html>

@@ -3,6 +3,14 @@
 require "json"
 
 module SiteHelpers
+  # Versionsnummer pro Build: hängt als ?v=… an CSS/JS, damit Browser nach einem Update die neue Datei laden
+  # (die .htaccess erlaubt ein Jahr Cache). Überschreibbar: ASSET_VERSION=2 bundle exec middleman build
+  BUILD_VERSION = (ENV["ASSET_VERSION"] || Time.now.strftime("%Y%m%d%H%M")).freeze
+
+  def versioned(path)
+    "#{path}?v=#{BUILD_VERSION}"
+  end
+
   def site_url
     config[:site_url]
   end
