@@ -4,7 +4,7 @@
   <div class="hero-glow absolute inset-0 -z-10"></div>
   <div class="mx-auto max-w-7xl px-4 pb-10 pt-12 sm:pt-16">
     <% unless breadcrumbs.empty? %>
-      <nav aria-label="Brotkrumen" class="mb-6 text-sm text-base-content/60">
+      <nav aria-label="Brotkrumen" class="mb-6 text-sm text-base-content/70">
         <ol class="flex flex-wrap items-center gap-2">
           <% breadcrumbs.each_with_index do |(name, url), i| %>
             <li class="flex items-center gap-2">
@@ -16,7 +16,7 @@
     <% end %>
     <h1 id="page-title" class="display max-w-5xl" style="font-size:clamp(2.6rem,7.5vw,6rem)"><%= current_page.data.pagetitle || current_page.data.title %></h1>
     <% lead = current_page.data.smalltitle || data.site.subtitle %>
-    <p class="mt-5 max-w-2xl text-lg text-base-content/70 sm:text-xl"><%= lead %></p>
+    <p class="mt-5 max-w-2xl text-lg text-base-content/80 sm:text-xl"><%= lead %></p>
     <% if subnav %>
       <nav aria-label="Unterseiten" class="mt-8">
         <ul class="flex flex-wrap gap-2">

@@ -47,7 +47,7 @@ Abweichung von der Vorgabe „PNG + WebP“: Für Fotos ist der Fallback JPG (PN
 ### Design
 Bewusst **kein** Nachbau der Altseite und nicht das Demo-Layout von dd5md.de, sondern ein eigenes Konzept (Briefing vom 30.10.2026):
 - Dunkelgrau (Graphit, nicht schwarz), Limette (Primär, Aktionen) und Orange (Sekundär, Hervorhebungen; Farben #c4ff4e und #fcb900), kein Rosa; Dark als Standard, Umschalter Hell/Dunkel (`localStorage`).
-- Sehr große weiße Überschriften (Titillium Web, selbst gehostet, nur Latin-Teilsatz, Schnitte 400/600/700). Farbverlauf in der Schrift nur für einzelne Wörter.
+- Sehr große weiße Überschriften (Manrope, variabel, selbst gehostet, nur Latin-Teilsatz). Farbverlauf in der Schrift nur für einzelne Wörter.
 - Kein Hero-Foto-Block: Das Auto-Foto ist weich ausgeblendet im Hintergrund. Danach ein Kachel-Layout (Bento) mit Auto, 30+ Jahre, Klassen, Preise, Zeiten, Uli, Standort, Anmelden.
 - Reihenfolge der Startseite nach dem, was Besucher wissen wollen: Fahrschule/Auto, Klassen, Dein erster Fahrtag, Preise, Reform 2027, bestanden, FAQ, Kontakt.
 - Schnellauswahl (Suchleiste mit Themen, `data/search.yml`) ohne KI und ohne Server; Chips funktionieren auch ohne JavaScript.
@@ -69,6 +69,14 @@ Keine Bewertungen und kein `FAQPage`, weil die Altseite weder Bewertungen noch F
 ## URLs / Weiterleitungen
 Alle URLs der Altseite bleiben identisch (Verzeichnis-URLs mit Slash): `/`, `/ueberuns/`, `/ueberuns/preise/`, `/ueberuns/links/`, `/ueberuns/downloads/`, `/galerie/`, `/galerie/bestanden/`, `/galerie/fahrzeuge/`, `/galerie/motorraeder/`, `/galerie/videos/`, `/news/`, `/kontakt/`, `/impressum/`, `/404.html`.
 Es sind daher keine Weiterleitungen nötig. Einzige Abweichung: Das Alt-Menü verlinkte `/galerie/bestanden` ohne Slash – das wird vom Webserver auf `/galerie/bestanden/` umgeleitet.
+
+## Testversion (test.fahrschuleguth.de) und Live-Bau
+
+```bash
+./scripts/build_test.sh   # Testversion: noindex, robots.txt sperrt alles, gelbes Banner, Adresse test.fahrschuleguth.de
+./scripts/build_live.sh   # echte Seite: indexierbar, ohne Banner
+```
+Danach jeweils den **Inhalt** von `build/` (nicht den Ordner selbst) in das Startverzeichnis der Domain hochladen. Die Testversion sendet Formulare wirklich an `uli@fahrschuleguth.de`. Ohne Skript: `NOINDEX=1 SITE_URL=https://test.fahrschuleguth.de bundle exec middleman build`.
 
 ## Offene Punkte
 - [ ] **Datenschutzerklärung fehlt** (auch in der Altseite nicht vorhanden); rechtlich nötig, besonders mit Anmeldeformular. `/datenschutz/` ist ein **Entwurf** (`noindex`), der beschreibt, was die Seite technisch tut. Gelb markiert fehlen Hoster, Löschfrist der Logfiles und die Anpassung ans Formular; Text vom Inhaber/Anwalt/Generator prüfen lassen, dann Hinweis und `noindex` entfernen.
