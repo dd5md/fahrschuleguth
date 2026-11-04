@@ -29,20 +29,20 @@ breadcrumb_parents:
             </ul>
           </div>
         </article>
-        <%# Klassen ohne Preisliste (z. B. AM): Karte „auf Rücksprache“ direkt hinter der ersten Liste %>
-        <% if i == 0 %>
-          <% data.klassen.select { |k| k.preis_text }.each do |k| %>
-            <article id="klasse-<%= k.id %>" class="tile scroll-mt-24" aria-labelledby="klasse-<%= k.id %>-titel">
-              <div class="p-6 sm:p-8">
-                <h2 id="klasse-<%= k.id %>-titel" class="text-2xl font-bold tracking-tight">Klasse <span class="text-primary"><%= k.kurz %></span></h2>
-                <p class="text-sm italic text-base-content/80"><%= k.titel %></p>
-                <p class="mt-6 text-2xl font-bold tracking-tight">Preis <span class="text-primary"><%= k.preis_text %></span></p>
-                <p class="mt-3 text-base-content/80">Ruf einfach an oder schreib uns: <a class="link link-primary whitespace-nowrap font-semibold" href="<%= tel_link data.site.contacts.first.tel %>"><%= phone data.site.contacts.first.phone %></a></p>
-                <a href="/fuehrerschein/<%= k.id %>/" class="link mt-5 inline-flex items-center gap-2 text-sm font-semibold">Zur Klasse <%= icon :arrow, css: "size-4" %></a>
-              </div>
-            </article>
-          <% end %>
-        <% end %>
+      <% end %>
+      <%# Klassen ohne Preisliste (z. B. AM): eigene breite Karte unter den Preislisten %>
+      <% data.klassen.select { |k| k.preis_text }.each do |k| %>
+        <article id="klasse-<%= k.id %>" class="tile scroll-mt-24 lg:col-span-3" aria-labelledby="klasse-<%= k.id %>-titel">
+          <div class="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <h2 id="klasse-<%= k.id %>-titel" class="text-2xl font-bold tracking-tight">Klasse <span class="text-primary"><%= k.kurz %></span></h2>
+              <p class="text-sm italic text-base-content/80"><%= k.titel %></p>
+              <p class="mt-4 text-2xl font-bold tracking-tight">Preis <span class="text-primary"><%= k.preis_text %></span></p>
+              <p class="mt-2 text-base-content/80">Ruf einfach an oder schreib uns: <a class="link link-primary whitespace-nowrap font-semibold" href="<%= tel_link data.site.contacts.first.tel %>"><%= phone data.site.contacts.first.phone %></a></p>
+            </div>
+            <a href="/fuehrerschein/<%= k.id %>/" class="link inline-flex items-center gap-2 text-sm font-semibold">Zur Klasse <%= icon :arrow, css: "size-4" %></a>
+          </div>
+        </article>
       <% end %>
     </div>
 
