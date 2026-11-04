@@ -1,0 +1,92 @@
+<section id="ueberblick" class="mx-auto max-w-7xl px-4 pb-8" aria-labelledby="ueberblick-title">
+  <h2 id="ueberblick-title" class="sr-only">Fahrschule Guth auf einen Blick</h2>
+  <div class="grid gap-4 lg:grid-cols-12">
+
+    <%# 1 Auto %>
+    <a href="/galerie/fahrzeuge/" class="tile group min-h-[22rem] lg:col-span-7 lg:row-span-2">
+      <div class="absolute inset-0">
+        <%= picture_tag "hero/a-klasse-schaufenster", alt: "Zwei Mercedes-A-Klassen der Fahrschule Guth vor dem Schaufenster in Bochum-Weitmar", sizes: "(min-width: 1024px) 58vw, 100vw", class: "h-full", style: "height:100%;object-fit:cover" %>
+        <div class="absolute inset-0 bg-gradient-to-t from-base-100 via-base-100/30 to-transparent"></div>
+      </div>
+      <div class="relative flex h-full min-h-[22rem] flex-col justify-end p-7 sm:p-9">
+        <p class="eyebrow">Dein Fahrschulauto</p>
+        <p class="h2 mt-2">Mercedes A-Klasse<br>mit AMG-Paket</p>
+        <p class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-base-content/80">Fahrzeuge ansehen <%= icon :arrow, css: "size-4 transition group-hover:translate-x-1" %></p>
+      </div>
+    </a>
+
+    <%# 2 Erfahrung %>
+    <div class="tile tile-hover flex flex-col justify-between p-7 sm:p-9 lg:col-span-5">
+      <p class="eyebrow">Erfahrung</p>
+      <p class="mt-4 text-[clamp(5rem,13vw,9rem)] font-bold leading-[0.85] tracking-[-0.06em]"><span class="text-gradient">30+</span></p>
+      <p class="mt-3 max-w-xs text-base-content/70">Jahre Fahrschule in Bochum-Weitmar. Klassen B, A1, A2 &amp; A.</p>
+    </div>
+
+    <%# 3 Klassen %>
+    <div class="tile p-7 sm:p-9 lg:col-span-5">
+      <p class="eyebrow">Dein Führerschein</p>
+      <ul class="mt-5 grid grid-cols-4 gap-2 sm:gap-3">
+        <% %w[b a1 a2 a].each do |id| %>
+          <li><a href="/fuehrerschein/#<%= id %>" class="grid aspect-square place-items-center rounded-2xl border border-base-content/12 bg-base-100/50 text-2xl font-bold tracking-tight transition hover:border-primary hover:bg-primary hover:text-primary-content sm:text-3xl"><%= id.upcase %></a></li>
+        <% end %>
+      </ul>
+      <a href="/fuehrerschein/" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">Alle Klassen erklärt <%= icon :arrow, css: "size-4" %></a>
+    </div>
+
+    <%# 4 Preise %>
+    <a href="/ueberuns/preise/" class="tile group p-7 sm:p-9 lg:col-span-4">
+      <p class="eyebrow">Preise</p>
+      <p class="mt-4 text-[clamp(3.5rem,8vw,5.5rem)] font-bold leading-[0.9] tracking-[-0.05em]">470 €</p>
+      <p class="mt-2 text-base-content/70">Grundbetrag inkl. Theorieunterricht, Klasse B. Übungsstunde 60 €.</p>
+      <p class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary">Zur Preisliste <%= icon :arrow, css: "size-4 transition group-hover:translate-x-1" %></p>
+    </a>
+
+    <%# 5 Öffnungszeiten %>
+    <div class="tile p-7 sm:p-9 lg:col-span-4">
+      <p class="eyebrow">Büro &amp; Theorie</p>
+      <dl class="mt-5 space-y-4">
+        <% data.site.hours.each do |h| %>
+          <div>
+            <dt class="text-sm text-base-content/60"><%= h.day %></dt>
+            <dd class="text-lg font-semibold tracking-tight"><%= h.times.join(" · ").gsub(" Uhr", "") %> Uhr</dd>
+          </div>
+        <% end %>
+        <div>
+          <dt class="text-sm text-base-content/60">Theorie-Unterricht</dt>
+          <dd class="text-lg font-semibold tracking-tight">Mo &amp; Do, 19:00 bis 20:30 Uhr</dd>
+        </div>
+      </dl>
+    </div>
+
+    <%# 6 Uli %>
+    <div class="tile flex flex-col justify-between gap-5 p-7 sm:p-9 lg:col-span-4">
+      <div class="flex items-center gap-4">
+        <div class="size-16 shrink-0 overflow-hidden rounded-full ring-2 ring-primary/60">
+          <%= picture_tag "galerie/fahrschule/fahrschule_10", alt: "Fahrlehrer Uli Guth im Büro der Fahrschule", class: "h-full", style: "height:100%;object-fit:cover;object-position:50% 25%", sizes: "64px" %>
+        </div>
+        <div>
+          <p class="text-xl font-bold tracking-tight">Uli Guth</p>
+          <p class="text-sm text-base-content/60">Inhaber · Fahrlehrer</p>
+        </div>
+      </div>
+      <p class="text-base-content/75">Fragen zur Ausbildung? Ruf einfach an, Uli beantwortet sie dir persönlich.</p>
+      <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-outline rounded-full border-base-content/25"><%= icon :phone, css: "size-5 text-primary" %> <%= data.site.contacts.first.phone %></a>
+    </div>
+
+    <%# 7 Standort %>
+    <a href="https://www.openstreetmap.org/?mlat=<%= data.site.geo.lat %>&amp;mlon=<%= data.site.geo.lon %>#map=17/<%= data.site.geo.lat %>/<%= data.site.geo.lon %>" target="_blank" rel="noopener noreferrer" class="tile group flex flex-col justify-between gap-6 p-7 sm:p-9 lg:col-span-6">
+      <div>
+        <p class="eyebrow">Standort</p>
+        <address class="h3 mt-4 not-italic">Hattinger Str. 136<br>44795 Bochum-Weitmar</address>
+      </div>
+      <p class="inline-flex items-center gap-2 text-sm font-semibold text-primary"><%= icon :pin, css: "size-4" %> Route ansehen <%= icon :external, css: "size-4" %></p>
+    </a>
+
+    <%# 8 Anmelden %>
+    <a href="/anmelden/" class="tile tile-accent group flex flex-col justify-between gap-6 p-7 sm:p-9 lg:col-span-6">
+      <p class="text-xs font-bold uppercase tracking-[0.14em] opacity-80">Bereit?</p>
+      <p class="h2">Melde dich an und<br>fahr los.</p>
+      <p class="inline-flex items-center gap-2 font-semibold">Zur Anmeldung <%= icon :arrow, css: "size-5 transition group-hover:translate-x-1" %></p>
+    </a>
+  </div>
+</section>

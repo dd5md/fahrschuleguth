@@ -1,108 +1,266 @@
 @import "tailwindcss";
 @config "../../../tailwind.config.js";
-@source "../../**/*.{erb,html,md}";
+@source "../../**/*.{erb,html,md,js}";
 @source "../../../lib/**/*.rb";
 
 /* daisyUI 5 wird per @plugin in der CSS-Quelldatei registriert (nicht per require in tailwind.config.js) */
 @plugin "daisyui" {
   themes: guth-dark --default --prefersdark, guth-light;
+  include: button, dropdown, menu, swap, kbd, input, select, textarea, checkbox, link;
 }
 
-/* Akzent: Signal-Gelb/Amber (Verkehrs- und Fahrschul-Beschilderung, wie die Ladenfront), dazu Blau
-   als Zweitfarbe (blaue Stühle im Theorieraum, alte Seitenfarbe). */
+/* ---------------------------------------------------------------------------
+   Themes: Graphit (dunkelgrau, nicht schwarz) mit EINER Akzentfarbe (Rosa).
+   --------------------------------------------------------------------------- */
 @plugin "daisyui/theme" {
   name: "guth-dark";
   default: true;
   prefersdark: true;
   color-scheme: dark;
-  --color-base-100: #0a0d14;
-  --color-base-200: #111621;
-  --color-base-300: #1b2230;
-  --color-base-content: #e8edf4;
-  --color-primary: #f5b301;
-  --color-primary-content: #1a1300;
-  --color-secondary: #4c6ef5;
-  --color-secondary-content: #ffffff;
-  --color-accent: #34d399;
-  --color-accent-content: #04130d;
-  --color-neutral: #161c28;
-  --color-neutral-content: #e8edf4;
-  --color-info: #38bdf8;
-  --color-success: #34d399;
-  --color-warning: #fbbf24;
-  --color-error: #f87171;
-  --radius-selector: 1rem;
-  --radius-field: 0.75rem;
-  --radius-box: 1.25rem;
+  --color-base-100: #17181c;
+  --color-base-200: #1e1f25;
+  --color-base-300: #2a2b33;
+  --color-base-content: #f4f4f6;
+  --color-primary: #ff5a9e;
+  --color-primary-content: #1a0610;
+  --color-secondary: #b9bbc7;
+  --color-secondary-content: #17181c;
+  --color-accent: #ff5a9e;
+  --color-accent-content: #1a0610;
+  --color-neutral: #24252c;
+  --color-neutral-content: #f4f4f6;
+  --color-info: #8ab4ff;
+  --color-success: #5fd3a2;
+  --color-warning: #ffcf5c;
+  --color-error: #ff7a7a;
+  --radius-selector: 999px;
+  --radius-field: 0.9rem;
+  --radius-box: 1.5rem;
 }
 
 @plugin "daisyui/theme" {
   name: "guth-light";
   color-scheme: light;
-  --color-base-100: #ffffff;
-  --color-base-200: #f4f6fa;
-  --color-base-300: #e3e8f0;
-  --color-base-content: #111621;
-  --color-primary: #b45309;
+  --color-base-100: #fafafb;
+  --color-base-200: #f0f0f3;
+  --color-base-300: #e1e2e8;
+  --color-base-content: #17181c;
+  --color-primary: #d4165f;
   --color-primary-content: #ffffff;
-  --color-secondary: #3b5bdb;
+  --color-secondary: #50525e;
   --color-secondary-content: #ffffff;
-  --color-accent: #059669;
+  --color-accent: #d4165f;
   --color-accent-content: #ffffff;
-  --color-neutral: #111621;
+  --color-neutral: #17181c;
   --color-neutral-content: #ffffff;
-  --color-info: #0284c7;
-  --color-success: #059669;
-  --color-warning: #d97706;
-  --color-error: #dc2626;
-  --radius-selector: 1rem;
-  --radius-field: 0.75rem;
-  --radius-box: 1.25rem;
+  --color-info: #1d5fd1;
+  --color-success: #0f8a5f;
+  --color-warning: #b86e00;
+  --color-error: #c62828;
+  --radius-selector: 999px;
+  --radius-field: 0.9rem;
+  --radius-box: 1.5rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Schrift: Inter Tight (variabel), selbst gehostet, nur Latin-Teilsatz (Umlaute, ß)
+   --------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/fonts/inter-tight-latin-wght-normal.woff2") format("woff2-variations");
+  src: url("/assets/fonts/inter-tight-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@theme {
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
+  scroll-padding-top: 5.5rem;
 }
 
 body {
   overflow-x: clip;
+  font-feature-settings: "ss01", "cv11";
 }
 
-/* Glow-Hintergrund oben auf der Seite */
-.glow-bg {
-  background-image:
-    radial-gradient(ellipse 60% 40% at 15% 0%, color-mix(in oklab, var(--color-primary) 18%, transparent), transparent 70%),
-    radial-gradient(ellipse 50% 40% at 90% 10%, color-mix(in oklab, var(--color-secondary) 16%, transparent), transparent 70%);
+/* ---------------------------------------------------------------------------
+   Typografie: sehr große Überschriften, enge Zeichenabstände
+   --------------------------------------------------------------------------- */
+.display {
+  font-size: clamp(2.5rem, 9.2vw, 8.25rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  font-weight: 750;
+  text-wrap: balance;
+}
+
+.h2 {
+  font-size: clamp(2.1rem, 5.4vw, 4.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  font-weight: 720;
+  text-wrap: balance;
+}
+
+.h3 {
+  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 650;
+  color: var(--color-primary);
+}
+
+/* Farbverlauf in der Schrift: sparsam, nur für einzelne Wörter */
+.text-gradient {
+  background-image: linear-gradient(95deg, color-mix(in oklab, var(--color-primary) 55%, white), var(--color-primary) 55%, color-mix(in oklab, var(--color-primary) 80%, #ff7a3c));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------------------------------------------------------------------------
+   Kacheln (Bento): Tiefe durch Schatten, feine Kante, leichter Lichtverlauf
+   --------------------------------------------------------------------------- */
+.tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  background: linear-gradient(160deg, var(--color-base-200), color-mix(in oklab, var(--color-base-200) 70%, var(--color-base-100)));
+  border: 1px solid color-mix(in oklab, var(--color-base-content) 9%, transparent);
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, var(--color-base-content) 7%, transparent),
+    0 1px 2px rgb(0 0 0 / 0.25),
+    0 24px 48px -24px rgb(0 0 0 / 0.55);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+a.tile:hover,
+.tile-hover:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in oklab, var(--color-primary) 55%, transparent);
+}
+
+.tile-accent {
+  background: linear-gradient(150deg, color-mix(in oklab, var(--color-primary) 92%, white), var(--color-primary) 40%, color-mix(in oklab, var(--color-primary) 70%, #7a0a3a));
+  color: var(--color-primary-content);
+  border-color: transparent;
+}
+
+[data-theme="guth-light"] .tile {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.8),
+    0 1px 2px rgb(0 0 0 / 0.06),
+    0 24px 48px -28px rgb(0 0 0 / 0.25);
 }
 
 .glass {
-  background: color-mix(in oklab, var(--color-base-100) 60%, transparent);
-  border: 1px solid color-mix(in oklab, var(--color-base-content) 12%, transparent);
-  backdrop-filter: blur(14px);
+  background: color-mix(in oklab, var(--color-base-100) 72%, transparent);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
 }
 
-.card-glass {
-  background: color-mix(in oklab, var(--color-base-200) 80%, transparent);
-  border: 1px solid color-mix(in oklab, var(--color-base-content) 10%, transparent);
+/* ---------------------------------------------------------------------------
+   Hero: Foto weich ausgeblendet im Hintergrund + rosa Glühen
+   --------------------------------------------------------------------------- */
+.hero-photo {
+  -webkit-mask-image: linear-gradient(to left, #000 0%, #000 35%, transparent 92%), linear-gradient(to top, transparent 0%, #000 40%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to left, #000 0%, #000 35%, transparent 92%), linear-gradient(to top, transparent 0%, #000 40%);
+  mask-composite: intersect;
+}
+
+.hero-glow {
+  background:
+    radial-gradient(40rem 26rem at 8% 0%, color-mix(in oklab, var(--color-primary) 20%, transparent), transparent 70%),
+    radial-gradient(30rem 22rem at 100% 100%, color-mix(in oklab, var(--color-primary) 12%, transparent), transparent 70%);
+}
+
+/* ---------------------------------------------------------------------------
+   Maskottchen (Kopf des Inhabers): leichte CSS-Animation, startet erst nach dem Laden
+   --------------------------------------------------------------------------- */
+.mascot {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  background: url("/assets/images/bilder/kopf.webp") center / cover no-repeat;
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--color-primary) 60%, transparent);
+}
+
+.is-loaded .mascot {
+  animation: mascot-hop 9s ease-in-out 1.2s infinite;
+}
+
+@keyframes mascot-hop {
+  0%, 6%, 100% { transform: translateY(0) rotate(0); }
+  2% { transform: translateY(-1.1rem) rotate(180deg); }
+  4% { transform: translateY(0) rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .is-loaded .mascot { animation: none; }
+  html { scroll-behavior: auto; }
 }
 
 /* Lesbarer Fließtext für Rechtstexte */
-.prose-legal h2 { font-size: 1.25rem; font-weight: 700; margin: 2rem 0 .5rem; }
-.prose-legal h3 { font-size: 1.05rem; font-weight: 700; margin: 1.5rem 0 .4rem; }
-.prose-legal p { margin: 0 0 .9rem; line-height: 1.65; color: color-mix(in oklab, var(--color-base-content) 85%, transparent); }
+.prose-legal h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; margin: 2.2rem 0 .6rem; }
+.prose-legal h3 { font-size: 1.1rem; font-weight: 700; margin: 1.5rem 0 .4rem; }
+.prose-legal p { margin: 0 0 .9rem; line-height: 1.65; color: color-mix(in oklab, var(--color-base-content) 82%, transparent); }
 
+/* Lightbox */
 dialog.lightbox {
   width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0;
   background: rgb(0 0 0 / .92); color: #fff;
 }
 dialog.lightbox::backdrop { background: transparent; }
 
-/* Hero: schmaler Glow in der Mitte (wie dd5md.de) */
-.hero-bg {
-  background-image: radial-gradient(
-    ellipse 40% 55% at 50% 35%,
-    color-mix(in oklab, var(--color-primary) 20%, transparent),
-    transparent 100%
-  );
+/* Fokus gut sichtbar (Barrierefreiheit) */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
+
+/* Tabs (Preise): Pillen, per JS umschaltbar; ohne JS sind alle Panels sichtbar */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-weight: 650;
+  font-size: 0.95rem;
+  border: 1px solid color-mix(in oklab, var(--color-base-content) 18%, transparent);
+  background: color-mix(in oklab, var(--color-base-100) 55%, transparent);
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.pill:hover { border-color: var(--color-primary); color: var(--color-primary); }
+.pill[aria-selected="true"], .pill[aria-current="page"] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-primary-content);
+}
+
+/* Formularfelder: klare Kante auf dunklem Grund */
+.input, .select, .textarea {
+  background: color-mix(in oklab, var(--color-base-100) 80%, transparent);
+  border: 1px solid color-mix(in oklab, var(--color-base-content) 22%, transparent);
+  box-shadow: none;
+}
+.input:focus, .select:focus, .textarea:focus, .input:focus-within {
+  border-color: var(--color-primary);
+  outline: 2px solid color-mix(in oklab, var(--color-primary) 35%, transparent);
+  outline-offset: 1px;
+}
+.checkbox { border-color: color-mix(in oklab, var(--color-base-content) 40%, transparent); }

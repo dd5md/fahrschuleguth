@@ -1,0 +1,48 @@
+<section id="home" class="relative isolate overflow-hidden" aria-labelledby="hero-title">
+  <div class="hero-glow absolute inset-0 -z-20"></div>
+  <%# Foto weich ausgeblendet im Hintergrund (LCP-Bild: früh laden, feste Maße) %>
+  <div class="hero-photo absolute right-0 top-0 -z-10 h-[58%] w-full opacity-45 sm:h-full sm:w-[78%] lg:w-[62%]" aria-hidden="true">
+    <%= picture_tag "hero/a-klasse-seite", alt: "", loading: "eager", fetchpriority: "high", sizes: "(min-width: 1024px) 62vw, (min-width: 640px) 78vw, 80vw", class: "h-full", style: "height:100%;object-fit:cover;object-position:35% 60%" %>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:pt-20 lg:pb-24">
+    <p class="inline-flex items-center gap-3 rounded-full border border-base-content/15 bg-base-100/60 py-1.5 pl-1.5 pr-4 text-sm font-semibold backdrop-blur">
+      <span class="mascot" role="img" aria-label="Uli Guth"></span>
+      Nicht in 7 Tagen – aber total Guth!
+    </p>
+
+    <h1 id="hero-title" class="display mt-6 max-w-5xl">
+      Fahrschule in <span class="text-gradient whitespace-nowrap">Bochum-Weitmar</span>
+    </h1>
+
+    <p class="mt-8 max-w-2xl text-lg leading-relaxed text-base-content/75 sm:text-xl">
+      Wir bilden seit über <strong class="text-base-content">30 Jahren</strong> erfolgreich die Klassen B, A1, A2 <strong class="text-base-content">&amp;</strong> A aus.
+      Für die Ausbildung nutzen wir die aktuelle Mercedes-A-Klasse mit AMG-Paket<strong class="text-base-content">!</strong>
+    </p>
+
+    <div class="mt-9 flex flex-wrap items-center gap-3">
+      <a href="/anmelden/" class="btn btn-primary btn-lg rounded-full px-8">Jetzt anmelden <%= icon :arrow, css: "size-5" %></a>
+      <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-lg rounded-full border-base-content/20 bg-base-100/40 px-6 backdrop-blur hover:bg-base-content/10"><%= icon :phone, css: "size-5 text-primary" %> <%= data.site.contacts.first.phone %></a>
+    </div>
+
+    <%# Schnellauswahl: ohne KI, ohne Server; Chips funktionieren auch ohne JavaScript %>
+    <form class="relative mt-14 max-w-2xl" role="search" data-quicksearch>
+      <label for="quicksearch" class="eyebrow mb-3 block">Was möchtest du wissen?</label>
+      <div class="flex items-center gap-3 rounded-full border border-base-content/15 bg-base-100/70 px-5 py-3.5 shadow-xl shadow-black/20 backdrop-blur focus-within:border-primary">
+        <%= icon :search, css: "size-5 shrink-0 text-base-content/60" %>
+        <input id="quicksearch" type="search" autocomplete="off" class="w-full bg-transparent text-lg outline-none placeholder:text-base-content/45" placeholder="z. B. Preise, Klasse B, erster Fahrtag …" aria-controls="quicksearch-results">
+        <kbd class="kbd kbd-sm hidden sm:inline-flex" aria-hidden="true">/</kbd>
+      </div>
+      <ul id="quicksearch-results" data-results hidden class="absolute inset-x-0 top-full z-30 mt-2 max-h-80 overflow-auto rounded-3xl border border-base-content/15 bg-base-200 p-2 shadow-2xl">
+        <% data.search.each do |it| %>
+          <li data-text="<%= it.label %> <%= it.keywords %>"><a class="flex items-center justify-between rounded-2xl px-4 py-3 hover:bg-base-content/10" href="<%= it.href %>"><span><%= it.label %></span><%= icon :arrow, css: "size-4 text-primary" %></a></li>
+        <% end %>
+      </ul>
+      <ul class="mt-4 flex flex-wrap gap-2" aria-label="Häufige Themen">
+        <% [["Anmelden", "/anmelden/"], ["Preise", "/ueberuns/preise/"], ["Klassen", "/fuehrerschein/"], ["Erster Fahrtag", "/#erster-fahrtag"], ["Kontakt", "/kontakt/"]].each do |label, href| %>
+          <li><a class="pill text-sm backdrop-blur" href="<%= href %>"><%= label %></a></li>
+        <% end %>
+      </ul>
+    </form>
+  </div>
+</section>
