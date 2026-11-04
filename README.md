@@ -2,7 +2,7 @@
 
 Neuaufbau der Website der Fahrschule Uli Guth (Bochum-Weitmar).
 Middleman 4 · ERB (Layout + Partials) · Tailwind CSS 4 · daisyUI 5 · `external_pipeline` (Tailwind CLI, kein Sprockets).
-Inhalte und URLs stammen aus dem Alt-Repo `dd5md/fahrschuleguth.de`, Stack und Design aus `dd5md/dd5md.de`.
+Inhalte und URLs stammen aus dem Alt-Repo `dd5md/fahrschuleguth.de`, der Stack aus `dd5md/dd5md.de`; das Design ist eigenständig (siehe unten).
 
 ## Setup
 
