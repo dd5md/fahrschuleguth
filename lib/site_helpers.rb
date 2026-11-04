@@ -65,6 +65,7 @@ module SiteHelpers
       "slogan" => s.slogan,
       "description" => s.description,
       "image" => "#{site_url}#{config[:default_og_image]}",
+      "logo" => "#{site_url}/assets/images/logo.svg",
       "telephone" => s.contacts.first.tel,
       "email" => s.contacts.first.email,
       "founder" => { "@type" => "Person", "name" => s.owner },

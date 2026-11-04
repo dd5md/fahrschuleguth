@@ -46,7 +46,7 @@ Abweichung von der Vorgabe „PNG + WebP“: Für Fotos ist der Fallback JPG (PN
 
 ### Design
 Bewusst **kein** Nachbau der Altseite und nicht das Demo-Layout von dd5md.de, sondern ein eigenes Konzept (Briefing vom 30.10.2026):
-- Dunkelgrau (Graphit, nicht schwarz), **eine** Akzentfarbe (Rosa), kein Gelb; Dark als Standard, Umschalter Hell/Dunkel (`localStorage`).
+- Dunkelgrau (Graphit, nicht schwarz), Limette (Primär, Aktionen) und Orange (Sekundär, Hervorhebungen; Farben #c4ff4e und #fcb900), kein Rosa; Dark als Standard, Umschalter Hell/Dunkel (`localStorage`).
 - Sehr große weiße Überschriften mit engem Zeichenabstand (Inter Tight, selbst gehostet, nur Latin-Teilsatz). Farbverlauf in der Schrift nur für einzelne Wörter.
 - Kein Hero-Foto-Block: Das Auto-Foto ist weich ausgeblendet im Hintergrund. Danach ein Kachel-Layout (Bento) mit Auto, 30+ Jahre, Klassen, Preise, Zeiten, Uli, Standort, Anmelden.
 - Reihenfolge der Startseite nach dem, was Besucher wissen wollen: Fahrschule/Auto, Klassen, Dein erster Fahrtag, Preise, Reform 2027, bestanden, FAQ, Kontakt.
