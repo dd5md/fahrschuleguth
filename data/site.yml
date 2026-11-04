@@ -31,7 +31,7 @@ contacts:
     email: tina@fahrschuleguth.de
     image: bilder/tina
     image_alt: Motorradfahrer an einer Tankstelle
-facebook: 'https://www.facebook.com/fahrschuleguth'
+facebook: 'https://www.facebook.com/FahrschuleGuth/'
 nav:
   - { label: Fahrschule, href: /ueberuns/ }
   - { label: Führerschein, href: /fuehrerschein/ }

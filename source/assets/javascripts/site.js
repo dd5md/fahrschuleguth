@@ -76,6 +76,7 @@
       f.src = box.getAttribute("data-embed");
       f.title = box.getAttribute("data-title") || "Eingebetteter Inhalt";
       f.className = "size-full";
+      if (box.getAttribute("data-height")) { box.style.minHeight = box.getAttribute("data-height") + "px"; f.style.minHeight = box.getAttribute("data-height") + "px"; }
       f.setAttribute("allow", "encrypted-media; picture-in-picture");
       f.setAttribute("allowfullscreen", "");
       box.innerHTML = "";
