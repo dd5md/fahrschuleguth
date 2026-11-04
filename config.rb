@@ -53,6 +53,11 @@ activate :external_pipeline,
 # ---------------------------------------------------------------------------
 helpers SiteHelpers
 
+# Live-Reload im Browser beim Speichern (nur im Dev-Server)
+configure :development do
+  activate :livereload
+end
+
 configure :build do
   activate :minify_html, remove_quotes: false if defined?(Middleman::MinifyHtml)
 end
