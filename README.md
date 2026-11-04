@@ -80,7 +80,7 @@ Danach jeweils den **Inhalt** von `build/` (nicht den Ordner selbst) in das Star
 
 ## Offene Punkte
 
-- [ ] **Facebook-Feed** (`partials/_facebook_feed.erb`, auf `/news/`): lädt nach Klick das Seitenplugin von `facebook.com/FahrschuleGuth/`. Nach dem Hochladen einmal klicken und prüfen, ob die Beiträge erscheinen. Das klappt nur bei einer **öffentlichen Facebook-Seite** (nicht bei einem privaten Profil). Ob es eine Seite ist, konnte ich von hier nicht prüfen. Datenschutz-Entwurf um Facebook ergänzt (lädt erst nach Klick).
+- [ ] **Facebook:** Das Seitenplugin wurde bewusst nicht eingebaut (passt nicht ins dunkle Design, Fotos der Fahrschüler liefen ungefiltert mit). Es gibt nur den Link zur Seite `facebook.com/FahrschuleGuth/` (Footer, News). Fotos der Bestandenen weiter von Hand pflegen.
 
 - [ ] **Google-Bewertung** steht im Hero („4,9 von 5 bei Google“, `data/site.yml` unter `google:`). Anzahl (382, laut Google-Suche vom 04.11.2026) ist eingetragen. Es fehlt noch der **Link zum Google-Unternehmensprofil** (`url`); den Link zum Profil bei Google Maps öffnen und über „Teilen“ kopieren. Nur Zahlen eintragen, die stimmen und aktuell sind. Bewusst **kein** `AggregateRating` im JSON-LD: Google zeigt Sterne für selbst eingebundene Bewertungen eigener Firmenseiten nicht und wertet das ggf. als irreführend.
 - [ ] **Erfolgsquoten** (`data/erfolg.yml`): Solange leer, erscheint nichts. Uli kann Quote Theorie/Praxis, Zeitraum und Anzahl Ausgebildete eintragen lassen. Ob und wie die Veröffentlichung Pflicht wird, ist laut Bundesregierung/BMV noch offen („sollen künftig in der Mobilithek veröffentlicht werden“).
