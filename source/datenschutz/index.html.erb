@@ -1,16 +1,51 @@
 ---
 title: Datenschutz
 pagetitle: Datenschutzerklärung
-smalltitle: Platzhalter, wird vor Veröffentlichung durch eine rechtssichere Erklärung ersetzt.
+smalltitle: Wie wir mit deinen Daten auf dieser Website umgehen.
 description: Datenschutzerklärung der Fahrschule Guth in Bochum-Weitmar.
 robots: 'noindex, follow'
 breadcrumb_parents: []
 ---
 <%= partial "partials/page_header" %>
 <section class="mx-auto max-w-3xl px-4 py-14 prose-legal">
-  <p class="rounded-2xl border border-warning/40 bg-warning/10 p-4 text-sm"><strong>Hinweis für den Betreiber:</strong> Diese Seite ist ein Platzhalter. Eine rechtssichere Datenschutzerklärung (Verantwortlicher, Server-Logfiles, Anmeldeformular/E-Mail-Kontakt, Betroffenenrechte) muss vor dem Livegang ergänzt werden, zum Beispiel über einen Datenschutz-Generator oder Rechtsberatung.</p>
-  <h2>Verantwortlicher</h2>
-  <p>Fahrschule Ulrich Guth, Hattinger Str. 136, 44795 Bochum. Kontakt: <%= data.site.contacts.first.email %></p>
-  <h2>Cookies und Tracking</h2>
-  <p>Diese Website setzt keine Tracking- oder Werbe-Cookies und bindet keine externen Schriften oder Statistik-Dienste ein. Inhalte von Drittanbietern (z. B. YouTube-Videos) werden erst nach einem Klick geladen. Deine Wahl für das helle oder dunkle Design speichert dein Browser lokal.</p>
+  <div class="mb-10 rounded-2xl border border-warning/50 bg-warning/10 p-5 text-sm">
+    <p class="!mb-2 font-bold">ENTWURF, noch nicht rechtlich geprüft</p>
+    <p class="!mb-0">Dieser Text beschreibt, was diese Website technisch tut. Vor dem Livegang müssen die <mark class="rounded bg-warning/40 px-1 text-base-content">markierten Stellen</mark> ergänzt und der Text von Inhaber, Datenschutzgenerator oder Rechtsberatung geprüft werden. Danach den Hinweis und <code>robots: noindex</code> in dieser Datei entfernen.</p>
+  </div>
+
+  <h2>1. Verantwortlicher</h2>
+  <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>
+    Fahrschule Ulrich Guth, Hattinger Str. 136, 44795 Bochum<br>
+    Telefon: <%= data.site.contacts.first.phone %> · E-Mail: <%= data.site.contacts.first.email %></p>
+
+  <h2>2. Rechtsgrundlagen</h2>
+  <p>Wir verarbeiten personenbezogene Daten nur, wenn dies erlaubt ist: zur Erfüllung eines Vertrags oder zur Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO), aufgrund deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) oder zur Wahrung unserer berechtigten Interessen (Art. 6 Abs. 1 lit. f DSGVO), zum Beispiel am sicheren und stabilen Betrieb dieser Website.</p>
+
+  <h2>3. Hosting und Server-Logfiles</h2>
+  <p>Beim Aufruf dieser Website übermittelt dein Browser automatisch Daten an unseren Webserver, die in sogenannten Logfiles gespeichert werden: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, übertragene Datenmenge, Referrer-URL sowie Browser- und Betriebssystemangaben. Die Verarbeitung dient der Auslieferung der Website und der Sicherheit (Art. 6 Abs. 1 lit. f DSGVO). Die Logfiles werden nach <mark class="rounded bg-warning/40 px-1 text-base-content">[Anzahl Tage laut Hoster eintragen]</mark> Tagen gelöscht.</p>
+  <p>Die Website wird bei <mark class="rounded bg-warning/40 px-1 text-base-content">[Name und Anschrift des Hosting-Anbieters eintragen]</mark> gehostet. Mit dem Anbieter besteht ein Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO).</p>
+
+  <h2>4. Cookies und lokale Speicherung</h2>
+  <p>Diese Website setzt <strong>keine Cookies</strong> und nutzt <strong>keine Analyse-, Tracking- oder Werbedienste</strong>. Wenn du zwischen dunklem und hellem Design umschaltest, speichert dein Browser diese Auswahl lokal auf deinem Gerät (Eintrag „theme“ im lokalen Speicher). Die Information verlässt dein Gerät nicht und dient nur der Darstellung.</p>
+
+  <h2>5. Schriftarten</h2>
+  <p>Die verwendete Schriftart (Inter Tight) wird von unserem eigenen Server ausgeliefert. Es wird dafür keine Verbindung zu Servern von Google oder anderen Anbietern aufgebaut.</p>
+
+  <h2>6. Kontakt und Anmeldung</h2>
+  <p>Wenn du uns anrufst oder eine E-Mail schreibst, verarbeiten wir die dabei übermittelten Daten (zum Beispiel Name, Telefonnummer, E-Mail-Adresse, Inhalt der Nachricht), um deine Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b oder lit. f DSGVO.</p>
+  <p>Beim Anmeldeformular gibst du Vorname, Nachname, Telefonnummer, E-Mail-Adresse, den gewünschten Führerschein und optional eine Nachricht an und bestätigst mit dem Häkchen, dass wir die Angaben zur Bearbeitung deiner Anfrage verwenden dürfen (Art. 6 Abs. 1 lit. a und b DSGVO). Das Formular öffnet dein E-Mail-Programm mit einer vorbereiteten Nachricht an uns, die du selbst absendest. Bitte beachte, dass E-Mails unterwegs nicht durchgehend verschlüsselt sind. <mark class="rounded bg-warning/40 px-1 text-base-content">[Abschnitt anpassen, sobald das Formular über einen Dienst oder ein Skript versendet wird]</mark></p>
+  <p>Wir speichern deine Angaben, solange sie für die Bearbeitung und Abwicklung der Ausbildung erforderlich sind, und danach nur, soweit gesetzliche Aufbewahrungspflichten bestehen.</p>
+
+  <h2>7. Inhalte von Drittanbietern (erst nach Klick)</h2>
+  <p><strong>YouTube-Videos:</strong> Auf der Seite „Videos“ laden wir Videos von YouTube (erweiterter Datenschutzmodus, youtube-nocookie.com) erst, wenn du auf den Abspielknopf klickst. Dabei wird eine Verbindung zu YouTube hergestellt und unter anderem deine IP-Adresse an den Betreiber (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) übermittelt. Eine Verarbeitung auch in den USA ist möglich. Rechtsgrundlage ist deine Einwilligung durch den Klick (Art. 6 Abs. 1 lit. a DSGVO). Ohne Klick findet keine Verbindung statt.</p>
+  <p><strong>Karte:</strong> Auf der Kontaktseite laden wir eine Karte von OpenStreetMap erst nach Klick auf „Karte laden“. Dabei werden unter anderem deine IP-Adresse an die OpenStreetMap Foundation (St John’s Innovation Centre, Cowley Road, Cambridge, CB4 0WS, Vereinigtes Königreich) übermittelt. Rechtsgrundlage ist deine Einwilligung durch den Klick (Art. 6 Abs. 1 lit. a DSGVO).</p>
+
+  <h2>8. Externe Links</h2>
+  <p>Diese Website enthält Links zu anderen Seiten, zum Beispiel zu Facebook oder zu Informationsangeboten. Es handelt sich um einfache Links: Erst wenn du einen Link anklickst, werden Daten an den jeweiligen Anbieter übermittelt. Für deren Datenverarbeitung sind die Anbieter verantwortlich.</p>
+
+  <h2>9. Deine Rechte</h2>
+  <p>Du hast das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21). Eine erteilte Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO). Wende dich dazu an die oben genannten Kontaktdaten.</p>
+  <p>Du hast außerdem das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, zum Beispiel bei der Landesbeauftragten für Datenschutz und Informationsfreiheit Nordrhein-Westfalen, Kavalleriestraße 2–4, 40213 Düsseldorf.</p>
+
+  <p class="mt-10 text-sm text-base-content/60">Stand: November 2026</p>
 </section>
