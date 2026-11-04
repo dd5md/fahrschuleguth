@@ -85,6 +85,14 @@ python3 scripts/add_photos.py ~/Desktop/neue-fotos --monat 11 --jahr 2026
 ```
 Das Skript dreht Handy-Fotos richtig, **entfernt alle Metadaten (inkl. GPS)**, erzeugt WebP + JPG (längste Seite 1280 px) und eine kleine Variante fürs Handy, benennt sie `bestanden_11-2026_<Nr>` und trägt sie **oben** in `data/galerie.yml` ein (die Startseite zeigt die ersten acht). Mit `--trocken` nur ansehen, mit `--alt "…"` eigener Alt-Text, mit `--kategorie` andere Galerien (`fahrschule`, `fahrzeuge`, `motorraeder`), mit `--verschieben` Originale in den Unterordner `fertig`. Benötigt Python 3 mit `pip install pillow pyyaml` (iPhone-HEIC-Fotos zusätzlich `pip install pillow-heif`). Danach `bundle exec middleman server` ansehen, committen, pushen. Nur Fotos mit Einwilligung der Abgebildeten verwenden.
 
+## Livegang: Checkliste (nicht vergessen)
+1. **Backup** des kompletten Inhalts von fahrschuleguth.de herunterladen (auch `statics/` bzw. `assets/files/` mit den PDFs: `checkliste.pdf`, `flyer.pdf`, `fuehrerschein_mit_17_anlage_1.pdf`, `…_2.pdf`; sie liegen nicht im Repo, die Downloads-Seite verlinkt sie) und die PDFs nach `source/assets/files/` legen, bevor überschrieben wird.
+2. `git pull`, dann `./scripts/build_live.sh` (nicht `build_test.sh`), Inhalt von `build/` hochladen, versteckte Dateien (`.htaccess`) mit.
+3. Danach prüfen: `/robots.txt` zeigt `Allow: /`, im Quelltext der Startseite kein `noindex`, Anmeldeformular einmal absenden (Mail an Uli), alle Seiten und die PDFs öffnen.
+4. Datenschutzerklärung finalisieren: Entwurfshinweis und `robots: noindex` in `source/datenschutz/index.html.erb` entfernen, gelbe Stellen füllen (Löschfrist Logfiles, AV-Vertrag mit UD Media).
+5. Google Search Console: Bestätigungscode der Altseite ist übernommen (`verify` in `data/site.yml`); neue `sitemap.xml` einreichen, Ranking für „Fahrschule Bochum-Weitmar“ beobachten.
+6. Google-Unternehmensprofil (Kategorie, Adresse, Zeiten, Website-Link) mit den Daten der Website abgleichen.
+
 ## Offene Punkte
 
 - [ ] **Google-Zitate** (`data/bewertungen.yml`, `items: []`): Solange leer, zeigt die Startseite nur die Zusammenfassung (4,9 · 382 · 30+ Jahre · ~20 m). Uli/Mathias wählen 3 bis 6 echte Bewertungen aus; Name nur als Vorname plus Initial oder anonym, kurzer Text, kein Foto. Keine Bewertung erfinden, keine Profile verlinken.

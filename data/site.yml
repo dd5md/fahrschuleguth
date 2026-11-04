@@ -33,6 +33,8 @@ contacts:
     image: bilder/tina
     image_alt: Motorradfahrer an einer Tankstelle
 facebook: 'https://www.facebook.com/FahrschuleGuth/'
+# Google Search Console: Bestätigungscode der Altseite (unverändert übernehmen, sonst geht die Inhaberbestätigung verloren)
+verify: 'X0wMJJYihgL9AopkU-wgDC-OGFJ1tbhZQubdNNM9CF4'
 nav:
   - { label: Fahrschule, href: /ueberuns/ }
   - { label: Führerschein, href: /fuehrerschein/ }

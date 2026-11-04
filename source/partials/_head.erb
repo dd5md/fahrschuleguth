@@ -7,6 +7,7 @@
 <meta name="robots" content="<%= config[:noindex] ? 'noindex, nofollow, noarchive' : (current_page.data.robots || 'index, follow, max-image-preview:large, max-snippet:-1') %>">
 <meta name="theme-color" content="#17181c">
 <meta name="author" content="Fahrschule Uli Guth">
+<% if data.site.verify %><meta name="google-site-verification" content="<%= data.site.verify %>"><% end %>
 <meta name="geo.region" content="DE-NW">
 <meta name="geo.placename" content="<%= data.site.address.district %>">
 <meta name="geo.position" content="<%= data.site.geo.lat %>;<%= data.site.geo.lon %>">
