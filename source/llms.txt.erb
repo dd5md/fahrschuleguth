@@ -4,6 +4,9 @@
 
 ## Seiten
 - [Startseite](<%= config[:site_url] %>/): Fahrschule in Bochum-Weitmar, Klassen B, A1, A2 und A
+- [Führerscheinklassen](<%= config[:site_url] %>/fuehrerschein/): B, BF17 (ab 17), B196, B96, A1, A2, A mit Voraussetzungen
+- [Anmelden](<%= config[:site_url] %>/anmelden/): Online-Anfrage zur Anmeldung
+- [Führerscheinreform 2027](<%= config[:site_url] %>/reform-2027/): Was geplant ist (Stand der Planung)
 - [Über Uns](<%= config[:site_url] %>/ueberuns/): Unsere Vorteile
 - [Preise](<%= config[:site_url] %>/ueberuns/preise/): Preislisten Klasse B, A1, A2/A (Stand April 2022)
 - [Links](<%= config[:site_url] %>/ueberuns/links/)
@@ -19,5 +22,5 @@
 <% data.site.contacts.each do |c| %>- <%= c.name %> (<%= c.role %>): <%= c.phone %>, <%= c.email %>
 <% end %>- Öffnungszeiten: <%= data.site.hours.map { |h| "#{h.day} #{h.times.join(' & ')}" }.join('; ') %>; <%= data.site.hours_phone %>
 - Theorie-Unterricht: <%= data.site.theory.map { |t| "#{t.day} #{t.time}" }.join('; ') %>
-- Führerscheinklassen: B, A1, A2, A
+- Führerscheinklassen: B, BF17, B196, B96, A1, A2, A
 - Ausbildungsfahrzeug: aktuelle Mercedes-A-Klasse mit AMG-Paket

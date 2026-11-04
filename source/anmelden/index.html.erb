@@ -1,0 +1,58 @@
+---
+title: Anmelden
+pagetitle: Online anmelden
+smalltitle: Schick uns deine Anfrage, wir melden uns und besprechen alles Weitere mit dir.
+description: 'Online-Anmeldung zur Fahrschule Guth in Bochum-Weitmar: Klasse B, BF17, A1, A2, A. Wir melden uns persönlich bei dir.'
+breadcrumb_parents: []
+---
+<%= partial "partials/page_header" %>
+<section class="mx-auto grid max-w-7xl gap-8 px-4 py-14 lg:grid-cols-12 lg:py-20">
+  <form id="formular" class="tile scroll-mt-24 p-7 sm:p-10 lg:col-span-7" action="mailto:<%= data.site.contacts.first.email %>" method="post" enctype="text/plain">
+    <h2 class="h3">Deine Anfrage</h2>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2">
+      <label class="block"><span class="mb-1 block text-sm font-semibold">Vorname</span><input class="input w-full" type="text" name="Vorname" autocomplete="given-name" required></label>
+      <label class="block"><span class="mb-1 block text-sm font-semibold">Nachname</span><input class="input w-full" type="text" name="Nachname" autocomplete="family-name" required></label>
+      <label class="block"><span class="mb-1 block text-sm font-semibold">Telefon</span><input class="input w-full" type="tel" name="Telefon" autocomplete="tel" required></label>
+      <label class="block"><span class="mb-1 block text-sm font-semibold">E-Mail</span><input class="input w-full" type="email" name="E-Mail" autocomplete="email" required></label>
+      <label class="block sm:col-span-2"><span class="mb-1 block text-sm font-semibold">Welchen Führerschein möchtest du?</span>
+        <select class="select w-full" name="Klasse" id="klasse">
+          <option>Klasse B (Pkw)</option><option>BF17 (Führerschein ab 17)</option><option>B196 / B96</option>
+          <option>A1 (Leichtkraftrad)</option><option>A2</option><option>A</option><option>Weiß ich noch nicht</option>
+        </select>
+      </label>
+      <label class="block sm:col-span-2"><span class="mb-1 block text-sm font-semibold">Nachricht (optional)</span><textarea class="textarea w-full" name="Nachricht" rows="4" placeholder="z. B. Wunschzeit, Vorkenntnisse, Fahrschulwechsel …"></textarea></label>
+    </div>
+    <label class="mt-5 flex items-start gap-3 text-sm text-base-content/75">
+      <input type="checkbox" class="checkbox checkbox-primary checkbox-sm mt-0.5" name="Einwilligung" required>
+      <span>Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. Mehr dazu in der <a class="link" href="/datenschutz/">Datenschutzerklärung</a>.</span>
+    </label>
+    <button type="submit" class="btn btn-primary btn-lg mt-6 rounded-full px-8">Anfrage senden <%= icon :arrow, css: "size-5" %></button>
+  </form>
+
+  <aside class="space-y-4 lg:col-span-5">
+    <div class="tile p-7">
+      <h2 class="eyebrow">Lieber telefonisch?</h2>
+      <ul class="mt-4 space-y-4">
+        <% data.site.contacts.each do |c| %>
+          <li><p class="text-sm text-base-content/60"><%= c.name %> · <%= c.role %></p><a class="text-2xl font-bold tracking-tight hover:text-primary" href="<%= tel_link c.tel %>"><%= c.phone %></a></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="wechsel" class="tile scroll-mt-24 p-7">
+      <h2 class="h3">Fahrschulwechsel?</h2>
+      <p class="mt-2 text-base-content/70">Du hast schon angefangen? Schreib uns in die Nachricht, wo du stehst. Wir besprechen mit dir, wie es bei uns weitergeht.</p>
+    </div>
+    <div class="tile p-7">
+      <h2 class="h3">Finanzierung</h2>
+      <p class="mt-2 text-base-content/70">Sprich uns gern darauf an, wir klären das persönlich mit dir.</p>
+    </div>
+  </aside>
+</section>
+<script>
+  // ?klasse=B aus der URL vorauswählen
+  (function () {
+    var p = new URLSearchParams(location.search).get("klasse"), s = document.getElementById("klasse");
+    if (!p || !s) return;
+    for (var i = 0; i < s.options.length; i++) { if (s.options[i].text.indexOf(p) === 0) { s.selectedIndex = i; break; } }
+  })();
+</script>

@@ -1,0 +1,8 @@
+# ENTWURF: Ablauf des ersten Fahrtags. Bitte von Uli prüfen/anpassen, bevor die Seite live geht.
+titel: Dein erster Fahrtag
+intro: Viele haben Respekt vor der ersten Fahrstunde. Das ist normal. So läuft sie bei uns ab.
+schritte:
+  - { titel: Ankommen und kennenlernen, text: 'Wir treffen uns in der Fahrschule, besprechen kurz den Ablauf und gehen dann zum Auto.' }
+  - { titel: 'Sitz, Spiegel, Pedale', text: 'Du stellst Sitz und Spiegel ein, wir erklären dir die Bedienelemente. Dein Fahrlehrer hat eigene Pedale: Er kann jederzeit bremsen und eingreifen. Du bist immer gesichert.' }
+  - { titel: Anfahren in Ruhe, text: 'Wir üben auf einer ruhigen Strecke Anfahren, Schalten und Bremsen. Der Motor geht aus? Das passiert jedem und ist kein Problem.' }
+  - { titel: Besprechen und planen, text: 'Am Ende sprechen wir darüber, was schon gut klappt und was wir als Nächstes üben, und planen deinen nächsten Termin.' }

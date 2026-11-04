@@ -1,28 +1,30 @@
-<%# Zentrierter Seitenkopf im Stil der Demo. Optional: Frontmatter `subnav:` (Schlüssel aus data.site.subnav) %>
+<%# Seitenkopf für Unterseiten: große Überschrift links, optional Brotkrumen und Unternavigation (Frontmatter `subnav:`) %>
 <% subnav = current_page.data.subnav %>
-<section class="hero-bg relative overflow-hidden" aria-labelledby="page-title">
-  <div class="mx-auto max-w-7xl px-4 pb-10 pt-12 text-center sm:pt-16">
+<section class="relative isolate overflow-hidden border-b border-base-content/10" aria-labelledby="page-title">
+  <div class="hero-glow absolute inset-0 -z-10"></div>
+  <div class="mx-auto max-w-7xl px-4 pb-10 pt-12 sm:pt-16">
     <% unless breadcrumbs.empty? %>
-      <nav aria-label="Brotkrumen" class="mb-5 flex justify-center text-sm text-base-content/70">
-        <ol class="flex flex-wrap items-center justify-center gap-2">
+      <nav aria-label="Brotkrumen" class="mb-6 text-sm text-base-content/60">
+        <ol class="flex flex-wrap items-center gap-2">
           <% breadcrumbs.each_with_index do |(name, url), i| %>
             <li class="flex items-center gap-2">
-              <% if i == breadcrumbs.size - 1 %><span class="badge badge-primary badge-outline" aria-current="page"><%= name %></span><% else %><a class="link link-hover" href="<%= url %>"><%= name %></a><span aria-hidden="true">/</span><% end %>
+              <% if i == breadcrumbs.size - 1 %><span aria-current="page" class="text-base-content"><%= name %></span><% else %><a class="link link-hover" href="<%= url %>"><%= name %></a><span aria-hidden="true">/</span><% end %>
             </li>
           <% end %>
         </ol>
       </nav>
     <% end %>
-    <h1 id="page-title" class="mx-auto max-w-3xl text-4xl font-extrabold tracking-tight sm:text-6xl"><%= current_page.data.pagetitle || current_page.data.title %></h1>
-    <p class="mx-auto mt-4 max-w-2xl text-lg text-base-content/70"><%= current_page.data.smalltitle || data.site.subtitle %></p>
+    <h1 id="page-title" class="display max-w-5xl" style="font-size:clamp(2.6rem,7.5vw,6rem)"><%= current_page.data.pagetitle || current_page.data.title %></h1>
+    <% lead = current_page.data.smalltitle || data.site.subtitle %>
+    <p class="mt-5 max-w-2xl text-lg text-base-content/70 sm:text-xl"><%= lead %></p>
     <% if subnav %>
-      <nav aria-label="Unterseiten" class="mt-8 flex justify-center">
-        <div role="tablist" class="tabs tabs-box flex-wrap justify-center bg-base-200">
+      <nav aria-label="Unterseiten" class="mt-8">
+        <ul class="flex flex-wrap gap-2">
           <% data.site.subnav[subnav].each do |item| %>
             <% active = current_page.url == item.href %>
-            <a role="tab" href="<%= item.href %>" class="tab <%= 'tab-active' if active %>" <%= 'aria-current="page"' if active %>><%= item.label %></a>
+            <li><a href="<%= item.href %>" class="pill" <%= 'aria-current="page"' if active %>><%= item.label %></a></li>
           <% end %>
-        </div>
+        </ul>
       </nav>
     <% end %>
   </div>

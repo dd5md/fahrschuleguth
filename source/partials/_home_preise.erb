@@ -1,0 +1,35 @@
+<section id="preise" class="mx-auto max-w-7xl px-4 py-20 lg:py-28" aria-labelledby="preise-title">
+  <div class="max-w-3xl">
+    <p class="eyebrow">Preise</p>
+    <h2 id="preise-title" class="h2 mt-3">Transparent. Ohne <span class="text-gradient">Überraschungen</span>.</h2>
+    <p class="mt-5 text-lg text-base-content/70">Preisliste gemäß Preisaushang Fahrlehrergesetz § 32.</p>
+  </div>
+
+  <div data-tabs class="mt-10">
+    <div role="tablist" aria-label="Führerscheinklasse" class="flex flex-wrap gap-2">
+      <% data.preise.listen.each_with_index do |liste, i| %>
+        <button type="button" role="tab" id="tab-<%= liste.id %>" aria-controls="panel-<%= liste.id %>" aria-selected="<%= i.zero? %>" class="pill"><%= liste.title %></button>
+      <% end %>
+    </div>
+    <% data.preise.listen.each do |liste| %>
+      <div role="tabpanel" id="panel-<%= liste.id %>" aria-labelledby="tab-<%= liste.id %>" class="tile mt-4 p-6 sm:p-9">
+        <div class="grid gap-8 lg:grid-cols-12">
+          <div class="lg:col-span-4">
+            <p class="text-sm text-base-content/60">Grundbetrag, <%= liste.items.first.sub %></p>
+            <p class="mt-2 text-6xl font-bold tracking-[-0.05em] text-primary"><%= liste.items.first.preis %></p>
+            <a href="/anmelden/" class="btn btn-primary mt-6 rounded-full">Anmelden <%= icon :arrow, css: "size-5" %></a>
+          </div>
+          <dl class="divide-y divide-base-content/10 lg:col-span-8">
+            <% liste.items.drop(1).each do |item| %>
+              <div class="flex items-baseline justify-between gap-4 py-3">
+                <dt><%= item.text %> <span class="text-sm text-base-content/55">(<%= item.sub %>)</span></dt>
+                <dd class="whitespace-nowrap font-semibold"><%= item.preis %></dd>
+              </div>
+            <% end %>
+          </dl>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <p class="mt-5 max-w-4xl text-sm text-base-content/60"><%= data.preise.hinweis %> <a class="link" href="/ueberuns/preise/">Alle Preise</a></p>
+</section>

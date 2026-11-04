@@ -1,0 +1,65 @@
+# Führerscheinklassen. `home: true` = Karte auf der Startseite. `preis` verweist auf eine Preisliste (preise.yml id).
+# Hinweis: Rechtliche Angaben (Alter, Voraussetzungen) allgemein, Stand 2026, ohne Gewähr. Bitte von Uli prüfen lassen.
+- id: b
+  kurz: B
+  titel: Pkw
+  lead: Der Klassiker für Auto, Kleinbus und leichten Anhänger.
+  alter: ab 18 Jahren
+  darf: Pkw bis 3.500 kg zulässiger Gesamtmasse mit bis zu 8 Sitzplätzen (außer Fahrer), dazu Anhänger bis 750 kg.
+  ablauf: Theorieunterricht, Fahrstunden inkl. Überland-, Autobahn- und Dunkelheitsfahrten, danach theoretische und praktische Prüfung.
+  preis: klasse-b
+  home: true
+- id: bf17
+  kurz: BF17
+  titel: Führerschein ab 17
+  lead: Mit 17 anfangen und prüfen, mit Begleitung fahren, mit 18 allein.
+  alter: ab 17 Jahren
+  darf: Fahren in Begleitung einer eingetragenen Person. Mit 18 gilt der Führerschein Klasse B ohne Begleitung.
+  ablauf: Ausbildung und Prüfungen wie bei Klasse B. Die Begleitpersonen müssen mindestens 30 Jahre alt sein, seit mindestens 5 Jahren einen Führerschein der Klasse B besitzen und dürfen höchstens einen Punkt im Fahreignungsregister haben.
+  preis: klasse-b
+  home: true
+- id: b196
+  kurz: B196
+  titel: Leichtkraftrad mit dem Pkw-Führerschein
+  lead: Mit dem Auto-Führerschein 125er fahren, ohne Prüfung.
+  alter: ab 25 Jahren, Klasse B seit mindestens 5 Jahren
+  darf: Leichtkrafträder bis 125 ccm und 11 kW, gilt nur in Deutschland.
+  ablauf: Theorie- und Praxisschulung bei der Fahrschule, keine Prüfung.
+  preis: null
+  home: true
+- id: b96
+  kurz: B96
+  titel: Pkw mit schwererem Anhänger
+  lead: Mehr Gespann-Gewicht, ohne Prüfung.
+  alter: Klasse B erforderlich
+  darf: Pkw mit Anhänger, wenn die zulässige Gesamtmasse des Zuges 4.250 kg nicht übersteigt.
+  ablauf: Fahrschulung in der Praxis, keine Prüfung.
+  preis: null
+  home: true
+- id: a1
+  kurz: A1
+  titel: Leichtkraftrad
+  lead: Der Einstieg aufs Motorrad.
+  alter: ab 16 Jahren
+  darf: Krafträder bis 125 ccm und 11 kW.
+  ablauf: Theorie, Fahrstunden und praktische Prüfung auf dem Motorrad.
+  preis: klasse-a1
+  home: true
+- id: a2
+  kurz: A2
+  titel: Motorrad bis 35 kW
+  lead: Mehr Leistung, Schritt für Schritt.
+  alter: ab 18 Jahren
+  darf: Krafträder bis 35 kW.
+  ablauf: Theorie, Fahrstunden und praktische Prüfung.
+  preis: klasse-a2-a
+  home: true
+- id: a
+  kurz: A
+  titel: Motorrad ohne Leistungsgrenze
+  lead: Alles fahren dürfen.
+  alter: ab 24 Jahren direkt, ab 20 Jahren nach 2 Jahren Klasse A2 (Stufenführerschein)
+  darf: Krafträder ohne Leistungsbegrenzung.
+  ablauf: Theorie, Fahrstunden und praktische Prüfung (beim Aufstieg von A2 nur praktische Prüfung).
+  preis: klasse-a2-a
+  home: true

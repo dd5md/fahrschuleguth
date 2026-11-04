@@ -1,0 +1,28 @@
+<section id="klassen" class="mx-auto max-w-7xl px-4 py-20 lg:py-28" aria-labelledby="klassen-title">
+  <div class="max-w-3xl">
+    <p class="eyebrow">Führerscheinklassen</p>
+    <h2 id="klassen-title" class="h2 mt-3">Welcher Führerschein passt zu <span class="text-gradient">dir</span>?</h2>
+    <p class="mt-5 text-lg text-base-content/70">Auto, Motorrad, mit 17 oder ohne Prüfung: kurz erklärt. Alle Details findest du auf der Seite zu den Klassen.</p>
+  </div>
+  <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <% data.klassen.select(&:home).each do |k| %>
+      <li>
+        <a href="/fuehrerschein/#<%= k.id %>" class="tile group flex h-full flex-col gap-4 p-6">
+          <span class="text-5xl font-bold leading-none tracking-[-0.05em] text-primary"><%= k.kurz %></span>
+          <div>
+            <h3 class="h3"><%= k.titel %></h3>
+            <p class="mt-2 text-sm text-base-content/70"><%= k.lead %></p>
+          </div>
+          <p class="mt-auto text-sm font-semibold text-base-content/60"><%= k.alter %></p>
+        </a>
+      </li>
+    <% end %>
+    <li>
+      <a href="/fuehrerschein/" class="tile tile-accent group flex h-full min-h-[12rem] flex-col justify-between gap-4 p-6">
+        <span class="text-sm font-bold uppercase tracking-[0.14em] opacity-80">Alle Details</span>
+        <span class="h3">Klassen, Voraussetzungen und Ablauf</span>
+        <span class="inline-flex items-center gap-2 font-semibold">Zur Übersicht <%= icon :arrow, css: "size-5 transition group-hover:translate-x-1" %></span>
+      </a>
+    </li>
+  </ul>
+</section>

@@ -5,7 +5,7 @@
 <meta name="description" content="<%= page_description %>">
 <link rel="canonical" href="<%= canonical_url %>">
 <meta name="robots" content="<%= current_page.data.robots || 'index, follow, max-image-preview:large, max-snippet:-1' %>">
-<meta name="theme-color" content="#0a0d14">
+<meta name="theme-color" content="#17181c">
 <meta name="author" content="Fahrschule Uli Guth">
 <meta name="geo.region" content="DE-NW">
 <meta name="geo.placename" content="<%= data.site.address.district %>">
@@ -30,6 +30,7 @@
 
 <link rel="icon" href="<%= asset_path(:images, "favicon.svg") %>" type="image/svg+xml">
 <link rel="icon" href="<%= asset_path(:images, "favicon.ico") %>" sizes="any">
+<link rel="preload" href="<%= asset_path(:fonts, "inter-tight-latin-wght-normal.woff2") %>" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="<%= asset_path(:css, "site") %>">
 
 <!-- Structured Data (Schema.org JSON-LD) -->

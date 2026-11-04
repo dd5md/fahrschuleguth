@@ -2,7 +2,7 @@ name: Fahrschule Guth
 legal_name: Fahrschule Ulrich Guth
 title: 'Fahrschule Bochum Uli Guth - Deine Fahrschule in Bochum-Weitmar!'
 title_separator: '•'
-description: 'Fahrschule Bochum Uli Guth für PKW und Motorrad. Wir bilden seit über 25 Jahren erfolgreich die Führerscheinklassen B, A1, A2 und A in Bochum aus.'
+description: 'Fahrschule Bochum Uli Guth für PKW und Motorrad. Wir bilden seit über 30 Jahren erfolgreich die Führerscheinklassen B, A1, A2 und A in Bochum aus.'
 slogan: 'Nicht in 7 Tagen aber total Guth..!'
 subtitle: 'Deine Fahrschule in Bochum-Weitmar!'
 owner: Ulrich Guth
@@ -33,12 +33,24 @@ contacts:
     image_alt: Motorradfahrer an einer Tankstelle
 facebook: 'https://www.facebook.com/fahrschuleguth'
 nav:
-  - { label: Home, href: / }
-  - { label: Über Uns, href: /ueberuns/ }
+  - { label: Fahrschule, href: /ueberuns/ }
+  - { label: Führerschein, href: /fuehrerschein/ }
+  - { label: Preise, href: /ueberuns/preise/ }
   - { label: Galerie, href: /galerie/ }
   - { label: News, href: /news/ }
   - { label: Kontakt, href: /kontakt/ }
+footer_nav:
+  - { label: Anmelden, href: /anmelden/ }
+  - { label: Führerschein, href: /fuehrerschein/ }
+  - { label: Führerscheinreform 2027, href: /reform-2027/ }
+  - { label: Fahrschule, href: /ueberuns/ }
+  - { label: Preise, href: /ueberuns/preise/ }
+  - { label: Galerie, href: /galerie/ }
+  - { label: News, href: /news/ }
+  - { label: Kontakt, href: /kontakt/ }
+legal_nav:
   - { label: Impressum, href: /impressum/ }
+  - { label: Datenschutz, href: /datenschutz/ }
 subnav:
   ueberuns:
     - { label: Über Uns, href: /ueberuns/ }

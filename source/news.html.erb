@@ -6,7 +6,7 @@ description: 'Aktuelle News der Fahrschule Guth Bochum: Wir haben bestanden! 100
 <%= partial "partials/page_header" %>
 <div class="mx-auto max-w-7xl space-y-8 px-4 pb-16 pt-6">
   <% data.news.posts.each_with_index do |post, n| %>
-    <article class="card bg-base-200 p-5 shadow-sm sm:p-8">
+    <article class="tile p-5 sm:p-8">
       <h2 class="text-2xl font-bold sm:text-3xl"><%= post["title"] %></h2>
       <p class="mt-2 font-semibold text-primary"><%= post["subtitle"] %></p>
       <p class="mt-3 leading-relaxed"><%= post["text"] %></p>

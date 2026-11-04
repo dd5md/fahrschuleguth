@@ -1,34 +1,33 @@
-<header class="sticky top-0 z-40 px-3 pt-3 sm:px-4 sm:pt-4">
-  <nav class="glass navbar mx-auto max-w-5xl rounded-full px-3" aria-label="Hauptnavigation">
-    <div class="navbar-start">
-      <div class="dropdown">
-        <button tabindex="0" class="btn btn-ghost btn-circle lg:hidden" aria-label="Menü öffnen">
-          <%= icon :menu %>
-        </button>
-        <ul tabindex="0" class="menu menu-sm dropdown-content z-10 mt-3 w-60 rounded-box bg-base-200 p-2 shadow-xl">
-          <% data.site.nav.each do |item| %>
-            <li><a href="<%= item.href %>" <%= 'aria-current="page"' if current_page.url == item.href %>><%= item.label %></a></li>
-          <% end %>
-        </ul>
-      </div>
-      <a href="/" class="whitespace-nowrap px-2 text-base font-extrabold tracking-tight sm:text-lg">Fahrschule <span class="text-primary">Guth</span></a>
-    </div>
-    <div class="navbar-center hidden lg:flex">
-      <ul class="menu menu-horizontal gap-1 px-1 font-semibold">
+<header class="glass sticky top-0 z-40 border-b border-base-content/10">
+  <nav class="mx-auto flex h-16 max-w-7xl items-center gap-1 px-3 sm:gap-2 sm:px-4" aria-label="Hauptnavigation">
+    <div class="dropdown lg:hidden">
+      <button tabindex="0" class="btn btn-ghost btn-circle" aria-label="Menü öffnen"><%= icon :menu %></button>
+      <ul tabindex="0" class="menu dropdown-content z-10 mt-3 w-64 rounded-box bg-base-200 p-2 shadow-xl">
         <% data.site.nav.each do |item| %>
-          <% active = item.href == "/" ? home? : current_page.url.start_with?(item.href) %>
-          <li><a class="rounded-full <%= 'bg-primary/15 text-primary' if active %>" href="<%= item.href %>" <%= 'aria-current="page"' if active %>><%= item.label %></a></li>
+          <li><a href="<%= item.href %>" class="text-base"><%= item.label %></a></li>
         <% end %>
       </ul>
     </div>
-    <div class="navbar-end gap-1">
-      <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-primary btn-sm rounded-full" aria-label="Uli Guth anrufen">
-        <%= icon :phone, css: "size-4" %><span class="hidden sm:inline">Anrufen</span>
-      </a>
+
+    <a href="/" class="flex items-baseline gap-1.5 pr-2" aria-label="Fahrschule Guth, zur Startseite">
+      <span class="text-2xl font-extrabold tracking-tighter">Guth</span>
+      <span class="text-xs font-semibold uppercase tracking-[0.18em] text-base-content/60">Fahrschule</span>
+    </a>
+
+    <ul class="ml-6 hidden items-center gap-1 text-[0.95rem] font-semibold lg:flex">
+      <% data.site.nav.each do |item| %>
+        <% active = item.href == "/" ? home? : current_page.url.start_with?(item.href) %>
+        <li><a class="rounded-full px-3.5 py-2 transition hover:bg-base-content/10 <%= 'bg-base-content/10 text-primary' if active %>" href="<%= item.href %>" <%= 'aria-current="page"' if active %>><%= item.label %></a></li>
+      <% end %>
+    </ul>
+
+    <div class="ml-auto flex items-center gap-1">
+      <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-ghost btn-circle hidden sm:inline-flex" aria-label="Uli Guth anrufen: <%= data.site.contacts.first.phone %>"><%= icon :phone, css: "size-5" %></a>
+      <a href="/anmelden/" class="btn btn-primary rounded-full px-4 sm:px-5">Anmelden</a>
       <label class="swap swap-rotate btn btn-ghost btn-circle" aria-label="Zwischen dunklem und hellem Design wechseln">
         <input type="checkbox" id="theme-toggle">
-        <%= icon :moon, css: "swap-off size-6" %>
-        <%= icon :sun, css: "swap-on size-6" %>
+        <%= icon :moon, css: "swap-off size-5" %>
+        <%= icon :sun, css: "swap-on size-5" %>
       </label>
     </div>
   </nav>
