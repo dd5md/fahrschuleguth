@@ -74,6 +74,6 @@ theory:
 # anzahl = Anzahl der Bewertungen, url = Link zum Google-Unternehmensprofil (Maps), stand = Datum der Angabe
 google:
   rating: 4.9
-  anzahl:
+  anzahl: 382
   url:
   stand: 'November 2026'
