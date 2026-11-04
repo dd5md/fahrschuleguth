@@ -1,0 +1,44 @@
+<%# Google-Bewertungen: Zusammenfassung (Daten aus data/site.yml `google`) und ausgewählte Zitate (data/bewertungen.yml). Zitate nur mit Kürzel-Namen. %>
+<% g = data.site.google %>
+<% if g && g.rating %>
+  <% rating = g.rating.to_s.tr(".", ",") %>
+  <section id="bewertungen" class="mx-auto max-w-7xl px-4 py-8 sm:py-12 lg:py-16 xl:py-20" aria-labelledby="bewertungen-title">
+    <div class="grid items-end gap-6 lg:grid-cols-12">
+      <div class="lg:col-span-8">
+        <p class="eyebrow">Echte Google-Bewertungen</p>
+        <h2 id="bewertungen-title" class="h2 mt-3"><%= rating %> von 5 Sternen: Fahrschüler <span class="text-gradient">empfehlen uns</span></h2>
+      </div>
+      <a href="<%= ERB::Util.html_escape(g.url) %>" target="_blank" rel="noopener noreferrer" class="tile tile-hover flex items-center gap-4 p-5 lg:col-span-4" aria-label="Alle Bewertungen auf Google ansehen">
+        <span class="text-6xl font-bold leading-none tracking-[-0.03em]"><%= rating %></span>
+        <span>
+          <span class="block text-2xl tracking-widest text-secondary" aria-hidden="true">★★★★★</span>
+          <span class="mt-1 block text-sm font-semibold underline underline-offset-4"><%= "#{g.anzahl} Bewertungen · " if g.anzahl %>alle auf Google lesen →</span>
+        </span>
+      </a>
+    </div>
+
+    <% unless data.bewertungen.items.to_a.empty? %>
+      <ul class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <% data.bewertungen.items.each do |b| %>
+          <li class="tile flex flex-col gap-4 p-6">
+            <p class="text-xl tracking-widest text-secondary" role="img" aria-label="<%= b.sterne || 5 %> von 5 Sternen"><%= "★" * (b.sterne || 5) %></p>
+            <blockquote class="text-base-content/90">„<%= b.text %>“</blockquote>
+            <p class="mt-auto flex items-center gap-3 text-sm">
+              <span class="grid size-9 shrink-0 place-items-center rounded-full bg-primary font-bold text-primary-content" aria-hidden="true"><%= b.name.to_s[0] || "F" %></span>
+              <span><strong class="block"><%= b.name || "Fahrschüler" %></strong><span class="text-base-content/70">Google-Bewertung<%= " · #{b.wann}" if b.wann %></span></span>
+            </p>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <ul class="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
+      <li class="tile p-5"><p class="text-4xl font-bold leading-none tracking-[-0.02em] text-primary"><%= rating %> ★</p><p class="mt-2 text-sm font-semibold">Google-Bewertung</p></li>
+      <% if g.anzahl %><li class="tile p-5"><p class="text-4xl font-bold leading-none tracking-[-0.02em] text-primary"><%= g.anzahl %></p><p class="mt-2 text-sm font-semibold">Bewertungen</p></li><% end %>
+      <li class="tile p-5"><p class="text-4xl font-bold leading-none tracking-[-0.02em] text-primary">30+</p><p class="mt-2 text-sm font-semibold">Jahre Fahrschule</p></li>
+      <li class="tile p-5"><p class="text-4xl font-bold leading-none tracking-[-0.02em] text-primary">~20 m</p><p class="mt-2 text-sm font-semibold">von der Haltestelle zur Tür</p></li>
+    </ul>
+    <p class="mt-4 text-xs text-base-content/60">Stand der Bewertungen: <%= g.stand %>. Quelle: Google. Bewertungen können sich ändern.</p>
+  </section>
+  <div class="groove" aria-hidden="true"></div>
+<% end %>

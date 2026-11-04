@@ -16,14 +16,33 @@ module SiteHelpers
   end
 
   # Titel wie auf der Altseite: "<Seite> • <Site-Titel>"
+  # Führerscheinklasse der aktuellen Seite (nur bei den Klassen-Unterseiten /fuehrerschein/<id>/, die per proxy entstehen)
+  def klasse
+    (current_page.metadata[:locals] || {})[:k]
+  end
+
   def page_title
-    title = current_page.data.title
     site = data.site
+    title = klasse ? klasse.seo_titel : current_page.data.title
     title ? "#{title} #{site.title_separator} #{site.title}" : site.title
   end
 
   def page_description
+    return klasse_description(klasse) if klasse
     current_page.data.description || data.site.description
+  end
+
+  # Beschreibung für Suchergebnisse (ca. 150 Zeichen): Name, Alter, Prüfung und Ort aus den Klassendaten
+  def klasse_description(k)
+    "#{k.seo_titel.sub(/ in Bochum-Weitmar\z/, '')}: #{k.alter}, #{k.pruefung.split(',').first.downcase}. Fahrschule Guth in Bochum-Weitmar, Hattinger Str. 136. Jetzt anmelden."
+  end
+
+  def page_heading
+    klasse ? "Klasse #{klasse.kurz}" : (current_page.data.pagetitle || current_page.data.title)
+  end
+
+  def page_lead
+    klasse ? "#{klasse.titel}. #{klasse.lead}" : (current_page.data.smalltitle || data.site.subtitle)
   end
 
   def canonical_url
@@ -64,6 +83,7 @@ module SiteHelpers
   # Breadcrumb-Einträge [[Name, URL], ...] aus Frontmatter `breadcrumbs:` oder Titel.
   def breadcrumbs
     return [] if home?
+    return [["Home", "/"], ["Führerscheinklassen", "/fuehrerschein/"], ["Klasse #{klasse.kurz}", current_page.url]] if klasse
     crumbs = [["Home", "/"]]
     Array(current_page.data.breadcrumb_parents).each { |p| crumbs << [p["label"], p["href"]] }
     crumbs << [current_page.data.crumb || current_page.data.title, current_page.url]
@@ -136,6 +156,11 @@ module SiteHelpers
                    { "@type" => "Question", "name" => f.frage,
                      "acceptedAnswer" => { "@type" => "Answer", "text" => f.antwort } }
                  end }
+    end
+    if klasse
+      graph << { "@type" => "Service", "@id" => "#{canonical_url}#service", "name" => klasse.seo_titel.sub(/ in Bochum-Weitmar\z/, ""),
+                 "serviceType" => "Fahrausbildung Klasse #{klasse.kurz}", "description" => "#{klasse.lead} #{klasse.darf}",
+                 "provider" => { "@id" => "#{site_url}/#business" }, "areaServed" => data.site.address.district }
     end
     graph.concat(Array(current_page.data.schema).map(&:to_h))
     { "@context" => "https://schema.org", "@graph" => graph }

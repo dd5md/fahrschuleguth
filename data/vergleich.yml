@@ -1,0 +1,15 @@
+# Motorradklassen im Vergleich (Fahrzeugdaten: Bundesverkehrsministerium, Übersicht der Fahrerlaubnisklassen; Mindestalter AM von Uli).
+# Reihenfolge = Spalten. `hl` markiert die Spalte B196 (ohne Prüfung).
+spalten:
+  - { id: am, kurz: AM }
+  - { id: a1, kurz: A1 }
+  - { id: a2, kurz: A2 }
+  - { id: a, kurz: A }
+  - { id: b196, kurz: B196, hl: true }
+zeilen:
+  - { label: Mindestalter, werte: ['15 Jahre', '16 Jahre', '18 Jahre', '24 Jahre (20 nach 2 Jahren A2)', '25 Jahre und Klasse B seit 5 Jahren'] }
+  - { label: Prüfung, werte: ['Theorie und Praxis', 'Theorie und Praxis', 'Theorie und Praxis (Aufstieg: nur Praxis)', 'Theorie und Praxis (Aufstieg: nur Praxis)', 'Keine'] }
+  - { label: Ausbildung, werte: ['Theorie und Fahrstunden', 'Theorie und Fahrstunden', 'Theorie und Fahrstunden', 'Theorie und Fahrstunden', '4 × Theorie und 5 × Praxis à 90 Min.'] }
+  - { label: Fahrzeuge, werte: ['Mopeds bis 45 km/h, 50 cm³, 4 kW', 'bis 125 cm³ und 11 kW', 'bis 35 kW', 'ohne Leistungsgrenze', 'bis 125 cm³ und 11 kW'] }
+  - { label: Leistungsgewicht, werte: ['', 'höchstens 0,1 kW/kg', 'höchstens 0,2 kW/kg', '', 'höchstens 0,1 kW/kg'] }
+  - { label: Gilt, werte: ['EU-weit', 'EU-weit', 'EU-weit', 'EU-weit', 'nur in Deutschland'] }

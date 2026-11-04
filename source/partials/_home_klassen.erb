@@ -13,7 +13,7 @@
   <ul class="mt-8 grid sm:mt-12 gap-4 sm:grid-cols-2 lg:grid-cols-4">
     <% data.klassen.select(&:home).each do |k| %>
       <li>
-        <a href="/fuehrerschein/#<%= k.id %>" class="tile group flex h-full flex-col gap-4 p-6">
+        <a href="/fuehrerschein/<%= k.id %>/" class="tile group flex h-full flex-col gap-4 p-6">
           <span class="text-5xl font-bold leading-none tracking-[-0.03em] text-primary"><%= k.kurz %></span>
           <div>
             <h3 class="h3-sm"><%= tidy k.titel %></h3>

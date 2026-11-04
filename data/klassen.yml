@@ -5,6 +5,8 @@
 # (bmv.de/SharedDocs/DE/Artikel/StV/Strassenverkehr/fahrerlaubnisklassen-uebersicht.html).
 # Mindestalter, Ablauf und BF17: allgemeine Angaben (Fahrerlaubnis-Verordnung), von Uli bestätigen lassen.
 - id: b
+  seo_titel: 'Klasse B in Bochum-Weitmar: Pkw-Führerschein'
+  pruefung: 'Theorie und Praxis'
   kurz: B
   titel: Pkw
   lead: Der Klassiker für Auto, Kleinbus und leichten Anhänger.
@@ -14,6 +16,8 @@
   preis: klasse-b
   home: true
 - id: bf17
+  seo_titel: 'Führerschein ab 17 (BF17) in Bochum-Weitmar'
+  pruefung: 'Theorie und Praxis'
   kurz: BF17
   titel: Führerschein ab 17
   lead: Mit 17 anfangen und prüfen, mit Begleitung fahren, mit 18 allein.
@@ -24,6 +28,8 @@
   preis_hinweis: gleiche Preise wie Klasse B
   home: true
 - id: b196
+  seo_titel: 'B196: 125er mit dem Autoführerschein in Bochum-Weitmar'
+  pruefung: 'Keine Prüfung'
   kurz: B196
   titel: 125er mit Pkw-Führerschein
   lead: Mit dem Auto-Führerschein 125er fahren, ohne Prüfung.
@@ -33,6 +39,8 @@
   preis: b196
   home: true
 - id: am
+  seo_titel: 'Klasse AM: Moped-Führerschein in Bochum-Weitmar'
+  pruefung: 'Theorie und Praxis'
   kurz: AM
   titel: Moped und Kleinkraftrad
   lead: Der Einstieg auf zwei und vier Rädern bis 45 km/h.
@@ -43,6 +51,8 @@
   preis_text: auf Rücksprache mit dem Fahrlehrer
   home: true
 - id: a1
+  seo_titel: 'Klasse A1: Leichtkraftrad in Bochum-Weitmar'
+  pruefung: 'Theorie und Praxis'
   kurz: A1
   titel: Leichtkraftrad
   lead: Der Einstieg aufs Motorrad.
@@ -52,6 +62,8 @@
   preis: klasse-a1
   home: true
 - id: a2
+  seo_titel: 'Klasse A2: Motorrad-Führerschein bis 35 kW in Bochum-Weitmar'
+  pruefung: 'Theorie und Praxis, beim Aufstieg nur Praxis'
   kurz: A2
   titel: Motorrad bis 35 kW
   lead: Mehr Leistung, Schritt für Schritt.
@@ -61,6 +73,8 @@
   preis: klasse-a2-a
   home: true
 - id: a
+  seo_titel: 'Klasse A: Motorrad-Führerschein ohne Leistungsgrenze in Bochum-Weitmar'
+  pruefung: 'Theorie und Praxis, beim Aufstieg nur Praxis'
   kurz: A
   titel: Motorrad ohne Leistungsgrenze
   lead: Alles fahren dürfen.

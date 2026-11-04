@@ -1,0 +1,6 @@
+# Google-Bewertungen, ausgewählte Zitate. NUR echte Bewertungen eintragen, mit Wissen von Uli, gekürzt, ohne Foto.
+# Datenschutz: Name nur als Vorname plus Anfangsbuchstabe des Nachnamens (z. B. "Max M.") oder anonym ("Fahrschüler"). Keine Links auf Profile.
+# Solange `items` leer ist, zeigt die Startseite nur die Zusammenfassung (4,9 · Anzahl) ohne Zitate.
+# Beispiel:
+#   - { name: 'Max M.', sterne: 5, text: 'Ruhig und geduldig erklärt, ich habe sofort bestanden.', wann: 'Oktober 2026' }
+items: []

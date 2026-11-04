@@ -27,12 +27,14 @@ breadcrumb_parents: []
               <% else %>
                 <p class="text-lg">Preis <strong class="text-primary"><%= k.preis_text || "auf Anfrage" %></strong></p>
               <% end %>
-              <a href="/anmelden/?klasse=<%= k.kurz %>#formular" class="btn btn-primary btn-sm ml-auto rounded-full">Anmelden</a>
+              <a href="/fuehrerschein/<%= k.id %>/" class="link link-primary ml-auto inline-flex items-center gap-2 text-sm font-semibold">Mehr zur Klasse <%= icon :arrow, css: "size-4" %></a>
+              <a href="/anmelden/?klasse=<%= k.kurz %>#formular" class="btn btn-primary btn-sm rounded-full">Anmelden</a>
             </div>
           </dl>
         </div>
       </li>
     <% end %>
   </ul>
+  <%= partial "partials/vergleich" %>
   <p class="mt-8 max-w-3xl text-sm text-base-content/70">Angaben zu den Fahrzeugen nach dem <a class="link" href="https://www.bmv.de/SharedDocs/DE/Artikel/StV/Strassenverkehr/fahrerlaubnisklassen-uebersicht.html" target="_blank" rel="noopener noreferrer">Bundesverkehrsministerium (Übersicht der Fahrerlaubnisklassen)</a>, Mindestalter und Ablauf allgemein, Stand 2026, ohne Gewähr. Die genauen Voraussetzungen besprechen wir persönlich mit dir. Wegen der <a class="link" href="/reform-2027/">Führerscheinreform 2027</a> können sich Details ändern.</p>
 </section>

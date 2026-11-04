@@ -14,12 +14,12 @@
         </ol>
       </nav>
     <% end %>
-    <% title = current_page.data.pagetitle || current_page.data.title %>
+    <% title = page_heading %>
     <%# Lange Titel (ab 20 Zeichen oder mit sehr langem Wort) kleiner setzen, damit sie in eine Zeile passen; letztes kurzes Wort bleibt am Wort davor %>
     <% long_title = title.length > 20 || title.split.map(&:length).max >= 16 %>
     <% size = long_title ? "clamp(1.45rem,6.4vw,4.4rem)" : "clamp(2.6rem,7.5vw,6rem)" %>
     <h1 id="page-title" class="display max-w-6xl" style="font-size:<%= size %>"><%= long_title ? ERB::Util.html_escape(title) : tidy(title) %></h1>
-    <% lead = current_page.data.smalltitle || data.site.subtitle %>
+    <% lead = page_lead %>
     <p class="mt-5 max-w-2xl text-lg text-base-content/80 sm:text-xl"><%= lead %></p>
     <% if subnav %>
       <nav aria-label="Unterseiten" class="mt-8">

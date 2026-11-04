@@ -89,9 +89,9 @@ google:
   stand: 'November 2026'
 # Anfahrt mit öffentlichen Verkehrsmitteln. Quelle: BOGESTRA-Fahrplan Linie 308/318 (PDF, vom Nutzer geliefert, 04.11.2026):
 # Linienband nennt "Friederikastr." zwischen Bergmannsheil und Kohlenstr.; Mo-Fr morgens fährt etwa alle 7 bis 8 Minuten eine Bahn
-# (308 und 318 abwechselnd); Hbf bis Bergmannsheil 4 Minuten, bis Friederikastr. eine Haltestelle mehr. Fahrplan ändert sich: jährlich prüfen.
+# (308 und 318 abwechselnd); Entfernung Haltestelle bis Fahrschule laut Google Street View (Screenshot vom Nutzer): ca. 15 bis 20 Meter; Hbf bis Bergmannsheil 4 Minuten, bis Friederikastr. eine Haltestelle mehr. Fahrplan ändert sich: jährlich prüfen.
 oepnv:
   haltestelle: Friederikastraße
   linien: ['308', '318']
-  text: 'Die Fahrschule liegt direkt an der Haltestelle Friederikastraße in Bochum-Weitmar, die von den BOGESTRA-Straßenbahnlinien 308 und 318 bedient wird. Du steigst aus und bist praktisch schon bei uns.'
+  text: 'Die Fahrschule liegt rund 20 Meter von der Haltestelle Friederikastraße in Bochum-Weitmar entfernt, die von den BOGESTRA-Straßenbahnlinien 308 und 318 bedient wird. Du steigst aus und bist praktisch schon bei uns.'
   takt: 'Montags bis freitags fährt tagsüber meist alle 10 Minuten oder öfter eine Bahn. Bis zum Bochumer Hauptbahnhof sind es nur wenige Minuten (etwa 5 bis 7). Aktuelle Abfahrten findest du im Fahrplan der BOGESTRA.'

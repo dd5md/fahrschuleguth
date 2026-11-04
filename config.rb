@@ -29,6 +29,12 @@ config[:fonts_dir]   = "assets/fonts"
 # URLs wie auf der Altseite: /ueberuns/preise/ (Verzeichnis + Slash)
 activate :directory_indexes
 page "/404.html", directory_index: false, layout: "layout"
+
+# Eine eigene Seite je Führerscheinklasse (/fuehrerschein/<id>/) aus data/klassen.yml und der Vorlage source/fuehrerschein/klasse.html.erb
+data.klassen.each do |k|
+  proxy "/fuehrerschein/#{k.id}/index.html", "/fuehrerschein/klasse.html", locals: { k: k }, ignore: false
+end
+ignore "/fuehrerschein/klasse.html"
 page "/anmelden/senden.php", directory_index: false, layout: false
 
 # Tailwind-Quelldatei ist nur Input für die Tailwind CLI und wird nicht ausgeliefert
