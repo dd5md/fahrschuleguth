@@ -29,10 +29,10 @@ breadcrumb_parents:
       <% end %>
     </div>
 
-    <%# Weitere Klassen ohne eigene Preisliste: BF17 wie Klasse B, übrige mit Platzhalter ??? (Preise von Uli nachliefern) %>
-    <h2 class="h3 mt-12">Weitere Klassen</h2>
+    <%# Weitere Klassen ohne eigene Preisliste (B96/B196 sind Erweiterungen zu Klasse B, AM ist eine eigene Klasse): Platzhalter ??? bis Uli die Preise nennt. BF17 steht in der Preisliste Klasse B. %>
+    <h2 class="h3 mt-12">Weitere Klassen und Erweiterungen</h2>
     <ul class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      <% data.klassen.reject { |k| %w[b a1 a2 a].include?(k.id) }.each do |k| %>
+      <% data.klassen.reject { |k| %w[b bf17 a1 a2 a].include?(k.id) }.each do |k| %>
         <li class="tile flex flex-col gap-3 p-6">
           <p class="text-4xl font-bold leading-none tracking-[-0.03em] text-primary"><%= k.kurz %></p>
           <p class="font-semibold"><%= tidy k.titel %></p>

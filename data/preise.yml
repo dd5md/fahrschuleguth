@@ -2,7 +2,7 @@
 hinweis: 'Preise in Euro inkl. MwSt. Die TÜV-Gebühren werden gesondert berechnet. Preisliste: Stand November 2026. Änderungen vorbehalten. Bei Nichtbestehen der praktischen oder theoretischen Prüfung wird kein weiterer Grundbetrag erhoben.'
 listen:
   - id: klasse-b
-    title: 'Klasse B'
+    title: 'Klasse B, BF17'
     items:
       - { text: Grundbetrag, sub: inkl. Theorieunterricht, preis: '470,00 €' }
       - { text: Übungsstunde, sub: je 45 Minuten, preis: '60,00 €' }
