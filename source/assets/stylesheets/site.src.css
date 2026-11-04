@@ -168,11 +168,12 @@ p, li, dd, summary h3 { text-wrap-style: pretty; }
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
-/* Nur klickbare Kacheln (a.tile) heben sich beim Überfahren an; .tile-hover erzwingt das bei Bedarf auch für nicht klickbare. */
-a.tile:hover,
-.tile-hover:hover {
-  transform: translateY(-3px);
-  border-color: color-mix(in oklab, var(--color-primary) 55%, transparent);
+/* Alle Kacheln heben sich beim Überfahren leicht an (nur bei Geräten mit Maus, damit es auf Touch nicht hängen bleibt). */
+@media (hover: hover) {
+  .tile:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in oklab, var(--color-primary) 55%, transparent);
+  }
 }
 
 .tile-accent {
