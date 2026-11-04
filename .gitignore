@@ -8,3 +8,4 @@
 # macOS
 Icon?
 .DS_Store
+__pycache__/

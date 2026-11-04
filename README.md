@@ -78,6 +78,13 @@ Es sind daher keine Weiterleitungen nötig. Einzige Abweichung: Das Alt-Menü ve
 ```
 Danach jeweils den **Inhalt** von `build/` (nicht den Ordner selbst) in das Startverzeichnis der Domain hochladen. Die Testversion sendet Formulare wirklich an `uli@fahrschuleguth.de`. Ohne Skript: `NOINDEX=1 SITE_URL=https://test.fahrschuleguth.de bundle exec middleman build`.
 
+## Neue Fotos hinzufügen (z. B. Bestandene)
+
+```bash
+python3 scripts/add_photos.py ~/Desktop/neue-fotos --monat 11 --jahr 2026
+```
+Das Skript dreht Handy-Fotos richtig, **entfernt alle Metadaten (inkl. GPS)**, erzeugt WebP + JPG (längste Seite 1280 px) und eine kleine Variante fürs Handy, benennt sie `bestanden_11-2026_<Nr>` und trägt sie **oben** in `data/galerie.yml` ein (die Startseite zeigt die ersten acht). Mit `--trocken` nur ansehen, mit `--alt "…"` eigener Alt-Text, mit `--kategorie` andere Galerien (`fahrschule`, `fahrzeuge`, `motorraeder`), mit `--verschieben` Originale in den Unterordner `fertig`. Benötigt Python 3 mit `pip install pillow pyyaml` (iPhone-HEIC-Fotos zusätzlich `pip install pillow-heif`). Danach `bundle exec middleman server` ansehen, committen, pushen. Nur Fotos mit Einwilligung der Abgebildeten verwenden.
+
 ## Offene Punkte
 
 - [ ] **Facebook:** Das Seitenplugin wurde bewusst nicht eingebaut (passt nicht ins dunkle Design, Fotos der Fahrschüler liefen ungefiltert mit). Es gibt nur den Link zur Seite `facebook.com/FahrschuleGuth/` (Footer, News). Fotos der Bestandenen weiter von Hand pflegen.
