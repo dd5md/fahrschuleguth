@@ -137,3 +137,5 @@ Das Skript dreht Handy-Fotos richtig, **entfernt alle Metadaten (inkl. GPS)**, e
 - [ ] Facebook-Link `https://www.facebook.com/fahrschuleguth` aus der Alt-Meta als `sameAs`/Footer übernommen – prüfen, ob noch aktuell.
 - [ ] Per-Seiten-Meta-Descriptions: Startseite unverändert, Unterseiten neu aus vorhandenen Seitenfakten formuliert (Alt nutzte überall dieselbe).
 - [ ] Der `<404>`-Text ist neu (Alt war grafisch); Deployment: `build/` auf den Apache-Webserver (`.htaccess` liegt bei).
+
+- [x] **News** (`data/news.yml`, `source/news.html.erb`): Alle Altbeiträge (2020 bis 2023, teils mit Corona-Masken) entfernt auf Wunsch von Uli (05.11.2026). Solange `posts` leer ist, zeigt `/news/` „News folgen in Kürze“ (URL bleibt für das Ranking). Neue Beiträge: Beispiel steht als Kommentar in `data/news.yml`, Fotos nur mit Einverständnis. Die Fotos liegen weiter unter `galerie/bestanden/` und werden von `/galerie/bestanden/` und der Startseite genutzt, siehe offene Frage dort.

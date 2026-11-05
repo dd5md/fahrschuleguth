@@ -1,10 +1,21 @@
 ---
 title: Aktuelle News
 pagetitle: Aktuelle News
-description: 'Aktuelle News der Fahrschule Guth Bochum: Wir haben bestanden! 100% Erfolg – Glückwünsche an unsere Fahrschüler mit Fotos.'
+description: 'News der Fahrschule Guth in Bochum-Weitmar: Neuigkeiten und Glückwünsche an unsere Fahrschüler folgen in Kürze.'
 ---
 <%= partial "partials/page_header" %>
 <div class="mx-auto max-w-7xl space-y-8 px-4 pb-10 pt-4 sm:pb-16 sm:pt-6">
+  <% if data.news.posts.blank? %>
+    <article class="tile p-6 sm:p-10">
+      <p class="eyebrow">Neuigkeiten</p>
+      <h2 class="mt-2 text-2xl font-bold sm:text-3xl">News folgen in Kürze</h2>
+      <p class="mt-3 max-w-2xl leading-relaxed text-base-content/80">Wir haben unsere Webseite komplett neu aufgebaut. Neue Beiträge und Fotos von unseren Fahrschülern folgen hier in Kürze. Schau gern bald wieder vorbei.</p>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a href="/anmelden/" class="btn btn-primary rounded-full">Jetzt anmelden <%= icon :arrow, css: "size-4" %></a>
+        <a href="/kontakt/" class="btn btn-outline rounded-full border-base-content/25">Kontakt</a>
+      </div>
+    </article>
+  <% end %>
   <% data.news.posts.each_with_index do |post, n| %>
     <article class="tile p-5 sm:p-8">
       <h2 class="text-2xl font-bold sm:text-3xl"><%= post["title"] %></h2>
