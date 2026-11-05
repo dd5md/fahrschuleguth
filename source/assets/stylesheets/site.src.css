@@ -387,6 +387,14 @@ body:has(#nav-toggle:checked) { overflow: hidden; }
 .pill:active,
 .keycap:active { transform: translateY(0); }
 
+/* Leuchtende Füllungen (Lime, WhatsApp-Grün): weißer Ring, damit er sich klar vom dunklen Grund abhebt */
+.btn.btn-primary:not(.btn-ghost):not(.btn-link),
+.btn.btn-wa:not(.btn-ghost):not(.btn-link) { border-color: rgb(255 255 255 / 0.85); }
+@media (hover: hover) {
+  .btn.btn-primary:not(.btn-ghost):not(.btn-link):hover,
+  .btn.btn-wa:not(.btn-ghost):not(.btn-link):hover { border-color: #fff; }
+}
+
 /* Auf der limefarbenen Kachel: dunkle statt heller Kante */
 .tile-accent .btn:not(.btn-ghost):not(.btn-link) { border-color: rgb(0 0 0 / 0.35); }
 @media (hover: hover) {
