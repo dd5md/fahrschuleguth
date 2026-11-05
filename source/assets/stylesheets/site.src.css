@@ -304,7 +304,7 @@ body:has(#nav-toggle:checked) { overflow: hidden; }
 /* Hüpfender Kopf rechts oben (wie auf der Altseite): hüpft dauernd, nach drei Hüpfern dreht er sich beim vierten
    einmal um sich selbst. Seitenverhältnis 1:1, kein Rand, keine Verzerrung. Startet erst nach dem Laden. */
 .mascot-corner {
-  --s: 3.9rem;
+  --s: 5.2rem;
   --hop: 4.5rem;
   position: absolute;
   z-index: 5;
@@ -315,6 +315,7 @@ body:has(#nav-toggle:checked) { overflow: hidden; }
   pointer-events: none;
 }
 .mascot-corner img { display: block; width: 100%; height: 100%; }
+@media (max-width: 359px) { .mascot-corner { --s: 3.4rem; } }
 @media (min-width: 560px) { .mascot-corner { --s: 6.8rem; --hop: 8rem; right: 1.25rem; top: 8.5rem; } }
 @media (min-width: 768px) { .mascot-corner { --s: 7.5rem; --hop: 9.5rem; right: 1.5rem; top: 10.5rem; } }
 @media (min-width: 1280px) {
