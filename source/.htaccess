@@ -65,10 +65,16 @@
   ExpiresByType application/x-font-woff2       "access plus 1 year"
 </IfModule>
 
-# MOD HEADERS
+# MOD HEADERS: Cache-Steuerung
+# CSS und JS tragen eine Versionsnummer (?v=...), Bilder und Schriften bekommen bei Änderung neue Dateinamen:
+# die dürfen ein Jahr im Browser bleiben. HTML, XML und TXT werden dagegen immer neu geprüft,
+# damit Änderungen sofort sichtbar sind (sonst zeigt Safari tagelang alte Seiten).
 <IfModule mod_headers.c>
-  <FilesMatch "\.(ico|jpg|jpeg|png|gif|js|css|html|gz|swf|woff|woff2|webp)$">
+  <FilesMatch "\.(ico|jpg|jpeg|png|gif|js|css|gz|swf|woff|woff2|webp|svg)$">
     Header set Cache-Control "max-age=31536000, public"
+  </FilesMatch>
+  <FilesMatch "\.(html|xml|txt)$">
+    Header set Cache-Control "no-cache, must-revalidate"
   </FilesMatch>
 </IfModule>
 
