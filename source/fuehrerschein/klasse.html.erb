@@ -50,7 +50,7 @@
       <div class="mt-6 flex flex-col gap-3">
         <a href="/anmelden/?klasse=<%= klasse.kurz %>#formular" class="btn btn-lg rounded-full border-0 bg-base-100 text-base-content hover:bg-base-200">Jetzt anmelden <%= icon :arrow, css: "size-5" %></a>
         <a href="<%= whatsapp_link(data.site.contacts.first, "Hallo Uli, ich interessiere mich für Klasse #{klasse.kurz}.") %>" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-wa rounded-full"><%= social_icon :whatsapp, css: "size-5" %> WhatsApp</a>
-        <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-lg btn-outline rounded-full border-primary-content/70 text-primary-content hover:border-primary-content hover:bg-primary-content hover:text-primary"><%= icon :phone, css: "size-5" %> <%= phone(data.site.contacts.first.phone) %></a>
+        <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-lg rounded-full bg-white text-[#17181c] hover:bg-white/80"><%= icon :phone, css: "size-5" %> <%= phone(data.site.contacts.first.phone) %></a>
       </div>
     </div>
     <% if liste && liste.items.size > 1 %>

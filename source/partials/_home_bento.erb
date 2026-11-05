@@ -28,7 +28,7 @@
       <p class="eyebrow">Dein Führerschein</p>
       <ul class="mt-5 grid grid-cols-4 gap-2 sm:gap-3">
         <% %w[b a1 a2 a].each do |id| %>
-          <li><a href="/fuehrerschein/<%= id %>/" class="grid aspect-square place-items-center rounded-2xl border border-base-content/12 bg-base-100/50 text-2xl font-bold tracking-tight transition hover:border-primary hover:bg-primary hover:text-primary-content sm:text-3xl"><%= id.upcase %></a></li>
+          <li><a href="/fuehrerschein/<%= id %>/" class="keycap grid aspect-square place-items-center rounded-2xl border border-base-content/12 bg-base-100/50 text-2xl font-bold tracking-tight transition hover:border-primary hover:bg-primary hover:text-primary-content sm:text-3xl"><%= id.upcase %></a></li>
         <% end %>
       </ul>
       <a href="/fuehrerschein/" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">Alle Klassen erklärt <%= icon :arrow, css: "size-4" %></a>
