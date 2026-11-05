@@ -222,7 +222,7 @@ p, li, dd, summary h3 { text-wrap-style: pretty; }
   width: 3rem;
   height: 3rem;
   border-radius: 999px;
-  background: url("/assets/images/bilder/kopf.webp") center / cover no-repeat;
+  background: url("/assets/images/bilder/kopf-2.webp") center / cover no-repeat;
 }
 
 /* Lesbarer Fließtext für Rechtstexte */
