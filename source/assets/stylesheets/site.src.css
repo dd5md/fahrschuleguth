@@ -304,21 +304,21 @@ body:has(#nav-toggle:checked) { overflow: hidden; }
 /* Hüpfender Kopf rechts oben (wie auf der Altseite): hüpft dauernd, nach drei Hüpfern dreht er sich beim vierten
    einmal um sich selbst. Seitenverhältnis 1:1, kein Rand, keine Verzerrung. Startet erst nach dem Laden. */
 .mascot-corner {
-  --s: 3.5rem;
+  --s: 3.9rem;
   --hop: 4.5rem;
   position: absolute;
   z-index: 5;
   right: 0.5rem;
-  top: 6.8rem;
+  top: 6.5rem;
   width: var(--s);
   height: var(--s);
   pointer-events: none;
 }
 .mascot-corner img { display: block; width: 100%; height: 100%; }
-@media (min-width: 560px) { .mascot-corner { --s: 5rem; --hop: 8rem; right: 1.25rem; top: 8.5rem; } }
-@media (min-width: 768px) { .mascot-corner { --s: 5.5rem; --hop: 9.5rem; right: 1.5rem; top: 10.5rem; } }
+@media (min-width: 560px) { .mascot-corner { --s: 6.8rem; --hop: 8rem; right: 1.25rem; top: 8.5rem; } }
+@media (min-width: 768px) { .mascot-corner { --s: 7.5rem; --hop: 9.5rem; right: 1.5rem; top: 10.5rem; } }
 @media (min-width: 1280px) {
-  .mascot-corner { --s: 6rem; --hop: 11rem; right: max(1.5rem, calc((100vw - 80rem) / 2 + 2rem)); top: 12.5rem; }
+  .mascot-corner { --s: 8.2rem; --hop: 11rem; right: max(1.5rem, calc((100vw - 80rem) / 2 + 2rem)); top: 12.5rem; }
 }
 .is-loaded .mascot-corner { animation: corner-bounce 0.875s infinite 1s; }
 .is-loaded .mascot-corner .mascot-spin { animation: corner-spin 3.5s infinite 1s; }
