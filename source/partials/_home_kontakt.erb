@@ -4,8 +4,8 @@
       <p class="text-xs font-bold uppercase tracking-[0.14em] opacity-80">Wir sind für dich da</p>
       <h2 id="kontakt-title" class="display mt-4" style="font-size:clamp(2.6rem,7vw,6rem)">Fragen? Ruf einfach an<strong>.</strong></h2>
       <div class="mt-9 flex flex-wrap gap-3">
-        <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-lg rounded-full border-0 bg-base-100 text-base-content hover:bg-base-200"><%= icon :phone, css: "size-5 text-primary" %> <%= phone(data.site.contacts.first.phone) %></a>
-        <a href="<%= whatsapp_link %>" target="_blank" rel="noopener noreferrer" class="btn btn-lg rounded-full border-0 bg-[#25d366] text-[#052e13] hover:bg-[#3ee37f]"><%= social_icon :whatsapp, css: "size-5" %> WhatsApp</a>
+        <a href="<%= tel_link data.site.contacts.first.tel %>" class="btn btn-lg rounded-full bg-base-100 text-base-content hover:bg-base-200"><%= icon :phone, css: "size-5 text-primary" %> <%= phone(data.site.contacts.first.phone) %></a>
+        <a href="<%= whatsapp_link %>" target="_blank" rel="noopener noreferrer" class="btn btn-lg rounded-full bg-[#25d366] text-[#052e13] hover:bg-[#3ee37f]"><%= social_icon :whatsapp, css: "size-5" %> WhatsApp</a>
         <a href="/anmelden/" class="btn btn-lg btn-outline rounded-full border-primary-content/70 text-primary-content hover:border-primary-content hover:bg-primary-content hover:text-primary">Online anmelden</a>
       </div>
     </div>

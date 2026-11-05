@@ -377,3 +377,12 @@ body:has(#nav-toggle:checked) { overflow: hidden; }
 }
 .btn:not(.btn-ghost):not(.btn-link):active { transform: translateY(0); }
 
+/* Einheitliche Kante für alle Knöpfe: auf dunklem Grund eine helle graue Linie, auf der limefarbenen Kachel eine dunkle.
+   Gilt für gefüllte und umrandete Knöpfe gleichermaßen (vorher hatten manche eine Kante, andere nicht). */
+.btn:not(.btn-ghost):not(.btn-link) {
+  border: 1px solid rgb(255 255 255 / 0.22);
+}
+.tile-accent .btn:not(.btn-ghost):not(.btn-link) { border-color: rgb(0 0 0 / 0.35); }
+.tile-accent .btn.btn-outline { border-color: rgb(0 0 0 / 0.6); }
+.tile-accent .btn.bg-base-100 { border-color: rgb(255 255 255 / 0.25); }
+
