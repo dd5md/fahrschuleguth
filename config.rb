@@ -73,5 +73,7 @@ configure :development do
 end
 
 configure :build do
-  activate :minify_html, remove_quotes: false if defined?(Middleman::MinifyHtml)
+  # HTML kompakt (eine Zeile), JSON-LD und JavaScript verkleinert: siehe lib/site_minify.rb
+  require_relative "lib/site_minify"
+  after_build { |builder| SiteMinify.build_dir(File.join(builder.app.root, builder.app.config[:build_dir])) }
 end
