@@ -1,19 +1,22 @@
 <div class="groove" aria-hidden="true"></div>
-<section id="klassen" class="mx-auto max-w-7xl px-4 py-8 sm:py-12 lg:py-16 xl:py-20" aria-labelledby="klassen-title">
-  <div class="max-w-3xl">
+<section id="klassen" class="relative overflow-hidden" aria-labelledby="klassen-title">
+<div class="relative mx-auto max-w-7xl px-4 py-8 sm:py-12 lg:py-16 xl:py-20">
+  <%# Dekoratives Foto von Uli (freigestellt) leicht im Hintergrund; die Kacheln davor sind durchscheinend %>
+  <img src="<%= asset_path(:images, "bilder/uli-winner.webp") %>" width="1100" height="967" alt="" aria-hidden="true" loading="lazy" decoding="async" class="klassen-foto pointer-events-none relative mb-[-2.75rem] mt-[-0.5rem] h-[14.5rem] w-full select-none object-cover object-top sm:h-[20rem] lg:absolute lg:right-4 lg:top-0 lg:m-0 lg:h-auto lg:w-[62%] lg:object-fill xl:w-[56%]">
+  <div class="relative z-10 max-w-3xl">
     <p class="eyebrow">Führerscheinklassen</p>
     <h2 id="klassen-title" class="h2 mt-3">Welcher Führerschein passt zu <span class="text-gradient">dir</span>?</h2>
-    <p class="mt-5 text-lg text-base-content/80">Auto, Moped, Motorrad, mit 17 oder ohne Prüfung: kurz erklärt. Alle Details findest du auf der Seite zu den Klassen.</p>
+    <p class="mt-5 max-w-xl text-lg text-base-content/80">Auto, Moped, Motorrad, mit 17 oder ohne Prüfung: kurz erklärt. Alle Details findest du auf der Seite zu den Klassen.</p>
   </div>
   <%# Der Banner füllt die Reihe auf: letzte Reihe mit 4 Spalten (lg) bzw. 2 Spalten (sm) %>
   <% n = data.klassen.count(&:home) %>
   <% lg_span = { 0 => "lg:col-span-4", 1 => "lg:col-span-3", 2 => "lg:col-span-2", 3 => "lg:col-span-1" }[n % 4] %>
   <% sm_span = n.odd? ? "sm:col-span-1" : "sm:col-span-2" %>
   <% wide = (n % 4) <= 2 %>
-  <ul class="mt-8 grid sm:mt-12 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+  <ul class="relative z-10 mt-8 grid sm:mt-12 gap-4 sm:grid-cols-2 lg:grid-cols-4">
     <% data.klassen.select(&:home).each do |k| %>
       <li>
-        <a href="/fuehrerschein/<%= k.id %>/" class="tile group flex h-full flex-col gap-4 p-6">
+        <a href="/fuehrerschein/<%= k.id %>/" class="tile tile-glass group flex h-full flex-col gap-4 p-6">
           <span class="text-5xl font-bold leading-none tracking-[-0.03em] text-primary"><%= k.kurz %></span>
           <div>
             <h3 class="h3-sm"><%= tidy k.titel %></h3>
@@ -31,4 +34,5 @@
       </a>
     </li>
   </ul>
+</div>
 </section>
