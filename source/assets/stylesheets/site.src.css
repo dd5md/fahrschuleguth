@@ -348,7 +348,7 @@ dialog.lightbox::backdrop { background: transparent; }
 
 /* Offenes Handy-Menü: Seite dahinter nicht scrollen */
 body:has(#nav-toggle:checked) { overflow: hidden; }
-#nav-burger:focus-visible, #nav-drawer label:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+#nav-burger:focus-visible, #nav-drawer button:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
 
 /* Hüpfender Kopf rechts oben (wie auf der Altseite): hüpft dauernd, nach drei Hüpfern dreht er sich beim vierten
    einmal um sich selbst. Seitenverhältnis 1:1, kein Rand, keine Verzerrung. Startet erst nach dem Laden. */

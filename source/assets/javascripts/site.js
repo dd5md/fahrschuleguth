@@ -13,10 +13,9 @@
       if (burger) burger.setAttribute("aria-expanded", navToggle.checked ? "true" : "false");
     };
     navToggle.addEventListener("change", sync);
-    [].forEach.call(document.querySelectorAll('label[for="nav-toggle"][role="button"]'), function (lb) {
-      lb.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); navToggle.checked = !navToggle.checked; sync(); }
-      });
+    // Echte Knöpfe (Enter und Leertaste funktionieren von selbst) schalten das Menü um
+    [].forEach.call(document.querySelectorAll("[data-nav-toggle]"), function (btn) {
+      btn.addEventListener("click", function () { navToggle.checked = !navToggle.checked; sync(); if (!navToggle.checked && burger) burger.focus(); });
     });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && navToggle.checked) { navToggle.checked = false; sync(); if (burger) burger.focus(); }
