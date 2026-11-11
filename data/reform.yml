@@ -1,8 +1,8 @@
 # Führerscheinreform: Stand der Planung. Quellen: Bundesregierung (bundesregierung.de, "Reform für einen bezahlbaren und
 # modernen Führerschein") und Bundesverkehrsministerium (Pressemitteilung 043/2026). Vor Veröffentlichung gegen den aktuellen
-# Stand im Bundestag/Bundesgesetzblatt prüfen. NICHTS davon ist beschlossenes Recht.
-stand: 'November 2026'
-hinweis: 'Alle Punkte sind geplant. Gesetzentwurf und Verordnung werden noch in Bundestag und Bundesrat beraten, Inhalte und Termine können sich ändern.'
+# Stand im Bundestag/Bundesgesetzblatt prüfen. Der Bundestag hat den Gesetzentwurf am 05.11.2026 beschlossen, der Bundesrat muss noch zustimmen; in Kraft ist noch nichts.
+stand: '11. November 2026'
+hinweis: 'Der Bundestag hat die Änderung des Fahrlehrergesetzes am 5. November 2026 beschlossen. Der Bundesrat muss noch zustimmen, und die zugehörige Verordnung steht noch aus. Bis zum Inkrafttreten gelten die bisherigen Regeln. Inhalte und Termine können sich noch ändern.'
 punkte:
   - { titel: 'Theorie digital', text: 'Die Pflicht zum Präsenzunterricht soll entfallen. Das Wissen kann auch digital, zum Beispiel per App, erworben werden. Fahrschulen entscheiden selbst, ob und wie sie Theorieunterricht anbieten.' }
   - { titel: 'Kürzerer Fragenkatalog', text: 'Der Fragenkatalog (derzeit über 1.100 Fragen) soll um rund ein Drittel gekürzt, das Bewertungssystem vereinfacht werden. Fragen zur Verkehrssicherheit bekommen einen Schwerpunkt.' }
@@ -14,8 +14,10 @@ kosten: 'Ein bestimmter Preisvorteil ist nicht garantiert, die Fahrschulen legen
 zeitplan:
   - { wann: '20.05.2026', was: 'Kabinett beschließt den Gesetzentwurf zur Änderung des Fahrlehrergesetzes' }
   - { wann: '10.06.2026', was: 'Kabinett beschließt die Verordnung zur Modernisierung der Fahrschulausbildung' }
-  - { wann: 'Aktuell', was: 'Beratung in Bundestag und Bundesrat' }
-  - { wann: 'Anfang 2027', was: 'Ziel für das Inkrafttreten, wenn das Verfahren ohne Verzögerung läuft' }
+  - { wann: '05.11.2026', was: 'Der Bundestag beschließt die Änderung des Fahrlehrergesetzes (Gesetzentwurf 21/7404 in der Fassung des Verkehrsausschusses)' }
+  - { wann: 'Als Nächstes', was: 'Der Bundesrat muss dem Gesetz und der Verordnung zur Modernisierung der Fahrschulausbildung noch zustimmen' }
+  - { wann: '01.07.2027', was: 'Geplantes Inkrafttreten der wesentlichen Änderungen (laut Presseberichten, kein gesichertes Datum)' }
 quellen:
   - { name: 'Bundesregierung: Reform für einen bezahlbaren und modernen Führerschein', url: 'https://www.bundesregierung.de/breg-de/aktuelles/kabinett-startet-reform-fahrschulausbildung-2431088' }
+  - { name: 'Deutscher Bundestag: Abstimmung über die Änderung des Fahrlehrergesetzes', url: 'https://www.bundestag.de/dokumente/textarchiv/2026/kw45-de-fahrlehrergesetz-1230606' }
   - { name: 'Bundesverkehrsministerium: Pressemitteilung zur Reform', url: 'https://www.bmv.de/SharedDocs/DE/Pressemitteilungen/2026/043-schnieder-bezahlbarer-fuehrerschein.html' }
