@@ -1,12 +1,19 @@
 ---
-title: 'Error 404 🙁'
+title: 'Error 404'
 pagetitle: Seite nicht gefunden
 description: Diese Seite wurde nicht gefunden.
 robots: noindex, follow
 hide_cta: true
 ---
-<%= partial "partials/page_header" %>
-<section class="mx-auto mt-6 max-w-5xl px-4">
-  <p class="text-lg">Fehler 404 – die angeforderte Seite gibt es nicht (mehr).</p>
-  <a href="/" class="btn btn-primary mt-5 rounded-full">Zur Startseite</a>
+<section class="hero-glow relative overflow-hidden" aria-labelledby="fehler-titel">
+  <div class="mx-auto flex min-h-[70vh] max-w-3xl flex-col items-center justify-center px-4 py-16 text-center sm:py-24">
+    <p class="eyebrow">Fehler</p>
+    <p class="text-gradient mt-2 select-none text-[clamp(7rem,32vw,17rem)] font-extrabold leading-[0.9] tracking-[-0.05em]" aria-hidden="true">404</p>
+    <h1 id="fehler-titel" class="h2 mt-4">Seite nicht gefunden</h1>
+    <p class="mt-4 max-w-md text-lg text-base-content/80">Die Seite gibt es nicht (mehr). Vielleicht hat sich die Adresse geändert, oder ein Link war nicht ganz richtig.</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="/" class="btn btn-primary btn-lg rounded-full px-7">Zur Startseite <%= icon :arrow, css: "size-5" %></a>
+      <a href="/kontakt/" class="btn btn-lg rounded-full px-7">Kontakt</a>
+    </div>
+  </div>
 </section>
