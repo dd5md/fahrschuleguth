@@ -21,6 +21,7 @@
               <p class="eyebrow">Klasse <%= k.kurz %> · <%= k.titel %></p>
               <p class="mt-4 text-sm text-base-content/70"><%= liste.items.first.text %>, <%= liste.items.first.sub %></p>
               <p class="mt-2 text-6xl font-bold tracking-[-0.03em] text-primary"><%= liste.items.first.preis %></p>
+              <% if liste.items.first.unter %><p class="mt-1 text-sm text-base-content/70"><%= liste.items.first.unter %></p><% end %>
               <% if k.preis_hinweis %><p class="mt-2 text-sm text-base-content/70"><%= k.preis_hinweis.sub(/\A./, &:upcase) %></p><% end %>
               <% if liste.platzhalter %><p class="mt-2 text-sm text-base-content/70">Preise folgen in Kürze. Bis dahin: <a class="link link-primary whitespace-nowrap font-semibold" href="<%= tel_link data.site.contacts.first.tel %>"><%= phone data.site.contacts.first.phone %></a></p><% end %>
               <% if %w[a2 a].include?(k.id) %><p class="mt-2 text-sm text-base-content/70">Eine gemeinsame Preisliste für A2 und A.</p><% end %>

@@ -11,8 +11,7 @@
       <p class="eyebrow">Preis</p>
       <% if liste %>
         <p class="mt-3 text-2xl font-bold tracking-tight text-primary"><%= liste.items.first.preis %></p>
-        <p class="mt-1 text-sm text-base-content/75"><%= liste.items.first.text %><%= " · #{klasse.preis_hinweis}" if klasse.preis_hinweis %></p>
-        <% if klasse.preis_zusatz %><p class="mt-1 text-sm text-base-content/75"><%= klasse.preis_zusatz %></p><% end %>
+        <p class="mt-1 text-sm text-base-content/75"><%= liste.items.first.unter || liste.items.first.text %><%= " · #{klasse.preis_hinweis}" if klasse.preis_hinweis %></p>
       <% else %>
         <p class="mt-3 text-2xl font-bold tracking-tight text-primary"><%= klasse.preis_text || "auf Anfrage" %></p>
       <% end %>

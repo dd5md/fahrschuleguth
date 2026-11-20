@@ -39,4 +39,4 @@ listen:
     gruppe: zusatz
     untertitel: Schulung ohne Prüfung, Richtpreis
     items:
-      - { text: Komplettpreis, sub: '4 × Theorie und 5 × Praxis zu je 90 Minuten · keine Prüfungsgebühr', preis: 'ca. 700 €' }
+      - { text: B196-Schulung, sub: '4 × Theorie und 5 × Praxis zu je 90 Minuten · keine Prüfungsgebühr', preis: 'ca. 700 €', unter: Näheres beim Fahrlehrer }
