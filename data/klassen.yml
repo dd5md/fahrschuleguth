@@ -1,5 +1,6 @@
 # Führerscheinklassen. `home: true` = Karte auf der Startseite. `preis` verweist auf eine Preisliste (preise.yml id),
 # `preis_hinweis` ergänzt einen Zusatz, ohne `preis` erscheint der Platzhalter "???" (Preis von Uli nachliefern).
+# `preis_zusatz` = eigene graue Zeile unter dem Preis (nur Detailseite).
 # AM ist eine eigene Klasse (Mindestalter 15). Preis: `preis_text` statt Tabelle (Uli will keinen Preis nennen).
 # Quelle der Fahrzeug-Angaben: Bundesverkehrsministerium, "Fahrerlaubnisklassen: Übersicht"
 # (bmv.de/SharedDocs/DE/Artikel/StV/Strassenverkehr/fahrerlaubnisklassen-uebersicht.html).
@@ -36,8 +37,8 @@
   alter: ab 25 Jahren, Klasse B seit mindestens 5 Jahren
   darf: Im Inland Krafträder (auch mit Beiwagen) der Klasse A1, also bis 125 cm³ Hubraum und 11 kW Leistung. Gilt nur in Deutschland.
   ablauf: Fahrerschulung von mindestens 13,5 Zeitstunden (4 Unterrichtseinheiten Theorie und 5 Unterrichtseinheiten Praxis zu je 90 Minuten), keine Prüfung. Der Fahrlehrer bestätigt die Teilnahme.
-  preis: null
-  preis_text: auf Rücksprache mit dem Fahrlehrer
+  preis: b196
+  preis_zusatz: Näheres beim Fahrlehrer
   home: true
 - id: am
   seo_titel: 'Klasse AM: Moped-Führerschein in Bochum-Weitmar'
