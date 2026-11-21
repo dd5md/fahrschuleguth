@@ -234,7 +234,8 @@ main { overflow-x: clip; }
 @property --beam-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes beam-spin { to { --beam-a: 360deg; } }
 .beam { --beam-color: var(--color-primary); }
-.tile-accent.beam { --beam-color: #fff; }
+/* auf den gelben Kacheln ein dunkles Orangebraun: Weiß war auf Lime kaum zu sehen */
+.tile-accent.beam { --beam-color: #8a3f00; }
 .beam::after {
   content: "";
   position: absolute;
@@ -249,7 +250,7 @@ main { overflow-x: clip; }
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
   opacity: 0;
-  animation: beam-spin 7s linear infinite;
+  animation: beam-spin 10s linear infinite;
   animation-play-state: paused;
 }
 .beam.is-view::after { opacity: 1; animation-play-state: running; }
