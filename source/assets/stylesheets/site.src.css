@@ -221,6 +221,16 @@ p, li, dd, summary h3 { text-wrap-style: pretty; }
 .reveal-wait { opacity: 0; transform: translateY(28px); }
 .reveal-in { animation: reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
 
+/* Bilder fliegen schräg ein (--fx: -50px links, 0 Mitte, 50px rechts), nach Scalo „Motion Effects, Effect 1“ */
+/* verhindert einen kurzen waagerechten Balken, solange ein Bild von rechts einfliegt */
+main { overflow-x: clip; }
+@keyframes fly-in {
+  from { opacity: 0; transform: translate(var(--fx, 0px), 50px); }
+  to { opacity: 1; transform: none; }
+}
+.fly-wait { opacity: 0; transform: translate(var(--fx, 0px), 50px); }
+.fly-in { animation: fly-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
 @property --beam-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes beam-spin { to { --beam-a: 360deg; } }
 .beam { --beam-color: var(--color-primary); }
@@ -247,6 +257,8 @@ p, li, dd, summary h3 { text-wrap-style: pretty; }
   .beam::after { display: none; }
   .reveal-wait { opacity: 1; transform: none; }
   .reveal-in { animation: none; }
+  .fly-wait { opacity: 1; transform: none; }
+  .fly-in { animation: none; }
 }
 
 [data-theme="guth-light"] .tile {

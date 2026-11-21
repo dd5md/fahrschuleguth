@@ -133,8 +133,44 @@
     });
     beams.forEach(function (el) { bo.observe(el); });
   }
-  if (!document.querySelector("[data-reveal-scope]")) return;
   var vh = window.innerHeight || document.documentElement.clientHeight;
+  // Bilder (Galerien, Startseite „bestanden“, News, große Fotos im Text) fliegen schräg von unten ein, links von links, rechts von rechts, Mitte von unten
+  var main = document.querySelector("main");
+  var pics = [];
+  Array.prototype.forEach.call(document.querySelectorAll("main li > a[data-lightbox]"), function (a) { pics.push(a.parentElement); });
+  Array.prototype.forEach.call(document.querySelectorAll("main picture"), function (p) {
+    if (p.closest(".tile") || p.closest("li > a[data-lightbox]") || p.closest("[data-embed]")) return;
+    if (p.getBoundingClientRect().width >= 200) pics.push(p);
+  });
+  pics = pics.filter(function (el) { return el.getBoundingClientRect().top > vh * 0.9; });
+  if (pics.length) {
+    pics.forEach(function (el) {
+      var box = el.tagName === "LI" ? el.parentElement : main;
+      var r = box.getBoundingClientRect(), e = el.getBoundingClientRect();
+      var f = r.width ? (e.left + e.width / 2 - r.left) / r.width : 0.5;
+      el.style.setProperty("--fx", f < 0.34 ? "-50px" : f > 0.66 ? "50px" : "0px");
+      el.classList.add("fly-wait");
+    });
+    var po = new IntersectionObserver(function (entries) {
+      var n = 0;
+      entries.forEach(function (x) {
+        if (!x.isIntersecting) return;
+        var el = x.target;
+        po.unobserve(el);
+        el.style.animationDelay = Math.min(n * 140, 700) + "ms";
+        n++;
+        el.classList.remove("fly-wait");
+        el.classList.add("fly-in");
+        el.addEventListener("animationend", function () {
+          el.classList.remove("fly-in");
+          el.style.animationDelay = "";
+          el.style.removeProperty("--fx");
+        }, { once: true });
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    pics.forEach(function (el) { po.observe(el); });
+  }
+  if (!document.querySelector("[data-reveal-scope]")) return;
   var tiles = Array.prototype.filter.call(document.querySelectorAll("[data-reveal-scope] main .tile"), function (el) {
     // nur Kacheln unterhalb des ersten Bildschirms und keine verschachtelten Kacheln
     return !(el.parentElement && el.parentElement.closest(".tile")) && el.getBoundingClientRect().top > vh * 0.9;
