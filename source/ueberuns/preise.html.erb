@@ -15,7 +15,7 @@ breadcrumb_parents:
 
     <div class="grid gap-6 lg:grid-cols-3">
       <% hauptlisten.each_with_index do |liste, i| %>
-        <article id="<%= liste.id %>" class="tile scroll-mt-24 <%= 'ring-2 ring-primary' if i == 0 %>" aria-labelledby="<%= liste.id %>-titel">
+        <article id="<%= liste.id %>" class="tile beam scroll-mt-24 <%= 'ring-2 ring-primary' if i == 0 %>" aria-labelledby="<%= liste.id %>-titel">
           <div class="p-6 sm:p-8">
             <h2 id="<%= liste.id %>-titel" class="text-2xl font-bold tracking-tight">Preisliste <span class="text-primary">Klasse <%= liste.title.sub("Klasse ", "") %></span></h2>
             <p class="text-sm italic text-base-content/80"><%= liste.untertitel || (liste.platzhalter ? "Preise folgen in Kürze" : "gemäß Preisaushang Fahrlehrergesetz § 32") %></p>
@@ -32,7 +32,7 @@ breadcrumb_parents:
       <% end %>
       <%# Klassen ohne Preisliste (z. B. AM): eigene breite Karte unter den Preislisten %>
       <% data.klassen.select { |k| k.preis_text }.each do |k| %>
-        <article id="klasse-<%= k.id %>" class="tile scroll-mt-24 lg:col-span-3" aria-labelledby="klasse-<%= k.id %>-titel">
+        <article id="klasse-<%= k.id %>" class="tile beam scroll-mt-24 lg:col-span-3" aria-labelledby="klasse-<%= k.id %>-titel">
           <div class="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <h2 id="klasse-<%= k.id %>-titel" class="text-2xl font-bold tracking-tight">Klasse <span class="text-primary"><%= k.kurz %></span></h2>
@@ -55,7 +55,7 @@ breadcrumb_parents:
       </div>
       <div class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <% zusatzlisten.each do |liste| %>
-          <article id="<%= liste.id %>" class="tile scroll-mt-24" aria-labelledby="<%= liste.id %>-titel">
+          <article id="<%= liste.id %>" class="tile beam scroll-mt-24" aria-labelledby="<%= liste.id %>-titel">
             <div class="p-6 sm:p-8">
               <h3 id="<%= liste.id %>-titel" class="text-2xl font-bold tracking-tight">Preisliste <span class="text-primary"><%= liste.title %></span></h3>
               <p class="text-sm italic text-base-content/80"><%= liste.untertitel || (liste.platzhalter ? "Preise folgen in Kürze" : "gemäß Preisaushang Fahrlehrergesetz § 32") %></p>

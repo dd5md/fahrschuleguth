@@ -233,9 +233,9 @@ main { overflow-x: clip; }
 
 @property --beam-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes beam-spin { to { --beam-a: 360deg; } }
-.beam { --beam-color: var(--color-primary); }
-/* Auf den gelben (Lime-)Kacheln ist ein einfarbiger Streifen kaum zu sehen: dort läuft ein dickerer, mehrfarbiger (dunkles Orange, Blau, Hellblau, Weiß wie bei Scalo „Supercharge“) */
-.tile-accent.beam { --beam-w: 4px; }
+/* Lichtstreifen um große Kacheln: mehrfarbig wie bei Scalo „Supercharge“ (Kopf Weiß, dahinter Hellblau, Blau, Orange, nach hinten ausblendend). Dicke über --beam-w (hier 4 Pixel, bei dunklen Kacheln bei Bedarf auf 2 bis 3 Pixel verringern). */
+.beam { --beam-w: 4px; }
+/* Auf den gelben (Lime-)Kacheln dunklere Farben, sonst sind Hellblau und Weiß kaum zu sehen */
 .tile-accent.beam::after { background: conic-gradient(from var(--beam-a), transparent 0deg 250deg, #b45309 285deg, #1d4ed8 318deg, #38bdf8 342deg, #fff 360deg); }
 .beam::after {
   content: "";
@@ -245,7 +245,7 @@ main { overflow-x: clip; }
   padding: var(--beam-w, 2px);
   border-radius: inherit;
   pointer-events: none;
-  background: conic-gradient(from var(--beam-a), transparent 0deg 285deg, var(--beam-color) 360deg);
+  background: conic-gradient(from var(--beam-a), transparent 0deg 250deg, #f97316 285deg, #3b82f6 318deg, #7dd3fc 342deg, #fff 360deg);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -423,8 +423,8 @@ body:has(#nav-toggle:checked) { overflow: hidden; }
 @media (min-width: 1280px) {
   .mascot-corner { --s: 8.2rem; --hop: 11rem; right: max(1.5rem, calc((100vw - 80rem) / 2 + 2rem)); top: 12.5rem; }
 }
-.is-loaded .mascot-corner { animation: corner-bounce 0.875s infinite 1s; }
-.is-loaded .mascot-corner .mascot-spin { animation: corner-spin 3.5s infinite 1s; }
+.is-loaded .mascot-corner { animation: corner-bounce 1s infinite 1s; }
+.is-loaded .mascot-corner .mascot-spin { animation: corner-spin 4s infinite 1s; }
 @keyframes corner-bounce {
   0%   { transform: translateY(0); animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1); }
   40%  { transform: translateY(calc(var(--hop) * -1)); animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.4); }

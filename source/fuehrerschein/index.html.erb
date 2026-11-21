@@ -10,7 +10,7 @@ breadcrumb_parents: []
   <ul class="space-y-5">
     <% data.klassen.each do |k| %>
       <% liste = k.preis && data.preise.listen.find { |l| l.id == k.preis } %>
-      <li id="<%= k.id %>" class="tile scroll-mt-24 p-7 sm:p-10">
+      <li id="<%= k.id %>" class="tile beam scroll-mt-24 p-7 sm:p-10">
         <div class="grid gap-8 lg:grid-cols-12">
           <div class="lg:col-span-4">
             <p class="text-7xl font-bold leading-none tracking-[-0.03em] text-primary"><%= k.kurz %></p>

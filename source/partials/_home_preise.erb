@@ -14,7 +14,7 @@
     </div>
     <% data.klassen.each do |k| %>
       <% liste = k.preis && data.preise.listen.find { |l| l.id == k.preis } %>
-      <div role="tabpanel" id="panel-<%= k.id %>" aria-labelledby="tab-<%= k.id %>" class="tile mt-4 p-6 sm:p-9">
+      <div role="tabpanel" id="panel-<%= k.id %>" aria-labelledby="tab-<%= k.id %>" class="tile beam mt-4 p-6 sm:p-9">
         <% if liste %>
           <div class="grid gap-8 lg:grid-cols-12">
             <div class="lg:col-span-4">
