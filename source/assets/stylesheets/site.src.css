@@ -234,14 +234,15 @@ main { overflow-x: clip; }
 @property --beam-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes beam-spin { to { --beam-a: 360deg; } }
 .beam { --beam-color: var(--color-primary); }
-/* auf den gelben Kacheln ein dunkles Orangebraun: Weiß war auf Lime kaum zu sehen */
-.tile-accent.beam { --beam-color: #8a3f00; }
+/* Auf den gelben (Lime-)Kacheln ist ein einfarbiger Streifen kaum zu sehen: dort läuft ein dickerer, mehrfarbiger (dunkles Orange, Blau, Hellblau, Weiß wie bei Scalo „Supercharge“) */
+.tile-accent.beam { --beam-w: 4px; }
+.tile-accent.beam::after { background: conic-gradient(from var(--beam-a), transparent 0deg 250deg, #b45309 285deg, #1d4ed8 318deg, #38bdf8 342deg, #fff 360deg); }
 .beam::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 3;
-  padding: 2px;
+  padding: var(--beam-w, 2px);
   border-radius: inherit;
   pointer-events: none;
   background: conic-gradient(from var(--beam-a), transparent 0deg 285deg, var(--beam-color) 360deg);
