@@ -233,8 +233,9 @@ main { overflow-x: clip; }
 
 @property --beam-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes beam-spin { to { --beam-a: 360deg; } }
-/* Lichtstreifen um große Kacheln: mehrfarbig wie bei Scalo „Supercharge“ (Kopf Weiß, dahinter Hellblau, Blau, Orange, nach hinten ausblendend). Dicke über --beam-w (hier 4 Pixel, bei dunklen Kacheln bei Bedarf auf 2 bis 3 Pixel verringern). */
-.beam { --beam-w: 4px; }
+/* Lichtstreifen um große Kacheln: mehrfarbig wie bei Scalo „Supercharge“ (Kopf Weiß, dahinter Hellblau, Blau, Orange, nach hinten ausblendend). Dicke über --beam-w (dunkle Kacheln 2,67 px, gelbe 4 px). */
+.beam { --beam-w: 2.67px; } /* dunkle Kacheln: ein Drittel dünner als die gelben (4px) */
+.tile-accent.beam { --beam-w: 4px; }
 /* Auf den gelben (Lime-)Kacheln dunklere Farben, sonst sind Hellblau und Weiß kaum zu sehen */
 .tile-accent.beam::after { background: conic-gradient(from var(--beam-a), transparent 0deg 250deg, #b45309 285deg, #1d4ed8 318deg, #38bdf8 342deg, #fff 360deg); }
 .beam::after {
