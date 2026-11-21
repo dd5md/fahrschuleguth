@@ -1,12 +1,16 @@
 <%# Google-Bewertungen: Zusammenfassung (Daten aus data/site.yml `google`) und ausgewählte Zitate (data/bewertungen.yml). Zitate nur mit Kürzel-Namen. %>
+<%# Zweiter Einsatz auf der Startseite (zwischen Kacheln und Klassen): partial "partials/bewertungen", locals: { zweite: true } -> andere IDs, Trennlinie davor statt danach %>
+<% zweite = binding.local_variable_defined?(:zweite) && zweite %>
+<% sid = zweite ? "bewertungen-2" : "bewertungen" %>
 <% g = data.site.google %>
 <% if g && g.rating %>
   <% rating = g.rating.to_s.tr(".", ",") %>
-  <section id="bewertungen" class="mx-auto max-w-7xl px-4 py-8 sm:py-12 lg:py-16 xl:py-20" aria-labelledby="bewertungen-title">
+  <% if zweite %><div class="groove" aria-hidden="true"></div><% end %>
+  <section id="<%= sid %>" class="mx-auto max-w-7xl px-4 py-8 sm:py-12 lg:py-16 xl:py-20" aria-labelledby="<%= sid %>-title">
     <div class="grid items-end gap-6 lg:grid-cols-12">
       <div class="lg:col-span-8">
         <p class="eyebrow">Echte Google-Bewertungen</p>
-        <h2 id="bewertungen-title" class="h2 mt-3"><%= rating %> von 5 Sternen: Fahrschüler <span class="text-gradient">empfehlen uns</span></h2>
+        <h2 id="<%= sid %>-title" class="h2 mt-3"><%= rating %> von 5 Sternen: Fahrschüler <span class="text-gradient">empfehlen uns</span></h2>
       </div>
       <a href="<%= ERB::Util.html_escape(g.url) %>" target="_blank" rel="noopener noreferrer" class="tile tile-hover flex items-center gap-4 p-5 lg:col-span-4" aria-label="Alle Bewertungen auf Google ansehen">
         <span class="text-6xl font-bold leading-none tracking-[-0.03em]"><%= rating %></span>
@@ -32,13 +36,14 @@
       </ul>
     <% end %>
 
+    <%# Zahlen zählen beim Einblenden hoch (site.js, data-count); ohne JavaScript steht der Endwert im Text %>
     <ul class="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
-      <li class="tile p-5"><p class="text-4xl font-bold leading-none tracking-[-0.02em] text-primary"><%= rating %> ★</p><p class="mt-2 text-sm font-semibold">Google-Bewertung</p></li>
-      <% if g.anzahl %><li class="tile p-5"><p class="text-4xl font-bold leading-none tracking-[-0.02em] text-primary"><%= g.anzahl %></p><p class="mt-2 text-sm font-semibold">Bewertungen</p></li><% end %>
-      <li class="tile p-5"><p class="text-4xl font-bold leading-none tracking-[-0.02em] text-primary">30+</p><p class="mt-2 text-sm font-semibold">Jahre Fahrschule</p></li>
-      <li class="tile p-5"><p class="text-4xl font-bold leading-none tracking-[-0.02em] text-primary">~20 m</p><p class="mt-2 text-sm font-semibold">von der Haltestelle zur Tür</p></li>
+      <li class="tile p-5"><%= count_number(g.rating.to_s, rating, decimals: 1, suffix: " ★") %><p class="mt-2 text-sm font-semibold">Google-Bewertung</p></li>
+      <% if g.anzahl %><li class="tile p-5"><%= count_number(g.anzahl.to_s, g.anzahl.to_s) %><p class="mt-2 text-sm font-semibold">Bewertungen</p></li><% end %>
+      <li class="tile p-5"><%= count_number("30", "30", suffix: "+") %><p class="mt-2 text-sm font-semibold">Jahre Fahrschule</p></li>
+      <li class="tile p-5"><%= count_number("20", "20", prefix: "~", suffix: " m") %><p class="mt-2 text-sm font-semibold">von der Haltestelle zur Tür</p></li>
     </ul>
     <p class="mt-4 text-xs text-base-content/60">Stand der Bewertungen: <%= g.stand %>. Quelle: Google. Bewertungen können sich ändern.</p>
   </section>
-  <div class="groove" aria-hidden="true"></div>
+  <% unless zweite %><div class="groove" aria-hidden="true"></div><% end %>
 <% end %>

@@ -93,3 +93,30 @@
     });
   });
 })();
+
+// Zähleffekt: Zahlen mit data-count laufen beim Einblenden von 0 hoch (ohne JavaScript oder bei reduzierter Bewegung steht der Endwert im Text)
+(function () {
+  var els = document.querySelectorAll("[data-count]");
+  if (!els.length) return;
+  if ((window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) || !("IntersectionObserver" in window)) return;
+  function fmt(el, v) {
+    var d = parseInt(el.getAttribute("data-decimals"), 10) || 0;
+    return (el.getAttribute("data-prefix") || "") + v.toLocaleString("de-DE", { minimumFractionDigits: d, maximumFractionDigits: d }) + (el.getAttribute("data-suffix") || "");
+  }
+  function run(el) {
+    var to = parseFloat(el.getAttribute("data-count")), t0 = null, dur = 1600;
+    function step(t) {
+      if (t0 === null) t0 = t;
+      var p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(el, to * e);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (x) {
+      if (x.isIntersecting) { io.unobserve(x.target); run(x.target); }
+    });
+  }, { threshold: 0.6 });
+  els.forEach(function (el) { el.textContent = fmt(el, 0); io.observe(el); });
+})();

@@ -11,6 +11,13 @@ module SiteHelpers
     "#{path}?v=#{BUILD_VERSION}"
   end
 
+  # Zahl mit Zähleffekt (site.js, data-count): Endwert steht im Text (ohne JavaScript sichtbar), Screenreader lesen den Endwert
+  def count_number(wert, text, decimals: 0, prefix: "", suffix: "")
+    esc = ERB::Util.method(:html_escape)
+    full = esc.call("#{prefix}#{text}#{suffix}")
+    %(<p class="text-4xl font-bold leading-none tabular-nums tracking-[-0.02em] text-primary"><span aria-hidden="true" data-count="#{esc.call(wert)}" data-decimals="#{decimals}" data-prefix="#{esc.call(prefix)}" data-suffix="#{esc.call(suffix)}">#{full}</span><span class="sr-only">#{full}</span></p>)
+  end
+
   def site_url
     config[:site_url]
   end
