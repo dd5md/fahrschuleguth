@@ -3,7 +3,7 @@
   <head>
     <%= partial "partials/head" %>
   </head>
-  <body class="bg-base-100 text-base-content antialiased">
+  <body class="bg-base-100 text-base-content antialiased"<%= " data-reveal-scope" if current_page.url == "/" %>>
     <a href="#main" class="sr-only focus:not-sr-only btn btn-primary absolute z-50 m-2">Zum Inhalt springen</a>
 
     <% if config[:noindex] %>

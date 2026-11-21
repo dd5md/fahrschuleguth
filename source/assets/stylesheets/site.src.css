@@ -210,6 +210,45 @@ p, li, dd, summary h3 { text-wrap-style: pretty; }
   border-color: transparent;
 }
 
+/* ---------------------------------------------------------------------------
+   Effekte: Kacheln blenden einzeln ein (Startseite) und ein Lichtstreifen wandert um die Kante (.beam)
+   Beides steuert site.js; ohne JavaScript oder bei "Bewegung reduzieren" bleibt alles ruhig und sichtbar.
+   --------------------------------------------------------------------------- */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+.reveal-wait { opacity: 0; transform: translateY(28px); }
+.reveal-in { animation: reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@property --beam-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+@keyframes beam-spin { to { --beam-a: 360deg; } }
+.beam { --beam-color: var(--color-primary); }
+.tile-accent.beam { --beam-color: #fff; }
+.beam::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  padding: 2px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(from var(--beam-a), transparent 0deg 285deg, var(--beam-color) 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  animation: beam-spin 7s linear infinite;
+  animation-play-state: paused;
+}
+.beam.is-view::after { opacity: 1; animation-play-state: running; }
+@media (prefers-reduced-motion: reduce) {
+  .beam::after { display: none; }
+  .reveal-wait { opacity: 1; transform: none; }
+  .reveal-in { animation: none; }
+}
+
 [data-theme="guth-light"] .tile {
   box-shadow:
     inset 0 1px 0 rgb(255 255 255 / 0.8),

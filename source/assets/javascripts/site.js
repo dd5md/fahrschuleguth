@@ -120,3 +120,42 @@
   }, { threshold: 0.6 });
   els.forEach(function (el) { el.textContent = fmt(el, 0); io.observe(el); });
 })();
+
+// Effekte: Kacheln der Startseite blenden einzeln ein; Lichtstreifen (.beam) läuft nur, solange die Kachel sichtbar ist
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (still) return;
+  var beams = document.querySelectorAll(".beam");
+  if (beams.length) {
+    var bo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (x) { x.target.classList.toggle("is-view", x.isIntersecting); });
+    });
+    beams.forEach(function (el) { bo.observe(el); });
+  }
+  if (!document.querySelector("[data-reveal-scope]")) return;
+  var vh = window.innerHeight || document.documentElement.clientHeight;
+  var tiles = Array.prototype.filter.call(document.querySelectorAll("[data-reveal-scope] main .tile"), function (el) {
+    // nur Kacheln unterhalb des ersten Bildschirms und keine verschachtelten Kacheln
+    return !(el.parentElement && el.parentElement.closest(".tile")) && el.getBoundingClientRect().top > vh * 0.9;
+  });
+  if (!tiles.length) return;
+  tiles.forEach(function (el) { el.classList.add("reveal-wait"); });
+  var ro = new IntersectionObserver(function (entries) {
+    var n = 0;
+    entries.forEach(function (x) {
+      if (!x.isIntersecting) return;
+      var el = x.target;
+      ro.unobserve(el);
+      el.style.animationDelay = Math.min(n * 90, 360) + "ms";
+      n++;
+      el.classList.remove("reveal-wait");
+      el.classList.add("reveal-in");
+      el.addEventListener("animationend", function () {
+        el.classList.remove("reveal-in");
+        el.style.animationDelay = "";
+      }, { once: true });
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+  tiles.forEach(function (el) { ro.observe(el); });
+})();
